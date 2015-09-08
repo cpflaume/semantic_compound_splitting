@@ -8,5 +8,5 @@ setup(name='Semantic compound splitting',
       author='',
       author_email='',
       url='https://github.com/jodaiber/semantic_compound_splitting',
-      install_requires=['gensim', 'dawg', 'annoy'],
+      install_requires=['nltk','gensim', 'dawg', 'annoy'],
      )
