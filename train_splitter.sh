@@ -18,6 +18,11 @@ die() { echo "$@" 1>&2 ; exit 1; }
 #FUGENELEMENTE="" 
 
 # Run: [PARAMETERS] bash train_splitter.sh
+#
+# The PYTHON bin must be accessible from every machine and must have all the required dependencies.
+# Create a virtualenv with all the requirements for the training.
+#  virtualenv --system-site-packages venv
+#  venv/bin/python setup.py install
 
 MIN_LENGTH=5
 PROTOTYPE_JOBS=100
@@ -28,11 +33,9 @@ if [ -z "$STEP" ]; then
   STEP=1
 fi
 
-mkdir $OUT_DIR || die "OUT_DIR exists!"
-
-#Create a virtualenv with all the requirements for the training.
-# virtualenv --system-site-packages venv
-# venv/bin/python setup.py install
+if ["$STEP" = "1" ]; then
+  mkdir $OUT_DIR || die "OUT_DIR exists!"
+fi
 
 cd $CODE_DIR/jobs
 
@@ -47,7 +50,7 @@ wait_step 1
 #python extract_candidates.py -w /home/jdaiber1/compounds/out/w2v.bin -b /home/jdaiber1/compounds/out/dawg -c /home/jdaiber1/compounds/out/candidates -o /home/jdaiber1/compounds/out/annoy_index -i /home/jdaiber1/compounds/out/candidates_index.p -l 5 -n 100 -f ""
 
 if [ "$STEP" -le "2" ]; then
-  qsub -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" -v PYTHON="$PYTHON" -v MIN_LENGTH="$MIN_LENGTH" -v FUGENELEMENTE="$FUGENELEMENTE" job_extract_candidates.sh
+  qsub -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" -v PYTHON="$PYTHON" -v MIN_LENGTH="$MIN_LENGTH" -v FUGENELEMENTE="$FUGENELEMENTE" extract_candidates.sh
 fi
 
 wait_step 2
@@ -64,7 +67,7 @@ if [ "$STEP" -le "4" ]; then
 
   for i in {1..$PROTOTYPE_JOBS}
   do
-   qsub -v INPUT="candidates_index.p.$i" -v OUTPUT="output$i" -v PYTHON="$PYTHON" -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" generic_find_dir_vec.sh
+   qsub -v INPUT="candidates_index.p.$i" -v OUTPUT="output$i" -v PYTHON="$PYTHON" -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" find_dir_vectors.sh
   done
 fi
 
