@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 __author__ = 'rwechsler'
 import sys
 import time
@@ -108,12 +110,9 @@ if __name__ == "__main__":
 
     ###------------Parameters-----------------###
     min_word_length = 5
-    fugenlaute = ["es", "s"]
+    fugenlaute = [""]
     n_annoy_trees = 100
     ###---------------------------------------###
-
-
-
 
     parser = argparse.ArgumentParser(description='Extracte candidates')
 
@@ -127,12 +126,15 @@ if __name__ == "__main__":
     parser.add_argument('-l', action="store", type=int, dest="min_word_length", default=min_word_length)
     parser.add_argument('-n', action="store", dest="n_annoy_trees", type=int, default=n_annoy_trees)
 
+    parser.add_argument('-f', action="store", dest="fugenlaute", nargs='+', type=str, default=fugenlaute)
+
     arguments = parser.parse_args(sys.argv[1:])
 
 
 
     print timestamp(), "loading word2ved model"
-    word2vec_model = gensim.models.Word2Vec.load_word2vec_format(arguments.word2vec_file, binary=True)
+    #word2vec_model = #gensim.models.Word2Vec.load_word2vec_format(arguments.word2vec_file, binary=True)
+    word2vec_model = gensim.models.Word2Vec.load(arguments.word2vec_file)
 
     print timestamp(), "building vocabulary ..."
     prefix_vocab, suffix_vocab = build_vocabulary(word2vec_model, min_length=arguments.min_word_length)
