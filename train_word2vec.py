@@ -31,27 +31,17 @@ class CorpusReader():
             print "Processing ", f
             for line in open(f, "r"):
 		try:
-	                yield [w.lower() for w in self.tokenizer.tokenize(line.decode("utf-8"))]
+	                yield self.tokenizer.tokenize(line.decode("utf-8"))
 		except:
 			pass
 
+print "Starting W2V training..."
 
 files = glob.glob(sys.argv[1])
 outfile_name = sys.argv[2]
 
 dataset = CorpusReader(files)
-
 model = gensim.models.Word2Vec(dataset, size=500, window=5, min_count=3, negative=5, workers=15)
 
 model.save(outfile_name)
-
-
-
-
-
-
-
-
-
-
 

@@ -9,8 +9,7 @@ cd $CODE_DIR
 
 # venv
 module load python 2>err_py
-source venv/bin/activate 2>err_venv
 
 # call the programs
-python train_word2vec.py ~/compounds/plain_text/*.txt ~/compounds/out
+venv/bin/python train_word2vec.py ~/compounds/plain_text/*.txt ~/compounds/out/w2v.bin 2>&1 > ~/compounds/out/word2vec.log
 
