@@ -1,20 +1,19 @@
 #!/bin/bash
 
-wait_step {
-	WAIT_FOR_STEP=$1
-	while [ ! -f $OUT_DIR/step1.done ]
-	do
-	  sleep 10
-	done
+wait_step() {
+  while [ ! -f $OUT_DIR/step${1}.done ]
+  do
+    sleep 10
+  done
 }
 
+die() { echo "$@" 1>&2 ; exit 1; }
 
 #Parameters:
 #PYTHON= 
 #CODE_DIR= 
 #INPUT_TEXTS="/home/jdaiber1/compounds/plain_text/*.txt" 
 #OUT_DIR="~/compounds/out_hu"
-#TMP_DIR="?"
 #STEP=1-4
 #FUGENELEMENTE="" 
 
@@ -23,12 +22,13 @@ wait_step {
 MIN_LENGTH=5
 PROTOTYPE_JOBS=100
 MIN_SUPPORT=10
+FUGENELEMENTE="" 
 
 if [ -z "$STEP" ]; then
   STEP=1
 fi
 
-mkdir -p $OUT_DIR
+mkdir $OUT_DIR || die "OUT_DIR exists!"
 
 #Create a virtualenv with all the requirements for the training.
 # virtualenv --system-site-packages venv
@@ -62,12 +62,9 @@ fi
 if [ "$STEP" -le "4" ]; then
   mkdir -p $OUT_DIR/prototypes/log/
 
-  PROTOTYPE_JOB_DIR=$OUT_DIR/prototype_jobs
-  mkdir -p $PROTOTYPE_JOB_DIR
   for i in {1..$PROTOTYPE_JOBS}
   do
-   sed "s/INPUT/candidates_index.p.$i/g" generic_find_dir_vec.sh | sed "s/OUTPUT/output$i/g" > $PROTOTYPE_JOB_DIR/job$i.sh
-   qsub -v PYTHON="$PYTHON" -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" $PROTOTYPE_JOB_DIR/job$i.sh
+   qsub -v INPUT="candidates_index.p.$i" -v OUTPUT="output$i" -v PYTHON="$PYTHON" -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" generic_find_dir_vec.sh
   done
 fi
 
