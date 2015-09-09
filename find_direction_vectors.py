@@ -23,7 +23,7 @@ def load_annoy_tree(model_file_name, vector_dims):
     return tree
 
 def load_word2vecmodel(file_name):
-    return gensim.models.Word2Vec.load_word2vec_format(file_name, binary=True)
+    return gensim.models.Word2Vec.load(file_name)
 
 def annoy_knn(annoy_tree, vector, true_index, k=100):
     neighbours = annoy_tree.get_nns_by_vector(list(vector), k)
