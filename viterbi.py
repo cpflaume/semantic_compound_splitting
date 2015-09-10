@@ -71,3 +71,13 @@ class Lattice(object):
         result = lattice.shortest_path()
         result.top_sort()
         return result
+
+    def get_splits(self): #[(0,3), ...]
+        result = fst.Acceptor()
+        for key, value in self._lattice.items():
+            for entry in value:
+                to, label, features = entry
+                result.add_arc(key, to, label)
+        result[1].final = True
+        return all_splits(result)
+

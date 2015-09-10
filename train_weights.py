@@ -3,9 +3,20 @@ import codecs
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
+from viterbi import Lattice, split_to_footprint
+from compound import Compound
+from itertools import chain
+
+
+def get_prev_split(splits, split):
+    i = splits.index(split)
+    if i == 0:
+        return (0, 0)
+    else:
+        return splits[i - 1]
+
 
 class StructuredPerceptron:
-
     def __init__(self, epochs=10, eta=1.):
 
         self.parameters_for_epoch = []
@@ -13,37 +24,40 @@ class StructuredPerceptron:
         self.n_epochs = epochs
         self.eta = eta
 
+        self.n_features = 4
+
     def train(self, data, heldout, verbose=False, run_label=None):
 
         self.w = np.zeros(self.n_features, dtype=float)
 
         training_accuracy = [0.0]
-        heldout_accuracy  = [0.0]
+        heldout_accuracy = [0.0]
 
         for i_epoch in xrange(self.n_epochs):
 
-            incorrect = 0.
-            total     = 0.
+            tp, fp, fn = 0, 0, 0
 
             for compound in data:
-                total, incorrect = self.train_one(compound, total, incorrect)
+                tp, fp, fn = self.train_one(compound, tp, fp, fn)
 
             self.parameters_for_epoch.append(self.w.copy())
 
-            accuracy = 1.0 - (incorrect/total)
-            training_accuracy.append(accuracy)
+            precision = tp / (tp + fp)
+            recall = tp / (tp + fn)
+            f1 = 2 * ((precision * recall) / (precision + recall))
+            training_accuracy.append(f1)
 
             if verbose:
                 _, _, acc = self.test(heldout)
                 heldout_accuracy.append(acc)
 
-            #Stop if the error on the training data does not decrease
+            # Stop if the error on the training data does not decrease
             if training_accuracy[-1] <= training_accuracy[-2]:
                 break
 
-            print >>sys.stderr, "Epoch %i, Accuracy: %f" % (i_epoch, accuracy)
+            print >> sys.stderr, "Epoch %i, Accuracy: %f" % (i_epoch, f1)
 
-        #Average!
+        # Average!
         averaged_parameters = 0
         for epoch_parameters in self.parameters_for_epoch:
             averaged_parameters += epoch_parameters
@@ -51,14 +65,14 @@ class StructuredPerceptron:
 
         self.w = averaged_parameters
 
-        #Finished training
+        # Finished training
         self.trained = True
 
-        #Export training info in verbose mode:
+        # Export training info in verbose mode:
         if verbose:
             x = np.arange(0, len(training_accuracy), 1.0)
             plt.plot(x, training_accuracy, marker='o', linestyle='--', color='r', label='Training')
-            plt.plot(x, heldout_accuracy,  marker='o', linestyle='--', color='b', label='Heldout')
+            plt.plot(x, heldout_accuracy, marker='o', linestyle='--', color='b', label='Heldout')
 
             plt.xlabel('Epoch')
             plt.ylabel('Accuracy')
@@ -72,47 +86,93 @@ class StructuredPerceptron:
 
             plt.close()
 
-    def viterbi_decode(compound):
+    def viterbi_decode(self, compound):
+        return compound.get_viterbi_splits(self.w)
+
+    def fs(self, compound, prev_split, split):
+        # Base features on the lattice:
+        # (0, 1.0, 0, 1) rank, cosine, split penalty, is_no_split
+
+        # Additional features:
+
+        base_features = []
+        base_features.append(split[1] - split[0])  # Length of the split
+        base_features.append(prev_split[1] - prev_split[0])  # Length of the previous split
+        base_features.append(1.0) # Bias
+
+        return np.array(base_features)
+
+    def train_one(self, compound, tp, fp, fn):
+
+        # Returns a list of tuples with (start, stop) position
+        predicted_splits = self.viterbi_decode(compound)
+
+        gold_splits = compound.get_splits()
+        gold_splits_set = set(compound.get_splits())
+        predicted_splits_set = set(predicted_splits)
+
+        for split in gold_splits_set.union(predicted_splits_set):
+            if split in predicted_splits_set and split in gold_splits_set:  # Do nothing
+                tp += 1
+
+            if split in predicted_splits_set and split not in gold_splits_set:  # This is a bad split!
+                prev_split = get_prev_split(predicted_splits, split)
+
+                predicted_split_features = self.fs(compound, prev_split, split)
+                self.w -= self.eta * (self.w * predicted_split_features)
+
+                fp += 1
+
+            if split not in predicted_splits_set and split in gold_splits_set:  # This split should have been there!
+                prev_split = get_prev_split(gold_splits, split)
+
+                gold_split_features = self.fs(compound, prev_split, split)
+                self.w += self.eta * (self.w * gold_split_features)
+
+                self.w[gold_split_features] += self.eta
+
+                fn += 1
+
+        return tp, fp, fn
+
+    def test(self, compounds):
+        tp, fp, fn = 0, 0, 0
+
+        for compound in compounds:
+            z = self.viterbi_decode(compound)
+
+            for split in z:
+                if compound.gold_lattice.contains(split):
+                    tp += 1
+                else:
+                    fp += 1
+
+            for gold_split in compound.gold_lattice.gold_path:
+                if gold_split not in z:
+                    fn += 1
+
+        precision = tp / (tp + fp)
+        recall = tp / (tp + fn)
+        f1 = 2 * ((precision * recall) / (precision + recall))
+
+        print "Test Precision: %f\n" % recall
+        print "Test Recall: %f\n" % precision
+        print "Test F1: %f\n" % f1
+
+        return f1
 
 
-
-    def train_one(self, compound, total, incorrect):
-
-        #Returns a list of tuples with (start, stop) position
-        z = self.viterbi_decode(compound)
-        y = compound.gold_lattice
-
-        for (i, z_i) in enumerate(z):
-
-            y_i = compound.gold_lattice.closest_gold_split(z_i)
-
-            total += 1.
-
-            if i == 0:
-                y_prev = (0,0)
-                z_prev = (0,0)
-            else:
-                y_prev = 
-                z_prev = z[i-1]
-
-            if compound.gold_lattice.contains(z_i):
-
-                #The predicted split was not correct
-                incorrect += 1.
-
-                correct_split_features   = fs(compound, y_prev, y_i)
-                self.w[correct_split_features]   += self.eta
-
-                predicted_split_features = fs(compound, z_prev, z_i)
-                self.w[predicted_split_features] -= self.eta
-
-        return total, incorrect
-
-
+HELDOUT_SIZE = 50
 
 if __name__ == '__main__':
+    compounds = map(
+        lambda (compound, latticeGold, latticePredicted): Compound(compound, Lattice(latticeGold),
+                                                                   Lattice(latticePredicted)),
+        zip(codecs.open("data/cdec_nouns").readlines(), codecs.open("data/cdec_nouns.gold.lattices").readlines(),
+            codecs.open("data/cdec_nouns.predicted.lattices").readlines())
+    )
 
-    lattices = map(Lattice, codecs.open("data/").readlines())
+    train, heldout = compounds[HELDOUT_SIZE:], compounds[:HELDOUT_SIZE]
 
     trainer = StructuredPerceptron(epochs=10)
     trainer.train(train, heldout, verbose=True)
