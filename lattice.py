@@ -22,7 +22,7 @@ class Lattice(object):
             arg = ast.literal_eval(arg)
 
         self.lattice = arg
-        self.features = defaultdict(lambda: (100, 0.0))
+        self.features = defaultdict(lambda: (100, 0.05))
         self.edges = set()
         for (key, edges) in self.lattice.items():
             if edges:

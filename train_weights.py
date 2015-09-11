@@ -8,14 +8,7 @@ from compound import Compound
 from itertools import chain
 import ast
 from collections import defaultdict
-
-def ends_at(split):
-    return split[1]
-def starts_at(split):
-    return split[0]
-
-
-
+from viterbi_decompounder import ViterbiDecompounder
 
 def get_prev_split(splits, split):
     i = splits.index(split)
@@ -27,20 +20,22 @@ def get_prev_split(splits, split):
 
 class StructuredPerceptron:
 
-    def __init__(self, epochs=10, eta=1.):
+    def __init__(self, epochs=10, eta=.005):
 
+        self.decoder = ViterbiDecompounder()
         self.parameters_for_epoch = []
 
         self.n_epochs = epochs
         self.eta = eta
 
-        self.n_features = 7
+        self.n_features = 5
 
 
     def train(self, data, heldout, verbose=0, run_label=None):
 
-        self.w = np.ones(self.n_features, dtype=float) / self.n_features
-        
+        self.decoder.w = np.ones(self.n_features, dtype=float) / self.n_features
+        print >> sys.stderr, "Start weights: %s" % self.decoder.w
+
         training_accuracy = [0.0]
         heldout_accuracy = [0.0]
 
@@ -51,7 +46,7 @@ class StructuredPerceptron:
             for compound in data:
                 tp, fp, fn = self.train_one(compound, tp, fp, fn)
 
-            self.parameters_for_epoch.append(self.w.copy())
+            self.parameters_for_epoch.append(self.decoder.w.copy())
 
             precision = tp / (tp + fp)
             recall = tp / (tp + fn)
@@ -62,11 +57,13 @@ class StructuredPerceptron:
                 acc = self.test(heldout)
                 heldout_accuracy.append(acc)
 
+            print "Training", training_accuracy
             # Stop if the error on the training data does not decrease
             if training_accuracy[-1] <= training_accuracy[-2]:
                 break
-
-            print >> sys.stderr, "Epoch %i, Accuracy: %f" % (i_epoch, f1)
+            
+            print >> sys.stderr, "Weights: %s" % self.decoder.w
+            print >> sys.stderr, "Epoch %i, F1: %f" % (i_epoch, f1)
 
         # Average!
         averaged_parameters = 0
@@ -74,14 +71,14 @@ class StructuredPerceptron:
             averaged_parameters += epoch_parameters
         averaged_parameters /= len(self.parameters_for_epoch)
 
-        self.w = averaged_parameters
+        self.decoder.w = averaged_parameters
 
         # Finished training
         self.trained = True
 
         if verbose == 1:
             print "Heldout accs:", str(heldout_accuracy)
-            print self.w
+            print self.decoder.w
 
         # Export training info in verbose mode:
         if verbose == 2:
@@ -101,72 +98,10 @@ class StructuredPerceptron:
 
             plt.close()
 
-    def arc_score(self, compound, prev_split, split, lattice):
-        return np.dot(self.w, self.fs(compound, prev_split, split, lattice))
-
-    def viterbi_decode(self, compound):
-
-        print "\n"*4
-        print compound.string
-
-        alphas = [{} for _ in range(len(compound.string)+1)]
-        path = { (0,0): [] }
-        alphas[0] = defaultdict(lambda: 1.0)
-
-        START_SPLIT = (0, 0)
-        END_SPLIT = (len(compound.string),len(compound.string))
-
-        lattice = compound.predicted_lattice
-        print "Lattice:", str(lattice.lattice)
-        print "Splits in the lattice:" + str(lattice.get_splits())
-
-        for split in lattice.splits_from(0):
-            path[split] = [(0,0)]
-            print "From 0:", str(split)
-
-        for i in range(len(compound.string)+1):
-            new_path = path
-
-            for split in lattice.splits_from(i):
-                if len(lattice.splits_to(i)) > 0 and len(lattice.splits_from(i)) > 0:
-                    (alphas[ split[1] ][split], b) = max([(alphas[ends_at(split_last)][split_last] + self.arc_score(compound, split_last, split, lattice), split_last) for split_last in lattice.splits_to(i)])
-
-                    new_path[split] = path[b] + [split]
-
-            path = new_path
-
-        print "path",  path
-
-        print "Final alphas"
-        for i, a in enumerate(alphas):
-            print i, a
-
-        f = len(compound.string)
-        (_, b) = max([(alphas[split_last[1]][split_last], split_last) for split_last in lattice.splits_to(f)])
-
-        return path[ b ]
-
-    def fs(self, compound, prev_split, split, lattice):
-        # Base features on the lattice:
-        # (0, 1.0, 0, 1) rank, cosine, split penalty, is_no_split
-
-        # Additional features:
-
-        base_features = list(lattice.get_features(split, compound))
-
-        base_features.append(1 if split[1] - split[0] == len(compound.string) else 0)  # Length of the split
-        base_features.append(0 if split[1] - split[0] == len(compound.string) else 1)  # Length of the split
-
-        base_features.append(split[1] - split[0])  # Length of the split
-        base_features.append(prev_split[1] - prev_split[0])  # Length of the previous split
-        base_features.append(1.0)  # Bias
-
-        return np.array(base_features)
-
     def train_one(self, compound, tp, fp, fn):
 
         # Returns a list of tuples with (start, stop) position
-        predicted_splits = self.viterbi_decode(compound)
+        predicted_splits = self.decoder.viterbi_decode(compound)
 
         gold_splits = compound.get_gold_splits()
         gold_splits_set = set(gold_splits)
@@ -176,19 +111,25 @@ class StructuredPerceptron:
             if split in predicted_splits_set and split in gold_splits_set:  # Do nothing
                 tp += 1
 
+            if split[1] == len(compound.string) and split[0] != 0:
+                continue
+
             if split in predicted_splits_set and split not in gold_splits_set:  # This is a bad split!
                 prev_split = get_prev_split(predicted_splits, split)
 
-                predicted_split_features = self.fs(compound, prev_split, split, compound.predicted_lattice)
-                self.w -= self.eta * (self.w * predicted_split_features)
+                predicted_split_features = self.decoder.fs(compound, prev_split, split, compound.predicted_lattice)
+                print >>sys.stderr, "Pred fs:", predicted_split_features
+                self.decoder.w -= self.eta * (self.decoder.w * predicted_split_features)
 
                 fp += 1
 
             if split not in predicted_splits_set and split in gold_splits_set:  # This split should have been there!
                 prev_split = get_prev_split(gold_splits, split)
 
-                gold_split_features = self.fs(compound, prev_split, split, compound.predicted_lattice)
-                self.w += self.eta * (self.w * gold_split_features)
+                gold_split_features = self.decoder.fs(compound, prev_split, split, compound.predicted_lattice)
+                print >>sys.stderr, "Gold fs:", gold_split_features
+                print >>sys.stderr, "w:", self.decoder.w
+                self.decoder.w += self.eta * (self.decoder.w * gold_split_features)
 
                 fn += 1
 
@@ -198,7 +139,7 @@ class StructuredPerceptron:
         tp, fp, fn = 0, 0, 0
 
         for compound in compounds:
-            z = self.viterbi_decode(compound)
+            z = self.decoder.viterbi_decode(compound)
 
             gold_splits = set(compound.gold_splits)
             for split in z:
@@ -221,7 +162,6 @@ class StructuredPerceptron:
 
         return f1
 
-HELDOUT_SIZE = 50
 
 def split_gold(l):
     l1=l.split("|||")[0].strip()
@@ -247,6 +187,7 @@ def split_gold(l):
     return sorted(splits)
 
 
+HELDOUT_SIZE = 50
 if __name__ == '__main__':
     compound_names = codecs.open("data/cdec_nouns").readlines()
     compounds_gold = codecs.open("data/cdec_nouns.references").readlines()
@@ -255,8 +196,15 @@ if __name__ == '__main__':
     compounds = map(lambda (compound, lineGold, latticePredicted):
             Compound(compound.strip(),  split_gold(lineGold), Lattice(latticePredicted)), zip(compound_names, compounds_gold, compounds_pred))
 
+    import random
+    random.shuffle(compounds)
+
     train, heldout = compounds[HELDOUT_SIZE:], compounds[:HELDOUT_SIZE]
 
 
     trainer = StructuredPerceptron(epochs=10)
     trainer.train(train, heldout, verbose=1)
+
+    import yaml 
+    with open('weights', 'w') as outfile:
+            outfile.write( yaml.dump(trainer.decoder.w.tolist(), default_flow_style=True) )

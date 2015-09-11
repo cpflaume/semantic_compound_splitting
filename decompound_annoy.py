@@ -14,6 +14,8 @@ from annoy import AnnoyIndex
 from sklearn.metrics.pairwise import cosine_similarity
 import gensim
 
+from viterbi_decompounder import ViterbiDecompounder
+
 def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
     global annoy_tree
     global vectors
@@ -150,31 +152,32 @@ def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
 
     return lattice
 
-if __name__ == '__main__':
 
-    # logging.basicConfig(level=logging.DEBUG)
-    logger = logging.getLogger('')
-    hdlr = logging.FileHandler('decompound_annoy.log')
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    hdlr.setFormatter(formatter)
-    logger.addHandler(hdlr)
-    logger.setLevel(logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger('')
+hdlr = logging.FileHandler('decompound_annoy.log')
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
+logger.setLevel(logging.CRITICAL)
 
 
-    globalNN = 500
-    annoyTreeFile = '/home/jdaiber1/compound_analogy/model/tree.ann'
-    w2vPath = '/home/jdaiber1/compound_analogy/model/w2v_500_de.bin'
-    resultsPath = '/home/jdaiber1/compound_analogy/model/prototypes/dir_vecs_10_100.p'
-    print  >> sys.stderr, "Loading models..."
-    nAccuracy = 250
-    similarityThreshold = .0
-    vectors = pickle.load(open(resultsPath, 'rb'))
-    annoy_tree = AnnoyIndex(500)
-    annoy_tree.load(annoyTreeFile)
-    model = gensim.models.Word2Vec.load_word2vec_format(w2vPath, binary=True) 
+globalNN = 500
+annoyTreeFile = '/home/jdaiber1/compound_analogy/model/tree.ann'
+w2vPath = '/home/jdaiber1/compound_analogy/model/w2v_500_de.bin'
+resultsPath = '/home/jdaiber1/compound_analogy/model/prototypes/dir_vecs_10_100.p'
+print  >> sys.stderr, "Loading models..."
+nAccuracy = 250
+similarityThreshold = .0
+vectors = pickle.load(open(resultsPath, 'rb'))
+annoy_tree = AnnoyIndex(500)
+annoy_tree.load(annoyTreeFile)
+model = gensim.models.Word2Vec.load_word2vec_format(w2vPath, binary=True) 
 
-    print  >> sys.stderr, "Loaded!"
-    for line in sys.stdin:
-        print(get_decompound_lattice(line.rstrip('\n').title(), nAccuracy, similarityThreshold))
+print  >> sys.stderr, "Loaded!"
+#for line in sys.stdin:
+#    print(get_decompound_lattice(line.rstrip('\n').title(), nAccuracy, similarityThreshold))
 
-    exit(0)
+vit = ViterbiDecompounder()
+vit.load_weights("weights")
+
