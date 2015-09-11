@@ -1,4 +1,4 @@
-from viterbi import split_to_footprint
+from lattice import *
 
 class Compound:
 
@@ -7,8 +7,8 @@ class Compound:
         self.predicted_lattice = predicted_lattice
         self.string = string
 
-    def get_splits(self):
-        return [split_to_footprint(self.string, s) for s in self.gold_lattice.get_splits()]
+    def get_gold_splits(self):
+        return split_to_footprint(self.string, self.gold_lattice.get_splits()[0])
 
     def get_viterbi_splits(self, weights):
-        return [split_to_footprint(self.string, s) for s in self.predicted_lattice.get_viterbi(weights)]
+        return split_to_footprint(self.string, all_splits(self.predicted_lattice.get_viterbi(weights))[0])

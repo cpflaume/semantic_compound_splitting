@@ -3,9 +3,14 @@ import codecs
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
-from viterbi import Lattice, split_to_footprint
+from lattice import Lattice, split_to_footprint
 from compound import Compound
 from itertools import chain
+import ast
+
+
+def ends_at(split):
+    return split[1]
 
 
 def get_prev_split(splits, split):
@@ -24,11 +29,11 @@ class StructuredPerceptron:
         self.n_epochs = epochs
         self.eta = eta
 
-        self.n_features = 4
+        self.n_features = 7
 
     def train(self, data, heldout, verbose=False, run_label=None):
 
-        self.w = np.zeros(self.n_features, dtype=float)
+        self.w = np.ones(self.n_features, dtype=float) / self.n_features
 
         training_accuracy = [0.0]
         heldout_accuracy = [0.0]
@@ -86,19 +91,41 @@ class StructuredPerceptron:
 
             plt.close()
 
-    def viterbi_decode(self, compound):
-        return compound.get_viterbi_splits(self.w)
+    def arc_score(self, compound, prev_split, split, lattice):
+        return np.dot(self.w, self.fs(compound, prev_split, split, lattice))
 
-    def fs(self, compound, prev_split, split):
+    def viterbi_decode(self, compound):
+        alphas = np.zeros(len(compound.string), dtype=float)
+        path = {}
+
+        START_SPLIT = (0, 0)
+        END_SPLIT = (len(compound.string),len(compound.string))
+
+        lattice = compound.predicted_lattice
+
+        for i in xrange(0, len(compound.string)):
+            new_path = {}
+
+            for split in lattice.splits_from(i):
+                (alphas[i], b) = max(
+                    [(alphas[ends_at(split_last)] + self.arc_score(compound, split_last, split, lattice), split_last)
+                     for split_last in lattice.splits_to(i)])
+                new_path[split] = path[b] + [split]
+
+            path = new_path
+
+        return path[END_SPLIT]
+
+    def fs(self, compound, prev_split, split, lattice):
         # Base features on the lattice:
         # (0, 1.0, 0, 1) rank, cosine, split penalty, is_no_split
 
         # Additional features:
 
-        base_features = []
+        base_features = list(lattice.get_features(split, compound))
         base_features.append(split[1] - split[0])  # Length of the split
         base_features.append(prev_split[1] - prev_split[0])  # Length of the previous split
-        base_features.append(1.0) # Bias
+        base_features.append(1.0)  # Bias
 
         return np.array(base_features)
 
@@ -107,8 +134,8 @@ class StructuredPerceptron:
         # Returns a list of tuples with (start, stop) position
         predicted_splits = self.viterbi_decode(compound)
 
-        gold_splits = compound.get_splits()
-        gold_splits_set = set(compound.get_splits())
+        gold_splits = compound.get_gold_splits()
+        gold_splits_set = set(gold_splits)
         predicted_splits_set = set(predicted_splits)
 
         for split in gold_splits_set.union(predicted_splits_set):
@@ -118,7 +145,7 @@ class StructuredPerceptron:
             if split in predicted_splits_set and split not in gold_splits_set:  # This is a bad split!
                 prev_split = get_prev_split(predicted_splits, split)
 
-                predicted_split_features = self.fs(compound, prev_split, split)
+                predicted_split_features = self.fs(compound, prev_split, split, compound.predicted_lattice)
                 self.w -= self.eta * (self.w * predicted_split_features)
 
                 fp += 1
@@ -126,7 +153,7 @@ class StructuredPerceptron:
             if split not in predicted_splits_set and split in gold_splits_set:  # This split should have been there!
                 prev_split = get_prev_split(gold_splits, split)
 
-                gold_split_features = self.fs(compound, prev_split, split)
+                gold_split_features = self.fs(compound, prev_split, split, compound.gold_lattice)
                 self.w += self.eta * (self.w * gold_split_features)
 
                 self.w[gold_split_features] += self.eta
@@ -165,11 +192,14 @@ class StructuredPerceptron:
 HELDOUT_SIZE = 50
 
 if __name__ == '__main__':
+    compound_names = codecs.open("data/cdec_nouns").readlines()
+    compounds_gold = codecs.open("data/cdec_nouns.ref.lattices").readlines()
+    compounds_pred = codecs.open("data/cdec_nouns.lattices").readlines()
+
     compounds = map(
         lambda (compound, latticeGold, latticePredicted): Compound(compound, Lattice(latticeGold),
                                                                    Lattice(latticePredicted)),
-        zip(codecs.open("data/cdec_nouns").readlines(), codecs.open("data/cdec_nouns.gold.lattices").readlines(),
-            codecs.open("data/cdec_nouns.predicted.lattices").readlines())
+        zip(compound_names, compounds_gold, compounds_pred)
     )
 
     train, heldout = compounds[HELDOUT_SIZE:], compounds[:HELDOUT_SIZE]
