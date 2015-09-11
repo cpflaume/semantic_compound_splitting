@@ -22,20 +22,34 @@ class Lattice(object):
             arg = ast.literal_eval(arg)
 
         self.lattice = arg
-        self.lattice.setdefault(list)
-
+        self.features = defaultdict(lambda: (100, 0.0))
         self.edges = set()
         for (key, edges) in self.lattice.items():
-            for edge in edges:
-                (edge_from, edge_to, prefix, rank, similarity) = edge
-                self.arcs_to[edge_to].append(edge)
-                self.edges += edge
+            if edges:
+                for edge in edges:
+                    (edge_from, edge_to, prefix, rank, similarity) = edge
+                    self.arcs_to[edge_to].append(edge)
+                    self.edges.add(edge)
+                    split = edge_to_split(edge)
+                    if split not in self.features or self.features[split][0] > rank:
+                        self.features[split] = (rank, similarity)
+
 
     def get_splits(self):  # [(0,3), ...]
         return sorted(set(map(edge_to_split, self.edges)))
 
     def splits_from(self, i):
-        return map(edge_to_split, self.lattice[i])
+        if i not in self.lattice:
+            return []
+        else:
+            return map(edge_to_split, self.lattice[i])
 
     def splits_to(self, i):
-        return map(edge_to_split, self.arcs_to[i])
+        if i == 0:
+            return [(0,0)]
+        else:
+            return map(edge_to_split, self.arcs_to[i])
+
+    def get_features(self, split, compound):
+        return self.features[split]
+

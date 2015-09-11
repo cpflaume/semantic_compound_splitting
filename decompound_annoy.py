@@ -14,7 +14,7 @@ from annoy import AnnoyIndex
 from sklearn.metrics.pairwise import cosine_similarity
 import gensim
 
-def decompound(inputCompound, nAccuracy, similarityThreshold):
+def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
     global annoy_tree
     global vectors
     global model
@@ -121,7 +121,6 @@ def decompound(inputCompound, nAccuracy, similarityThreshold):
 
 vertices_count = 0
 distances = []
-edges = {}
 
 def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
     # 1. Initialize
@@ -133,24 +132,23 @@ def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
     def add_edges(from_, label):
         candidates = decompound(label, nAccuracy, similarityThreshold)
         tails = set()
+
+        lattice[from_] = [(from_, from_+len(label), label, 0, 1.0)]
         for index, candidate in enumerate(candidates):
             prefix, tail, tail_offset, origin0, origin1, rank, similarity = candidate
-           
-            if from_ not in edges:
-                edges[from_] = []
 
-            to = from_+tail_offset
+            to = from_ + tail_offset
             lattice[from_] += [(from_, to, prefix, rank, similarity)]
 
-            tails += (tail, tail_offset)
+            tails.add((tail, tail_offset))
 
-        for (tail, tail_offset) in tails:
-            add_edges(tail_offset, tail)
+
+        for (tail, next_tail_offset) in tails:
+            add_edges(from_+next_tail_offset, tail)
 
     add_edges(0, inputCompound)
 
     return lattice
-
 
 if __name__ == '__main__':
 
@@ -164,9 +162,10 @@ if __name__ == '__main__':
 
 
     globalNN = 500
-    annoyTreeFile = '../../model/tree.ann'
-    w2vPath = '../../model/w2v_500_de.bin'
-    resultsPath = '../../model/prototypes/dir_vecs_10_100.p'
+    annoyTreeFile = '/home/jdaiber1/compound_analogy/model/tree.ann'
+    w2vPath = '/home/jdaiber1/compound_analogy/model/w2v_500_de.bin'
+    resultsPath = '/home/jdaiber1/compound_analogy/model/prototypes/dir_vecs_10_100.p'
+    print  >> sys.stderr, "Loading models..."
     nAccuracy = 250
     similarityThreshold = .0
     vectors = pickle.load(open(resultsPath, 'rb'))
@@ -174,8 +173,8 @@ if __name__ == '__main__':
     annoy_tree.load(annoyTreeFile)
     model = gensim.models.Word2Vec.load_word2vec_format(w2vPath, binary=True) 
 
-    print "Loaded!"
+    print  >> sys.stderr, "Loaded!"
     for line in sys.stdin:
-        print(get_decompound_lattice(line.rstrip('\n'), nAccuracy, similarityThreshold))
+        print(get_decompound_lattice(line.rstrip('\n').title(), nAccuracy, similarityThreshold))
 
     exit(0)
