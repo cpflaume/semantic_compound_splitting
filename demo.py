@@ -9,7 +9,13 @@ def lattice(c):
 def viterbi(c):
     return decompound_annoy.vit.viterbi_decode(Compound(c, None, lattice(c)))
 
-def draw_lattice(c, l, viterbi=set()):
+def draw_lattice(c):
+    draw_lattice2(c, lattice(c))
+
+def draw_viterbi(c):
+    draw_lattice2(c, lattice(c), viterbi=viterbi(c))
+
+def draw_lattice2(c, l, viterbi=set()):
     a = gv.Digraph()
 
     a.body.append("subgraph {rank=same; %s }" % (" ".join([ str(key) for key in l ] + [str(len(c))])))
@@ -63,7 +69,7 @@ vwl = {0: [(0, 21, 'Volkswirtschaftslehre', 0, 1.0),
   (5, 16, u'Wirtschafts', 80, 0.38657355)],
  16: [(16, 21, 'Lehre', 0, 1.0)]}
 
-draw_lattice("Volkswirtschaftslehre", vwl, [ (16, 21) ])
+draw_lattice2("Volkswirtschaftslehre", vwl, [ (16, 21) ])
 
 
 
