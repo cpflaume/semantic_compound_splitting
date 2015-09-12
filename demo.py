@@ -2,43 +2,45 @@ import decompound_annoy
 from compound import Compound
 from IPython.display import Image
 import graphviz as gv
+from lattice import Lattice
 
 def lattice(c):
     return decompound_annoy.get_decompound_lattice(c, 250, 0.0)
 
 def viterbi(c):
-    return decompound_annoy.vit.viterbi_decode(Compound(c, None, lattice(c)))
+    return decompound_annoy.vit.viterbi_decode(Compound(c, None,
+        Lattice(lattice(c))))
 
 def draw_lattice(c):
-    draw_lattice2(c, lattice(c))
+    return draw_lattice2(c, lattice(c))
 
 def draw_viterbi(c):
-    draw_lattice2(c, lattice(c), viterbi=viterbi(c))
+    return draw_lattice2(c, lattice(c), viterbi=viterbi(c))
 
 def draw_lattice2(c, l, viterbi=set()):
     a = gv.Digraph()
 
     a.body.append("subgraph {rank=same; %s }" % (" ".join([ str(key) for key in l ] + [str(len(c))])))
-
+    red = set()
     for (key, v) in l.items():
-        for (from_, to, label, _, _) in v:
+        for (from_, to, label, rank, cosine) in v:
             style = {}
-
-            if ((from_, to)) in viterbi:
+            
+            if (from_, to) in viterbi and (from_, to) not in red:
                 style = {'color': 'red', 'fontcolor': 'red'}
+                red.add((from_, to))
 
-            a.edge(str(from_), str(to), label, style)
+
+            a.edge(str(from_), str(to), "%s (%d, %.2f)" % (label,rank,cosine), style)
 
     apply_styles(a, styles)
-
-    a.render("x.png")
-    Image(filename='x.png')
+    return a #.render("x.png", view=True)
 
 styles = {
     'graph': {
         'label': '',
         'rankdir': 'TB',
-        'overlap': 'scale',
+        'overlap': 'false',
         'splines': 'true'
     },
     'nodes': {
@@ -70,6 +72,4 @@ vwl = {0: [(0, 21, 'Volkswirtschaftslehre', 0, 1.0),
  16: [(16, 21, 'Lehre', 0, 1.0)]}
 
 draw_lattice2("Volkswirtschaftslehre", vwl, [ (16, 21) ])
-
-
 

@@ -18,8 +18,8 @@ class ViterbiDecompounder:
 
     def viterbi_decode(self, compound):
 
-        print "\n"*4
-        print compound.string
+        #print "\n"*4
+        #print compound.string
 
         alphas = [{} for _ in range(len(compound.string)+1)]
         path = { (0,0): [] }
@@ -29,12 +29,10 @@ class ViterbiDecompounder:
         END_SPLIT = (len(compound.string),len(compound.string))
 
         lattice = compound.predicted_lattice
-        print "Lattice:", str(lattice.lattice)
-        print "Splits in the lattice:" + str(lattice.get_splits())
 
         for split in lattice.splits_from(0):
             path[split] = [(0,0)]
-            print "From 0:", str(split)
+            #print "From 0:", str(split)
 
         for i in range(len(compound.string)+1):
             new_path = path
@@ -47,11 +45,11 @@ class ViterbiDecompounder:
 
             path = new_path
 
-        print "path",  path
+        #print "path",  path
 
-        print "Final alphas"
-        for i, a in enumerate(alphas):
-            print i, a
+        #print "Final alphas"
+        #for i, a in enumerate(alphas):
+        #    print i, a
 
         f = len(compound.string)
         (_, b) = max([(alphas[split_last[1]][split_last], split_last) for split_last in lattice.splits_to(f)])
