@@ -175,9 +175,9 @@ annoy_tree.load(annoyTreeFile)
 model = gensim.models.Word2Vec.load_word2vec_format(w2vPath, binary=True) 
 
 print  >> sys.stderr, "Loaded!"
-#for line in sys.stdin:
-#    print(get_decompound_lattice(line.rstrip('\n').title(), nAccuracy, similarityThreshold))
+for line in sys.stdin:
+    print(get_decompound_lattice(line.decode('utf8').rstrip('\n').title(), nAccuracy, similarityThreshold))
 
-vit = ViterbiDecompounder()
-vit.load_weights("weights")
+#vit = ViterbiDecompounder()
+#vit.load_weights("weights")
 

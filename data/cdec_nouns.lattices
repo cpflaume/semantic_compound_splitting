@@ -1,601 +1,601 @@
-{0: [(0, 22, 'Untersuchungsausschuss', 0, 1.0), (0, 13, u'Untersuchungs', 3, 0.53245044), (0, 13, u'Untersuchungs', 2, 0.6406967), (0, 13, u'Untersuchungs', 31, 0.56912231), (0, 13, u'Untersuchungs', 4, 0.53633964)], 13: [(13, 22, 'Ausschuss', 0, 1.0)]}
-{0: [(0, 10, 'Hochzeiten', 0, 1.0)]}
-{0: [(0, 8, 'Damalige', 0, 1.0)]}
-{0: [(0, 9, 'Siegfried', 0, 1.0)]}
-{0: [(0, 10, 'Jaschinski', 0, 1.0)]}
-{0: [(0, 18, 'Verd\xc3\xa4Chtigenkreis', 0, 1.0)]}
-{0: [(0, 18, 'Staatsanwaltschaft', 0, 1.0)]}
-{0: [(0, 10, 'Landesbank', 0, 1.0), (0, 6, u'Landes', 1, 0.63086814), (0, 6, u'Landes', 0, 0.99999988), (0, 6, u'Landes', 83, 0.53912413), (0, 6, u'Landes', 5, 0.50620848), (0, 6, u'Land', 1, 0.63086814), (0, 6, u'Land', 142, 0.48870814), (0, 6, u'Land', 0, 0.99999988)], 6: [(6, 10, 'bank', 0, 1.0)]}
-{0: [(0, 9, 'Feldherrn', 0, 1.0)]}
-{0: [(0, 12, 'Handelsblatt', 0, 1.0), (0, 7, u'Handels', 132, 0.34551975)], 7: [(7, 12, 'Blatt', 0, 1.0)]}
-{0: [(0, 9, 'Alexander', 0, 1.0)]}
-{0: [(0, 7, 'Gro\xc3\x9fEn', 0, 1.0)]}
-{0: [(0, 16, 'Wachstumspl\xc3\xa4Nen', 0, 1.0)]}
-{0: [(0, 14, 'Konsolidierung', 0, 1.0)]}
-{0: [(0, 7, 'Branche', 0, 1.0)]}
-{0: [(0, 8, 'Institut', 0, 1.0)]}
-{0: [(0, 10, 'Augenh\xc3\xb6He', 0, 1.0)]}
-{0: [(0, 10, 'Augenh\xc3\xb6He', 0, 1.0)]}
-{0: [(0, 17, 'Wiederherstellung', 0, 1.0)]}
-{0: [(0, 11, 'Grundst\xc3\xbcCk', 0, 1.0)]}
-{0: [(0, 11, 'Grundst\xc3\xbcCk', 0, 1.0)]}
-{0: [(0, 9, 'Ruhestand', 0, 1.0)]}
-{0: [(0, 10, 'Widerstand', 0, 1.0)]}
-{0: [(0, 18, 'Versammlungsgesetz', 0, 1.0), (0, 12, u'Versammlungs', 1, 0.66569817)], 12: [(12, 18, 'Gesetz', 0, 1.0)]}
-{0: [(0, 10, 'Verst\xc3\xb6\xc3\x9fE', 0, 1.0)]}
-{0: [(0, 17, 'Sachbesch\xc3\xa4Digung', 0, 1.0)]}
-{0: [(0, 13, 'Vereinigungen', 0, 1.0)]}
-{0: [(0, 8, 'Glashaus', 0, 1.0)]}
-{0: [(0, 14, 'Auenlandschaft', 0, 1.0), (0, 4, u'Auen', 5, 0.65532231)], 4: [(4, 14, 'Landschaft', 0, 1.0)]}
-{0: [(0, 9, 'Fundament', 0, 1.0)]}
-{0: [(0, 8, 'Vierhock', 0, 1.0)]}
-{0: [(0, 6, 'Idylle', 0, 1.0)]}
-{0: [(0, 8, 'Johannes', 0, 1.0)]}
-{0: [(0, 10, 'Sportjacke', 0, 1.0), (0, 5, u'Sport', 26, 0.55328107), (0, 5, u'Sport', 31, 0.58602834), (0, 5, u'Sport', 101, 0.57169259), (0, 5, u'Sport', 14, 0.56838), (0, 5, u'Sport', 15, 0.49965557)], 5: [(5, 10, 'Jacke', 0, 1.0)]}
-{0: [(0, 16, 'Mittelmeerinseln', 0, 1.0), (0, 10, u'Mittelmeer', 0, 1.0000001), (0, 10, u'Mittelmeer', 13, 0.53245962)], 10: [(10, 16, 'Inseln', 0, 1.0)]}
-{0: [(0, 15, 'Stiefelf\xc3\xb6Rmige', 0, 1.0)]}
-{0: [(0, 14, 'Wiederaufnahme', 0, 1.0), (0, 6, u'Wieder', 8, 0.36210817)], 6: [(6, 14, 'Aufnahme', 0, 1.0)]}
-{0: [(0, 15, 'Tonbandaufnahme', 0, 1.0)]}
-{0: [(0, 15, 'Korrekturzucker', 0, 1.0)]}
-{0: [(0, 13, 'Meeresspiegel', 0, 1.0)]}
-{0: [(0, 13, 'Gesamtausgabe', 0, 1.0)]}
-{0: [(0, 12, 'Losfertigung', 0, 1.0)]}
-{0: [(0, 9, 'Reichstag', 0, 1.0)]}
-{0: [(0, 7, 'Monntag', 0, 1.0)]}
-{0: [(0, 8, 'Mittwoch', 0, 1.0)]}
-{0: [(0, 7, 'Freitag', 0, 1.0)]}
-{0: [(0, 7, 'Sonntag', 0, 1.0)]}
-{0: [(0, 25, 'Nachbarschaftsbeziehungen', 0, 1.0), (0, 14, u'Nachbarschafts', 47, 0.45702985), (0, 14, u'Nachbarschafts', 3, 0.51037145), (0, 14, u'Nachbarschafts', 8, 0.45390785)], 14: [(14, 25, 'Beziehungen', 0, 1.0)]}
-{0: [(0, 7, 'Saftbar', 0, 1.0)]}
-{0: [(0, 20, 'Produktionsprozesses', 0, 1.0), (0, 11, u'Produktions', 1, 0.5808323)], 18: [(18, 20, 'Es', 0, 1.0)], 11: [(11, 20, 'Prozesses', 0, 1.0), (11, 18, u'Prozess', 182, 0.43648782)]}
-{0: [(0, 18, 'Gesamtzusammenhang', 0, 1.0), (0, 6, u'Gesamt', 73, 0.38719282)], 6: [(6, 18, 'Zusammenhang', 0, 1.0)]}
-{0: [(0, 21, 'Volkswirtschaftslehre', 0, 1.0), (0, 5, u'Volks', 12, 0.45278138), (0, 5, u'Volks', 161, 0.39893898)], 16: [(16, 21, 'Lehre', 0, 1.0)], 5: [(5, 21, 'Wirtschaftslehre', 0, 1.0), (5, 16, u'Wirtschafts', 155, 0.39184004), (5, 16, u'Wirtschafts', 80, 0.38657355)]}
-{0: [(0, 12, 'Losverfahren', 0, 1.0)]}
-{0: [(0, 11, 'Schifffahrt', 0, 1.0), (0, 6, u'Schiff', 22, 0.43958431), (0, 6, u'Schiff', 156, 0.38293439)], 6: [(6, 11, 'Fahrt', 0, 1.0)]}
-{0: [(0, 8, 'Dienstag', 0, 1.0)]}
-{0: [(0, 10, 'Donnerstag', 0, 1.0)]}
-{0: [(0, 7, 'Samstag', 0, 1.0)]}
-{0: [(0, 9, 'Sonnabend', 0, 1.0)]}
-{0: [(0, 8, 'Mitglied', 0, 1.0)]}
-{0: [(0, 12, 'Abblendlicht', 0, 1.0)]}
-{0: [(0, 15, 'Abbrucharbeiten', 0, 1.0), (0, 7, u'Abbruch', 7, 0.57514173)], 7: [(7, 15, 'Arbeiten', 0, 1.0)]}
-{0: [(0, 16, 'Abergl\xc3\xa4Ubischen', 0, 1.0)]}
-{0: [(0, 32, 'Abfallbewirtschaftungshierarchie', 0, 1.0)]}
-{0: [(0, 29, 'Abfallbewirtschaftungspl\xc3\xa4Nen', 0, 1.0)]}
-{0: [(0, 21, 'Abfertigungsgeb\xc3\xbcHren', 0, 1.0)]}
-{0: [(0, 19, 'Beitragsunabh\xc3\xa4Ngig', 0, 1.0)]}
-{0: [(0, 17, 'Einreichungsfrist', 0, 1.0)]}
-{0: [(0, 17, 'Europaabgeordnete', 0, 1.0), (0, 6, u'Europa', 8, 0.5749054), (0, 6, u'Europa', 5, 0.52215093), (0, 6, u'Europa', 12, 0.50875372)], 6: [(6, 17, 'Abgeordnete', 0, 1.0)]}
-{0: [(0, 24, 'Fr\xc3\xbcHerkennungskampagnen', 0, 1.0)]}
-{0: [(0, 14, 'Hilfsagenturen', 0, 1.0), (0, 5, u'Hilfs', 187, 0.46670741), (0, 5, u'Hilfs', 17, 0.52105325), (0, 5, u'Hilfs', 166, 0.59952998), (0, 5, u'Hilfs', 222, 0.50576228)], 5: [(5, 14, 'agenturen', 0, 1.0)]}
-{0: [(0, 18, 'Hilfsinstitutionen', 0, 1.0), (0, 5, u'Hilfs', 3, 0.52144039), (0, 5, u'Hilfs', 30, 0.53092927), (0, 5, u'Hilfs', 200, 0.5813458), (0, 5, u'Hilfs', 226, 0.48535675)], 5: [(5, 18, 'Institutionen', 0, 1.0)]}
-{0: [(0, 12, 'Kaisergranat', 0, 1.0)]}
-{0: [(0, 11, 'Kalifornien', 0, 1.0)]}
-{0: [(0, 13, 'Kampfflugzeug', 0, 1.0), (0, 5, u'Kampf', 49, 0.44387734), (0, 5, u'Kampf', 74, 0.47823769), (0, 5, u'Kampf', 67, 0.51047033)], 9: [(9, 13, 'Zeug', 0, 1.0)], 5: [(5, 13, 'Flugzeug', 0, 1.0), (5, 9, u'Flug', 75, 0.3640421)]}
-{0: [(0, 13, 'Luftangriffen', 0, 1.0), (0, 4, u'Luft', 5, 0.50782001), (0, 4, u'Luft', 35, 0.56558371), (0, 4, u'Luft', 7, 0.47196507)], 4: [(4, 13, 'Angriffen', 0, 1.0)]}
-{0: [(0, 14, 'Luftsicherheit', 0, 1.0), (0, 4, u'Luft', 125, 0.41031414)], 4: [(4, 14, 'Sicherheit', 0, 1.0)]}
-{0: [(0, 14, 'Mith\xc3\xa4Ftlingen', 0, 1.0)]}
-{0: [(0, 16, 'Wartungsarbeiten', 0, 1.0)]}
-{0: [(0, 26, 'Wasseraufbereitungsanlagen', 0, 1.0), (0, 6, u'Wasser', 41, 0.49991426), (0, 6, u'Wasser', 6, 0.56877494), (0, 6, u'Wasser', 73, 0.5156194)], 6: [(6, 26, 'Aufbereitungsanlagen', 0, 1.0)]}
-{0: [(0, 22, 'Wasserdienstleistungen', 0, 1.0)]}
-{0: [(0, 18, 'Weihnachtsgeschenk', 0, 1.0), (0, 10, u'Weihnachts', 3, 0.61424589), (0, 10, u'Weihnachts', 2, 0.58450931), (0, 10, u'Weihnachts', 2, 0.5812341)], 10: [(10, 18, 'Geschenk', 0, 1.0)]}
-{0: [(0, 23, 'Weltarbeitsorganisation', 0, 1.0), (0, 4, u'Welt', 5, 0.54413795), (0, 4, u'Welt', 6, 0.56938732)], 11: [(11, 23, 'Organisation', 0, 1.0)], 4: [(4, 23, 'Arbeitsorganisation', 0, 1.0), (4, 11, u'Arbeits', 10, 0.4026053), (4, 11, u'Arbeits', 9, 0.36247575)]}
-{0: [(0, 9, 'Zeitdruck', 0, 1.0), (0, 4, u'Zeit', 19, 0.37520549), (0, 4, u'Zeit', 2, 0.50043643), (0, 4, u'Zeit', 5, 0.34901327)], 4: [(4, 9, 'druck', 0, 1.0)]}
-{0: [(0, 13, 'Bundesagentur', 0, 1.0), (0, 6, u'Bundes', 165, 0.38316554), (0, 6, u'Bundes', 157, 0.36867309), (0, 6, u'Bundes', 10, 0.35553473), (0, 6, u'Bund', 165, 0.38316554), (0, 6, u'Bund', 13, 0.38401076), (0, 6, u'Bund', 27, 0.24440661)], 6: [(6, 13, 'Agentur', 0, 1.0)]}
-{0: [(0, 19, 'Fahrstuhlsch\xc3\xa4Chten', 0, 1.0)]}
-{0: [(0, 16, 'Elektroindustrie', 0, 1.0), (0, 4, u'Elek', 24, 0.47701365), (0, 7, u'Elektro', 89, 0.51960564)], 4: [(4, 16, 'troindustrie', 0, 1.0)], 7: [(7, 16, 'Industrie', 0, 1.0)]}
-{0: [(0, 11, 'Sonderpreis', 0, 1.0), (0, 6, u'Sonder', 6, 0.4562071), (0, 6, u'Sonder', 23, 0.45342463), (0, 6, u'Sonder', 3, 0.44882885)], 6: [(6, 11, 'Preis', 0, 1.0)]}
-{0: [(0, 14, 'Modellrechnung', 0, 1.0)]}
-{0: [(0, 15, 'Treibhauseffekt', 0, 1.0)]}
-{0: [(0, 13, 'Europatournee', 0, 1.0), (0, 6, u'Europa', 13, 0.4721595), (0, 6, u'Europa', 3, 0.50620574), (0, 6, u'Europa', 18, 0.52116591), (0, 6, u'Europa', 11, 0.47859398)], 6: [(6, 13, 'Tournee', 0, 1.0)]}
-{0: [(0, 16, 'Wirtschaftskrise', 0, 1.0), (0, 11, u'Wirtschafts', 6, 0.55742228), (0, 11, u'Wirtschafts', 2, 0.65387523), (0, 11, u'Wirtschafts', 2, 0.63127935), (0, 11, u'Wirtschafts', 75, 0.56687701), (0, 11, u'Wirtschafts', 8, 0.58570713), (0, 11, u'Wirtschafts', 3, 0.55677688)], 11: [(11, 16, 'Krise', 0, 1.0)]}
-{0: [(0, 13, 'Mittwochabend', 0, 1.0), (0, 8, u'Mittwoch', 3, 0.52555346), (0, 8, u'Mittwoch', 4, 0.55480242)], 8: [(8, 13, 'abend', 0, 1.0)]}
-{0: [(0, 13, 'Abschiedsgala', 0, 1.0), (0, 9, u'Abschieds', 42, 0.45628667), (0, 9, u'Abschieds', 37, 0.48466337), (0, 9, u'Abschieds', 24, 0.47507304)], 9: [(9, 13, 'Gala', 0, 1.0)]}
-{0: [(0, 11, 'Betriebstag', 0, 1.0), (0, 8, u'Betriebs', 10, 0.43702799)], 8: [(8, 11, 'Tag', 0, 1.0)]}
-{0: [(0, 9, 'Flughafen', 0, 1.0), (0, 4, u'Flug', 0, 0.68825364), (0, 4, u'Flug', 0, 1.0)], 4: [(4, 9, 'Hafen', 0, 1.0)]}
-{0: [(0, 8, 'Truthahn', 0, 1.0)]}
-{0: [(0, 12, 'Gehirnregion', 0, 1.0)]}
-{0: [(0, 12, 'Feststellung', 0, 1.0)]}
-{0: [(0, 12, 'Thanksgiving', 0, 1.0)]}
-{0: [(0, 15, 'B\xc3\xb6Rsenh\xc3\xa4Ndler', 0, 1.0)]}
-{0: [(0, 15, 'Risikoforschung', 0, 1.0), (0, 6, u'Risiko', 47, 0.50392747), (0, 6, u'Risiko', 3, 0.51172471)], 6: [(6, 15, 'Forschung', 0, 1.0)]}
-{0: [(0, 11, 'Finanzkrise', 0, 1.0), (0, 6, u'Finanz', 2, 0.60796833), (0, 6, u'Finanz', 4, 0.61498934), (0, 6, u'Finanz', 2, 0.58288246), (0, 6, u'Finanz', 10, 0.64010668), (0, 6, u'Finanz', 2, 0.58451992)], 6: [(6, 11, 'Krise', 0, 1.0)]}
-{0: [(0, 10, 'Erkenntnis', 0, 1.0)]}
-{0: [(0, 13, 'Vergangenheit', 0, 1.0)]}
-{0: [(0, 19, 'Festtagsbratenesser', 0, 1.0)]}
-{0: [(0, 16, 'Ungem\xc3\xbcTlichkeit', 0, 1.0)]}
-{0: [(0, 14, 'Privatanlegern', 0, 1.0), (0, 6, u'Privat', 3, 0.56445873), (0, 6, u'Privat', 3, 0.5761416), (0, 6, u'Privat', 2, 0.60724604), (0, 6, u'Privat', 3, 0.59356433), (0, 6, u'Privat', 1, 0.57428479)], 6: [(6, 14, 'Anlegern', 0, 1.0)]}
-{0: [(0, 12, 'Finanzmakler', 0, 1.0)]}
-{0: [(0, 15, 'Immobilienfonds', 0, 1.0), (0, 10, u'Immobilien', 1, 0.59630471), (0, 10, u'Immobilien', 6, 0.54614151), (0, 10, u'Immobilien', 6, 0.52285361), (0, 10, u'Immobilien', 54, 0.55491257)], 10: [(10, 15, 'Fonds', 0, 1.0)]}
-{0: [(0, 11, 'Wertzuwachs', 0, 1.0), (0, 4, u'Wert', 27, 0.50315022)], 4: [(4, 11, 'Zuwachs', 0, 1.0)]}
-{0: [(0, 9, 'Marmelade', 0, 1.0)]}
-{0: [(0, 11, 'Roboterzofe', 0, 1.0)]}
-{0: [(0, 8, 'Heinrich', 0, 1.0)]}
-{0: [(0, 11, 'Zeitdehnung', 0, 1.0)]}
-{0: [(0, 13, 'Zeitlosigkeit', 0, 1.0)]}
-{0: [(0, 18, 'Auseinandersetzung', 0, 1.0)]}
-{0: [(0, 20, 'Immobilienfondskrise', 0, 1.0)]}
-{0: [(0, 11, 'Stackelberg', 0, 1.0)]}
-{0: [(0, 53, 'Bodenseedampfschifffahrtsgesellschaftskapit\xc3\xa4Nsm\xc3\xbcTze', 0, 1.0)]}
-{0: [(0, 7, 'Hamburg', 0, 1.0)]}
-{0: [(0, 6, 'Justiz', 0, 1.0)]}
-{0: [(0, 7, 'Bischof', 0, 1.0)]}
-{0: [(0, 7, 'Richard', 0, 1.0)]}
-{0: [(0, 10, 'Williamson', 0, 1.0)]}
-{0: [(0, 7, 'Standes', 0, 1.0)]}
-{0: [(0, 7, 'Soutane', 0, 1.0)]}
-{0: [(0, 9, 'Millionen', 0, 1.0)]}
-{0: [(0, 10, 'Gaskammern', 0, 1.0)]}
-{0: [(0, 16, 'Holocaustleugner', 0, 1.0), (0, 9, u'Holocaust', 1, 0.64782017)], 9: [(9, 16, 'Leugner', 0, 1.0)]}
-{0: [(0, 12, 'Gro\xc3\x9fAnsicht', 0, 1.0)]}
-{0: [(0, 10, 'Gegenfrage', 0, 1.0), (0, 5, u'Gegen', 63, 0.43656325), (0, 5, u'Gegen', 104, 0.43029553), (0, 5, u'Gegen', 6, 0.53361672), (0, 5, u'Gegen', 6, 0.53408861)], 5: [(5, 10, 'Frage', 0, 1.0)]}
-{0: [(0, 12, 'Journalisten', 0, 1.0)]}
-{0: [(0, 13, 'Fernsehsender', 0, 1.0), (0, 7, u'Fernseh', 3, 0.61194694), (0, 7, u'Fernseh', 2, 0.63960141), (0, 7, u'Fernseh', 3, 0.68230438), (0, 7, u'Fernseh', 15, 0.61095238), (0, 7, u'Fernseh', 2, 0.6323911), (0, 7, u'Fernseh', 2, 0.60629958)], 7: [(7, 13, 'Sender', 0, 1.0)]}
-{0: [(0, 13, 'Revisionisten', 0, 1.0)]}
-{0: [(0, 18, 'Dreihunderttausend', 0, 1.0)]}
-{0: [(0, 20, 'Konzentrationslagern', 0, 1.0)]}
-{0: [(0, 17, 'Schornsteinh\xc3\xb6Hen', 0, 1.0)]}
-{0: [(0, 9, 'Touristen', 0, 1.0)]}
-{0: [(0, 9, 'Auschwitz', 0, 1.0)]}
-{0: [(0, 8, 'Birkenau', 0, 1.0)]}
-{0: [(0, 14, 'Antisemitismus', 0, 1.0), (0, 4, u'Anti', 41, 0.52712178)], 4: [(4, 14, 'Semitismus', 0, 1.0)]}
-{0: [(0, 11, 'Interviewer', 0, 1.0)]}
-{0: [(0, 7, 'Bischof', 0, 1.0)]}
-{0: [(0, 10, 'Williamson', 0, 1.0)]}
-{0: [(0, 8, 'Wahrheit', 0, 1.0)]}
-{0: [(0, 8, 'Schlecht', 0, 1.0)]}
-{0: [(0, 12, 'Interessiert', 0, 1.0)]}
-{0: [(0, 10, 'Entr\xc3\xbcCkte', 0, 1.0)]}
-{0: [(0, 9, 'Deutscher', 0, 1.0)]}
-{0: [(0, 8, 'Blamiert', 0, 1.0)]}
-{0: [(0, 11, 'Katholische', 0, 1.0)]}
-{0: [(0, 7, 'Ausgabe', 0, 1.0)]}
-{0: [(0, 7, 'Skandal', 0, 1.0)]}
-{0: [(0, 9, 'Interview', 0, 1.0)]}
-{0: [(0, 9, 'Berichtet', 0, 1.0)]}
-{0: [(0, 11, 'Bayerischen', 0, 1.0)]}
-{0: [(0, 10, 'Zaitzhofen', 0, 1.0)]}
-{0: [(0, 9, 'Fernsehen', 0, 1.0), (0, 8, u'Fernseh', 61, 0.30041853)], 8: [(8, 9, 'N', 0, 1.0)]}
-{0: [(0, 12, 'Regensburger', 0, 1.0)]}
-{0: [(0, 12, 'Ruckd\xc3\xa4Schel', 0, 1.0)]}
-{0: [(0, 7, 'Artikel', 0, 1.0)]}
-{0: [(0, 7, 'Leitete', 0, 1.0)]}
-{0: [(0, 7, 'Angaben', 0, 1.0)]}
-{0: [(0, 20, 'Ermittlungsverfahren', 0, 1.0), (0, 11, u'Ermittlungs', 141, 0.56753796), (0, 11, u'Ermittlungs', 22, 0.52500379), (0, 11, u'Ermittlungs', 149, 0.58489835), (0, 11, u'Ermittlungs', 12, 0.54865324), (0, 11, u'Ermittlungs', 4, 0.58094126)], 11: [(11, 20, 'Verfahren', 0, 1.0)]}
-{0: [(0, 8, 'Verdacht', 0, 1.0)]}
-{0: [(0, 15, 'Volksverhetzung', 0, 1.0), (0, 5, u'Volks', 9, 0.447056), (0, 5, u'Volks', 77, 0.52036762), (0, 5, u'Volks', 92, 0.41605747)], 5: [(5, 15, 'Verhetzung', 0, 1.0)]}
-{0: [(0, 12, 'Rechtsanwalt', 0, 1.0), (0, 6, u'Rechts', 1, 0.66651833), (0, 6, u'Rechts', 1, 0.67794681), (0, 6, u'Rechts', 1, 0.62781423), (0, 6, u'Rechts', 1, 0.68538857), (0, 6, u'Rechts', 1, 0.63186085)], 6: [(6, 12, 'Anwalt', 0, 1.0)]}
-{0: [(0, 10, 'Einlassung', 0, 1.0)]}
-{0: [(0, 8, 'Beh\xc3\xb6Rde', 0, 1.0)]}
-{0: [(0, 9, 'Gespr\xc3\xa4Ch', 0, 1.0)]}
-{0: [(0, 17, 'Ver\xc3\xb6Ffentlichung', 0, 1.0)]}
-{0: [(0, 11, 'Deutschland', 0, 1.0)]}
-{0: [(0, 15, 'Exkommunikation', 0, 1.0)]}
-{0: [(0, 11, 'Hintergrund', 0, 1.0), (0, 6, u'Hinter', 18, 0.40446696)], 6: [(6, 11, 'Grund', 0, 1.0)]}
-{0: [(0, 16, 'Strafgesetzbuchs', 0, 1.0), (0, 5, u'Straf', 169, 0.54265857), (0, 5, u'Straf', 5, 0.56118125), (0, 5, u'Straf', 27, 0.44293195), (0, 5, u'Straf', 123, 0.48047161)], 5: [(5, 16, 'Gesetzbuchs', 0, 1.0)]}
-{0: [(0, 8, 'Leugnung', 0, 1.0)]}
-{0: [(0, 15, 'Strafverfolgung', 0, 1.0), (0, 5, u'Straf', 174, 0.43417725), (0, 5, u'Straf', 2, 0.48135898), (0, 5, u'Straf', 195, 0.34125298), (0, 5, u'Straf', 194, 0.50725245), (0, 5, u'Straf', 2, 0.463673)], 5: [(5, 15, 'Verfolgung', 0, 1.0)]}
-{0: [(0, 10, 'Hintert\xc3\xbcR', 0, 1.0)]}
-{0: [(0, 9, 'Entziehen', 0, 1.0)]}
-{0: [(0, 10, 'Inzwischen', 0, 1.0)]}
-{0: [(0, 8, 'Einsicht', 0, 1.0)]}
-{0: [(0, 16, 'Ermittlungsakten', 0, 1.0), (0, 11, u'Ermittlungs', 25, 0.5858072), (0, 11, u'Ermittlungs', 4, 0.58415151), (0, 11, u'Ermittlungs', 4, 0.61253464), (0, 11, u'Ermittlungs', 8, 0.57790303), (0, 11, u'Ermittlungs', 3, 0.61736357)], 11: [(11, 16, 'Akten', 0, 1.0)]}
-{0: [(0, 12, 'Ruckd\xc3\xa4Schel', 0, 1.0)]}
-{0: [(0, 10, '\xc3\xbcBerlegen', 0, 1.0)]}
-{0: [(0, 12, 'Schwedischen', 0, 1.0)]}
-{0: [(0, 12, 'Journalisten', 0, 1.0)]}
-{0: [(0, 14, 'Hintergr\xc3\xbcNden', 0, 1.0)]}
-{0: [(0, 10, 'Absprachen', 0, 1.0)]}
-{0: [(0, 7, 'Vorfeld', 0, 1.0)]}
-{0: [(0, 16, 'Oberstaatsanwalt', 0, 1.0), (0, 4, u'Ober', 1, 0.61771196), (0, 4, u'Ober', 3, 0.57985413), (0, 4, u'Ober', 2, 0.58751076)], 10: [(10, 16, 'Anwalt', 0, 1.0)], 4: [(4, 16, 'Staatsanwalt', 0, 1.0), (4, 10, u'Staats', 25, 0.51622343), (4, 10, u'Staats', 51, 0.47442228), (4, 10, u'Staats', 40, 0.46118084)]}
-{0: [(0, 11, 'Mendelssohn', 0, 1.0)]}
-{0: [(0, 9, 'Bartholdy', 0, 1.0)]}
-{0: [(0, 7, 'Familie', 0, 1.0)]}
-{0: [(0, 11, 'Philosophen', 0, 1.0)]}
-{0: [(0, 7, 'Abraham', 0, 1.0)]}
-{0: [(0, 18, 'Bankkaufmannslehre', 0, 1.0), (0, 4, u'Bank', 34, 0.51014423), (0, 4, u'Bank', 40, 0.5758698), (0, 4, u'Bank', 19, 0.58898878), (0, 4, u'Bank', 30, 0.65484774)], 4: [(4, 18, 'Kaufmannslehre', 0, 1.0)]}
-{0: [(0, 9, 'Kompagnon', 0, 1.0)]}
-{0: [(0, 6, 'Mutter', 0, 1.0)]}
-{0: [(0, 7, 'Salomon', 0, 1.0)]}
-{0: [(0, 18, 'Fabrikantenfamilie', 0, 1.0)]}
-{0: [(0, 9, 'Schwester', 0, 1.0)]}
-{0: [(0, 6, 'Hensel', 0, 1.0)]}
-{0: [(0, 11, 'Geschwister', 0, 1.0)]}
-{0: [(0, 7, 'Rebecca', 0, 1.0)]}
-{0: [(0, 12, 'Mathematiker', 0, 1.0)]}
-{0: [(0, 9, 'Dirichlet', 0, 1.0)]}
-{0: [(0, 6, 'Kinder', 0, 1.0)]}
-{0: [(0, 7, 'Pfarrer', 0, 1.0), (0, 5, u'Pfarr', 77, 0.42432863), (0, 6, u'Pfarr', 5, 0.40116423), (0, 6, u'Pfarr', 144, 0.45203644), (0, 5, u'Pfarr', 55, 0.41689968)], 5: [(5, 7, 'er', 0, 1.0)], 6: [(6, 7, 'R', 0, 1.0)]}
-{0: [(0, 8, 'Gemeinde', 0, 1.0)]}
-{0: [(0, 8, 'Berliner', 0, 1.0)]}
-{0: [(0, 10, 'Jerusalems', 0, 1.0)]}
-{0: [(0, 9, 'Haustaufe', 0, 1.0)]}
-{0: [(0, 11, 'Gelegenheit', 0, 1.0)]}
-{0: [(0, 9, 'Taufnamen', 0, 1.0), (0, 4, u'Tauf', 38, 0.41750497)], 4: [(4, 9, 'Namen', 0, 1.0)]}
-{0: [(0, 6, 'Ludwig', 0, 1.0)]}
-{0: [(0, 13, 'Familiennamen', 0, 1.0), (0, 8, u'Familien', 4, 0.47138864), (0, 8, u'Familien', 10, 0.46571115), (0, 8, u'Familien', 28, 0.45988834)], 8: [(8, 13, 'Namen', 0, 1.0)]}
-{0: [(0, 11, 'Christliche', 0, 1.0)]}
-{0: [(0, 12, 'Vorbesitzers', 0, 1.0)]}
-{0: [(0, 7, 'Gartens', 0, 1.0)]}
-{0: [(0, 7, 'Abraham', 0, 1.0)]}
-{0: [(0, 11, 'Mendelssohn', 0, 1.0)]}
-{0: [(0, 13, 'Konvertierten', 0, 1.0)]}
-{0: [(0, 11, 'Christentum', 0, 1.0)]}
-{0: [(0, 8, 'Kindheit', 0, 1.0)]}
-{0: [(0, 9, 'Besetzung', 0, 1.0)]}
-{0: [(0, 7, 'Familie', 0, 1.0)]}
-{0: [(0, 11, 'Gro\xc3\x9fMutter', 0, 1.0)]}
-{0: [(0, 10, 'Gro\xc3\x9fVater', 0, 1.0)]}
-{0: [(0, 15, 'Musikunterricht', 0, 1.0), (0, 5, u'Musik', 87, 0.4854154), (0, 5, u'Musik', 21, 0.51059669), (0, 5, u'Musik', 19, 0.43739453), (0, 5, u'Musik', 3, 0.56105053), (0, 5, u'Musik', 2, 0.58977807), (0, 5, u'Musik', 1, 0.57636726), (0, 5, u'Musik', 4, 0.5577178)], 5: [(5, 15, 'Unterricht', 0, 1.0)]}
-{0: [(0, 10, 'Sch\xc3\xbcLerin', 0, 1.0)]}
-{0: [(0, 7, 'Philipp', 0, 1.0)]}
-{0: [(0, 11, 'Kirnbergers', 0, 1.0)]}
-{0: [(0, 10, 'Gro\xc3\x9fTante', 0, 1.0)]}
-{0: [(0, 7, 'Tochter', 0, 1.0)]}
-{0: [(0, 11, 'Finanzmanns', 0, 1.0)]}
-{0: [(0, 6, 'Daniel', 0, 1.0)]}
-{0: [(0, 12, 'Preu\xc3\x9fIscher', 0, 1.0)]}
-{0: [(0, 9, 'Friedrich', 0, 1.0)]}
-{0: [(0, 7, 'Wilhelm', 0, 1.0)]}
-{0: [(0, 21, 'Naturalisationspatent', 0, 1.0)]}
-{0: [(0, 9, 'Tradition', 0, 1.0)]}
-{0: [(0, 9, 'G\xc3\xb6Nnerin', 0, 1.0)]}
-{0: [(0, 8, 'Lehrerin', 0, 1.0)]}
-{0: [(0, 11, 'Aufenthalts', 0, 1.0)]}
-{0: [(0, 9, 'R\xc3\xbcCkkehr', 0, 1.0)]}
-{0: [(0, 10, 'Unterricht', 0, 1.0)]}
-{0: [(0, 11, 'Komposition', 0, 1.0)]}
-{0: [(0, 10, 'Ausbildung', 0, 1.0)]}
-{0: [(0, 15, 'Schriftstellers', 0, 1.0), (0, 14, u'Schriftsteller', 44, 0.42964181)], 14: [(14, 15, 'S', 0, 1.0)]}
-{0: [(0, 13, 'Neunj\xc3\xa4Hriger', 0, 1.0)]}
-{0: [(0, 11, 'Klavierpart', 0, 1.0), (0, 7, u'Klavier', 102, 0.48375797), (0, 7, u'Klavier', 7, 0.53056061), (0, 7, u'Klavier', 6, 0.49631977)], 7: [(7, 11, 'Part', 0, 1.0)]}
-{0: [(0, 11, 'Klaviertrio', 0, 1.0), (0, 7, u'Klavier', 135, 0.47383904), (0, 7, u'Klavier', 74, 0.45124269)], 7: [(7, 11, 'Trio', 0, 1.0)]}
-{0: [(0, 10, 'Alts\xc3\xa4Nger', 0, 1.0)]}
-{0: [(0, 8, 'Akademie', 0, 1.0)]}
-{0: [(0, 12, 'Kirchenmusik', 0, 1.0), (0, 7, u'Kirchen', 87, 0.46611688), (0, 7, u'Kirchen', 46, 0.41992125), (0, 7, u'Kirchen', 91, 0.56826162), (0, 7, u'Kirchen', 1, 0.55390519), (0, 7, u'Kirchen', 2, 0.51967275)], 7: [(7, 12, 'Musik', 0, 1.0)]}
-{0: [(0, 13, 'Schnelligkeit', 0, 1.0)]}
-{0: [(0, 14, 'Klaviersonaten', 0, 1.0), (0, 7, u'Klavier', 6, 0.67686832), (0, 7, u'Klavier', 53, 0.65648091), (0, 7, u'Klavier', 4, 0.62820691), (0, 7, u'Klavier', 13, 0.59748465)], 7: [(7, 14, 'Sonaten', 0, 1.0)]}
-{0: [(0, 11, 'Klaviertrio', 0, 1.0), (0, 7, u'Klavier', 135, 0.47383904), (0, 7, u'Klavier', 74, 0.45124269)], 7: [(7, 11, 'Trio', 0, 1.0)]}
-{0: [(0, 12, 'Orgelst\xc3\xbcCke', 0, 1.0)]}
-{0: [(0, 18, 'Streichersinfonien', 0, 1.0)]}
-{0: [(0, 8, 'Motetten', 0, 1.0)]}
-{0: [(0, 10, 'Singspiele', 0, 1.0)]}
-{0: [(0, 18, 'Soldatenliebschaft', 0, 1.0)]}
-{0: [(0, 10, 'Singspiels', 0, 1.0)]}
-{0: [(0, 12, 'Kom\xc3\xb6Dianten', 0, 1.0)]}
-{0: [(0, 12, 'Freundschaft', 0, 1.0)]}
-{0: [(0, 6, 'Barack', 0, 1.0)]}
-{0: [(0, 7, 'Getappt', 0, 1.0)]}
-{0: [(0, 11, 'Anstehenden', 0, 1.0)]}
-{0: [(0, 16, 'Herkulesaufgaben', 0, 1.0)]}
-{0: [(0, 6, 'Westen', 0, 1.0)]}
-{0: [(0, 22, 'Regierungsgrunds\xc3\xa4Tzen', 0, 1.0)]}
-{0: [(0, 8, 'Gen\xc3\xbcGen', 0, 1.0)]}
-{0: [(0, 7, 'Problem', 0, 1.0)]}
-{0: [(0, 9, 'Krankheit', 0, 1.0)]}
-{0: [(0, 10, 'Washington', 0, 1.0)]}
-{0: [(0, 8, 'Symptome', 0, 1.0)]}
-{0: [(0, 11, 'Verquickung', 0, 1.0)]}
-{0: [(0, 13, '\xc3\xb6Ffentlichen', 0, 1.0)]}
-{0: [(0, 10, 'Interessen', 0, 1.0)]}
-{0: [(0, 18, 'Lobbyistenumtriebe', 0, 1.0)]}
-{0: [(0, 20, 'Steuerzahlungsphobie', 0, 1.0)]}
-{0: [(0, 9, 'Krankheit', 0, 1.0)]}
-{0: [(0, 8, 'Probleme', 0, 1.0)]}
-{0: [(0, 18, 'Problembew\xc3\xa4Ltiger', 0, 1.0)]}
-{0: [(0, 10, 'Verzichten', 0, 1.0)]}
-{0: [(0, 9, 'Ausnahmen', 0, 1.0)]}
-{0: [(0, 6, 'Nummer', 0, 1.0)]}
-{0: [(0, 24, 'Verteidigungsministerium', 0, 1.0), (0, 13, u'Verteidigungs', 1, 0.61807311), (0, 13, u'Verteidigungs', 7, 0.53035796), (0, 13, u'Verteidigungs', 88, 0.53689885), (0, 13, u'Verteidigungs', 3, 0.59100187), (0, 13, u'Verteidigungs', 3, 0.51066864), (0, 13, u'Verteidigungs', 2, 0.59206629)], 13: [(13, 24, 'Ministerium', 0, 1.0)]}
-{0: [(0, 8, 'Fachmann', 0, 1.0)]}
-{0: [(0, 17, 'R\xc3\xbcStungslobbyist', 0, 1.0)]}
-{0: [(0, 8, 'Geithner', 0, 1.0)]}
-{0: [(0, 14, 'Finanzminister', 0, 1.0), (0, 6, u'Finanz', 227, 0.4435038), (0, 6, u'Finanz', 26, 0.46214303), (0, 6, u'Finanz', 7, 0.53030264), (0, 6, u'Finanz', 17, 0.56110263), (0, 6, u'Finanz', 15, 0.49093503)], 6: [(6, 14, 'Minister', 0, 1.0)]}
-{0: [(0, 6, 'Fiskus', 0, 1.0)]}
-{0: [(0, 7, 'Daschle', 0, 1.0)]}
-{0: [(0, 6, 'Obamas', 0, 1.0)]}
-{0: [(0, 14, 'Wunschkandidat', 0, 1.0), (0, 6, u'Wunsch', 28, 0.50753039)], 6: [(6, 14, 'Kandidat', 0, 1.0)]}
-{0: [(0, 22, 'Gesundheitsministerium', 0, 1.0), (0, 11, u'Gesundheits', 2, 0.58322382), (0, 11, u'Gesundheits', 7, 0.53506148), (0, 11, u'Gesundheits', 2, 0.59040862)], 11: [(11, 22, 'Ministerium', 0, 1.0)]}
-{0: [(0, 11, 'Begleichung', 0, 1.0)]}
-{0: [(0, 9, 'Feststand', 0, 1.0)]}
-{0: [(0, 9, 'Regierung', 0, 1.0)]}
-{0: [(0, 12, 'Proteststurm', 0, 1.0), (0, 7, u'Protest', 144, 0.34655124)], 7: [(7, 12, 'Sturm', 0, 1.0)]}
-{0: [(0, 8, 'Handtuch', 0, 1.0)]}
-{0: [(0, 19, 'Konzentrationslager', 0, 1.0)]}
-{0: [(0, 19, 'Entwicklungspolitik', 0, 1.0), (0, 12, u'Entwicklungs', 33, 0.44544715)], 12: [(12, 19, 'Politik', 0, 1.0)]}
-{0: [(0, 15, 'Zeitungsbericht', 0, 1.0), (0, 8, u'Zeitungs', 67, 0.41167954)], 8: [(8, 15, 'Bericht', 0, 1.0)]}
-{0: [(0, 16, 'Managergeh\xc3\xa4Lter', 0, 1.0)]}
-{0: [(0, 11, 'Unternehmen', 0, 1.0)]}
-{0: [(0, 12, 'Staatshilfen', 0, 1.0), (0, 6, u'Staats', 57, 0.53262097), (0, 6, u'Staats', 106, 0.47707859)], 6: [(6, 12, 'Hilfen', 0, 1.0)]}
-{0: [(0, 12, 'Pr\xc3\xa4Sidenten', 0, 1.0)]}
-{0: [(0, 17, 'Gehaltsobergrenze', 0, 1.0)]}
-{0: [(0, 13, 'Sonnensystems', 0, 1.0)]}
-{0: [(0, 6, 'Planet', 0, 1.0)]}
-{0: [(0, 9, 'Exoplanet', 0, 1.0)]}
-{0: [(0, 10, 'Durchbruch', 0, 1.0)]}
-{0: [(0, 6, 'Ulrich', 0, 1.0)]}
-{0: [(0, 8, 'Schnabel', 0, 1.0)]}
-{0: [(0, 16, 'Kulturgeschichte', 0, 1.0), (0, 6, u'Kultur', 4, 0.50933951), (0, 6, u'Kultur', 3, 0.47599447), (0, 6, u'Kultur', 70, 0.50622404)], 6: [(6, 16, 'Geschichte', 0, 1.0)]}
-{0: [(0, 15, 'Milchwirtschaft', 0, 1.0), (0, 5, u'Milch', 66, 0.4670617)], 5: [(5, 15, 'Wirtschaft', 0, 1.0)]}
-{0: [(0, 8, 'Menschen', 0, 1.0)]}
-{0: [(0, 18, 'Gesch\xc3\xa4Ftsf\xc3\xbcHrung', 0, 1.0)]}
-{0: [(0, 11, 'Amtsgericht', 0, 1.0), (0, 4, u'Amts', 60, 0.48908147), (0, 4, u'Amts', 3, 0.52197522), (0, 4, u'Amts', 42, 0.44861078)], 4: [(4, 11, 'Gericht', 0, 1.0)]}
-{0: [(0, 10, 'G\xc3\xb6Ppingen', 0, 1.0)]}
-{0: [(0, 6, 'Antrag', 0, 1.0)]}
-{0: [(0, 10, 'Er\xc3\xb6Ffnung', 0, 1.0)]}
-{0: [(0, 19, 'Insolvenzverfahrens', 0, 1.0), (0, 9, u'Insolvenz', 2, 0.56226265), (0, 9, u'Insolvenz', 14, 0.55811119), (0, 9, u'Insolvenz', 26, 0.53232652)], 9: [(9, 19, 'Verfahrens', 0, 1.0)]}
-{0: [(0, 6, 'Dieter', 0, 1.0)]}
-{0: [(0, 20, 'Informationsangebote', 0, 1.0), (0, 12, u'Informations', 5, 0.50335896), (0, 12, u'Informations', 192, 0.46183756), (0, 12, u'Informations', 1, 0.61922014)], 12: [(12, 20, 'Angebote', 0, 1.0)]}
-{0: [(0, 11, 'Vereinfacht', 0, 1.0)]}
-{0: [(0, 14, 'Vokabelglossar', 0, 1.0)]}
-{0: [(0, 9, 'Gewaltige', 0, 1.0)]}
-{0: [(0, 8, 'Haushohe', 0, 1.0)]}
-{0: [(0, 6, 'Segler', 0, 1.0)]}
-{0: [(0, 7, 'Oktober', 0, 1.0)]}
-{0: [(0, 9, 'Gibraltar', 0, 1.0)]}
-{0: [(0, 13, 'Bronzekanonen', 0, 1.0), (0, 6, u'Bronze', 174, 0.50130248)], 6: [(6, 13, 'Kanonen', 0, 1.0)]}
-{0: [(0, 6, 'Tonnen', 0, 1.0)]}
-{0: [(0, 11, 'Goldm\xc3\xbcNzen', 0, 1.0)]}
-{0: [(0, 9, 'Kaufleute', 0, 1.0)]}
-{0: [(0, 12, 'Sch\xc3\xa4Tzungen', 0, 1.0)]}
-{0: [(0, 11, 'Vergangenen', 0, 1.0)]}
-{0: [(0, 9, 'Millionen', 0, 1.0)]}
-{0: [(0, 7, 'Schiffe', 0, 1.0)]}
-{0: [(0, 11, 'Meeresgrund', 0, 1.0), (0, 6, u'Meer', 74, 0.31636021)], 6: [(6, 11, 'grund', 0, 1.0)]}
-{0: [(0, 15, 'Wasserfahrzeuge', 0, 1.0), (0, 6, u'Wasser', 30, 0.46405244)], 6: [(6, 15, 'Fahrzeuge', 0, 1.0)]}
-{0: [(0, 13, 'Kriegsschiffe', 0, 1.0), (0, 6, u'Kriegs', 5, 0.54569381), (0, 6, u'Kriegs', 4, 0.58045888), (0, 6, u'Kriegs', 5, 0.54551792), (0, 6, u'Kriegs', 50, 0.59433466)], 6: [(6, 13, 'Schiffe', 0, 1.0)]}
-{0: [(0, 16, 'Passagierdampfer', 0, 1.0), (0, 9, u'Passagier', 42, 0.48745757), (0, 9, u'Passagier', 11, 0.51990241)], 9: [(9, 16, 'Dampfer', 0, 1.0)]}
-{0: [(0, 14, 'Handelsflotten', 0, 1.0), (0, 7, u'Handels', 189, 0.38756412), (0, 7, u'Handels', 166, 0.33427039)], 7: [(7, 14, 'Flotten', 0, 1.0)]}
-{0: [(0, 12, 'Piratenboote', 0, 1.0), (0, 7, u'Piraten', 6, 0.5427475), (0, 7, u'Piraten', 7, 0.49086124), (0, 7, u'Piraten', 17, 0.5477494)], 7: [(7, 12, 'Boote', 0, 1.0)]}
-{0: [(0, 6, 'Tanker', 0, 1.0)]}
-{0: [(0, 15, 'Gro\xc3\x9fBritannien', 0, 1.0)]}
-{0: [(0, 9, '\xc3\xa4Ltesten', 0, 1.0)]}
-{0: [(0, 17, 'Seefahrernationen', 0, 1.0)]}
-{0: [(0, 10, 'Auffassung', 0, 1.0)]}
-{0: [(0, 16, 'Marinehistoriker', 0, 1.0)]}
-{0: [(0, 7, 'Schiffe', 0, 1.0)]}
-{0: [(0, 6, 'Ortung', 0, 1.0)]}
-{0: [(0, 7, 'Victory', 0, 1.0)]}
-{0: [(0, 19, 'Bergungsunternehmen', 0, 1.0)]}
-{0: [(0, 11, 'Meeresfunde', 0, 1.0)]}
-{0: [(0, 10, 'Geschichte', 0, 1.0)]}
-{0: [(0, 10, 'Entdeckern', 0, 1.0)]}
-{0: [(0, 10, 'Kriegsboot', 0, 1.0)]}
-{0: [(0, 11, 'Jahrhundert', 0, 1.0)]}
-{0: [(0, 7, 'Tausend', 0, 1.0)]}
-{0: [(0, 8, 'Schiffen', 0, 1.0)]}
-{0: [(0, 10, 'Entdeckung', 0, 1.0)]}
-{0: [(0, 9, 'Tauchjagd', 0, 1.0)]}
-{0: [(0, 10, '\xc3\xbcBerreste', 0, 1.0)]}
-{0: [(0, 7, 'Epochen', 0, 1.0)]}
-{0: [(0, 7, 'L\xc3\xa4Nder', 0, 1.0)]}
-{0: [(0, 8, 'Streiten', 0, 1.0)]}
-{0: [(0, 17, 'Schiffsfriedh\xc3\xb6Fe', 0, 1.0)]}
-{0: [(0, 9, 'Tauchjagd', 0, 1.0)]}
-{0: [(0, 12, 'Schatzj\xc3\xa4Ger', 0, 1.0)]}
-{0: [(0, 7, 'Moderne', 0, 1.0)]}
-{0: [(0, 7, 'Technik', 0, 1.0)]}
-{0: [(0, 16, 'Jahrhundertealte', 0, 1.0)]}
-{0: [(0, 6, 'Wracks', 0, 1.0)]}
-{0: [(0, 11, 'Geheimnisse', 0, 1.0)]}
-{0: [(0, 12, 'Besitzrechte', 0, 1.0)]}
-{0: [(0, 18, 'Wahrscheinlichkeit', 0, 1.0)]}
-{0: [(0, 17, 'Minimaltemperatur', 0, 1.0), (0, 7, u'Minimal', 242, 0.45933509), (0, 7, u'Minimal', 152, 0.5854997)], 7: [(7, 17, 'Temperatur', 0, 1.0)]}
-{0: [(0, 14, 'Winterhalbjahr', 0, 1.0)]}
-{0: [(0, 7, 'Celsius', 0, 1.0)]}
-{0: [(0, 14, 'Sommerhalbjahr', 0, 1.0)]}
-{0: [(0, 17, 'Maximaltemperatur', 0, 1.0), (0, 7, u'Maximal', 8, 0.61032522), (0, 7, u'Maximal', 14, 0.52215493), (0, 7, u'Maximal', 1, 0.67849195), (0, 7, u'Maximal', 13, 0.61499035)], 7: [(7, 17, 'Temperatur', 0, 1.0)]}
-{0: [(0, 17, 'Kreuzungsversuche', 0, 1.0)]}
-{0: [(0, 14, 'Erbsenpflanzen', 0, 1.0)]}
-{0: [(0, 13, 'Klostergarten', 0, 1.0), (0, 7, u'Kloster', 9, 0.52527744)], 7: [(7, 13, 'Garten', 0, 1.0)]}
-{0: [(0, 13, 'Befruchtungen', 0, 1.0)]}
-{0: [(0, 12, 'Zehntausende', 0, 1.0), (0, 4, u'Zehn', 3, 0.73219931), (0, 4, u'Zehn', 5, 0.69699371)], 4: [(4, 12, 'Tausende', 0, 1.0)]}
-{0: [(0, 16, 'Pflanzenhybriden', 0, 1.0)]}
-{0: [(0, 13, 'Flei\xc3\x9fAufgabe', 0, 1.0)]}
-{0: [(0, 13, 'Flei\xc3\x9fAufgabe', 0, 1.0)]}
-{0: [(0, 15, 'Hartn\xc3\xa4Ckigkeit', 0, 1.0)]}
-{0: [(0, 14, 'Naturforschers', 0, 1.0), (0, 5, u'Natur', 4, 0.4769049)], 5: [(5, 14, 'Forschers', 0, 1.0)]}
-{0: [(0, 13, 'Innenminister', 0, 1.0), (0, 5, u'Innen', 27, 0.49857166), (0, 5, u'Innen', 16, 0.4578737)], 5: [(5, 13, 'Minister', 0, 1.0)]}
-{0: [(0, 19, 'Falschinformationen', 0, 1.0), (0, 6, u'Falsch', 5, 0.43732825)], 6: [(6, 19, 'Informationen', 0, 1.0)]}
-{0: [(0, 8, 'Analysen', 0, 1.0)]}
-{0: [(0, 13, 'Hintergr\xc3\xbcNde', 0, 1.0)]}
-{0: [(0, 8, 'Menschen', 0, 1.0)]}
-{0: [(0, 15, 'Containerschiff', 0, 1.0), (0, 9, u'Container', 2, 0.6297034), (0, 9, u'Container', 3, 0.54978025), (0, 9, u'Container', 20, 0.52891397)], 9: [(9, 15, 'Schiff', 0, 1.0)]}
-{0: [(0, 6, 'Unfall', 0, 1.0)]}
-{0: [(0, 14, 'Umweltdesaster', 0, 1.0), (0, 6, u'Umwelt', 20, 0.44047001), (0, 6, u'Umwelt', 9, 0.38483894)], 6: [(6, 14, 'Desaster', 0, 1.0)]}
-{0: [(0, 10, 'Australien', 0, 1.0)]}
-{0: [(0, 15, 'Containerschiff', 0, 1.0), (0, 9, u'Container', 2, 0.6297034), (0, 9, u'Container', 3, 0.54978025), (0, 9, u'Container', 20, 0.52891397)], 9: [(9, 15, 'Schiff', 0, 1.0)]}
-{0: [(0, 6, 'Unfall', 0, 1.0)]}
-{0: [(0, 10, 'Australien', 0, 1.0)]}
-{0: [(0, 9, 'Schwer\xc3\xb6L', 0, 1.0)]}
-{0: [(0, 7, 'Freitag', 0, 1.0)]}
-{0: [(0, 12, 'Fl\xc3\xbcSsigkeit', 0, 1.0)]}
-{0: [(0, 8, 'Str\xc3\xa4Nde', 0, 1.0)]}
-{0: [(0, 10, 'Kilometern', 0, 1.0), (0, 4, u'Kilo', 0, 1.0), (0, 4, u'Kilo', 0, 0.69171464)], 4: [(4, 10, 'Metern', 0, 1.0)]}
-{0: [(0, 8, 'Kapit\xc3\xa4N', 0, 1.0)]}
-{0: [(0, 7, 'Pacific', 0, 1.0)]}
-{0: [(0, 10, 'Adventurer', 0, 1.0)]}
-{0: [(0, 8, 'Hongkong', 0, 1.0)]}
-{0: [(0, 7, 'Verlust', 0, 1.0)]}
-{0: [(0, 6, 'Tonnen', 0, 1.0)]}
-{0: [(0, 14, 'Regierungschef', 0, 1.0)]}
-{0: [(0, 10, 'Queensland', 0, 1.0)]}
-{0: [(0, 7, 'Samstag', 0, 1.0)]}
-{0: [(0, 8, 'Kapit\xc3\xa4N', 0, 1.0)]}
-{0: [(0, 6, 'Vortag', 0, 1.0)]}
-{0: [(0, 11, 'Vertuschung', 0, 1.0)]}
-{0: [(0, 11, 'Vorgeworfen', 0, 1.0)]}
-{0: [(0, 8, 'Mittwoch', 0, 1.0)]}
-{0: [(0, 15, 'Containerschiff', 0, 1.0), (0, 9, u'Container', 2, 0.6297034), (0, 9, u'Container', 3, 0.54978025), (0, 9, u'Container', 20, 0.52891397)], 9: [(9, 15, 'Schiff', 0, 1.0)]}
-{0: [(0, 14, 'Naturreservate', 0, 1.0), (0, 5, u'Natur', 244, 0.4615033)], 5: [(5, 14, 'Reservate', 0, 1.0)]}
-{0: [(0, 17, 'Touristenstr\xc3\xa4Nde', 0, 1.0)]}
-{0: [(0, 9, 'Ostk\xc3\xbcSte', 0, 1.0)]}
-{0: [(0, 9, 'N\xc3\xb6Rdlich', 0, 1.0)]}
-{0: [(0, 8, 'Brisbane', 0, 1.0)]}
-{0: [(0, 18, 'Bestechungsversuch', 0, 1.0), (0, 11, u'Bestechungs', 105, 0.42316893), (0, 11, u'Bestechungs', 1, 0.55754888)], 11: [(11, 18, 'versuch', 0, 1.0)]}
-{0: [(0, 13, 'Campingkocher', 0, 1.0)]}
-{0: [(0, 11, 'Integration', 0, 1.0)]}
-{0: [(0, 11, 'Funktechnik', 0, 1.0), (0, 4, u'Funk', 164, 0.31504676), (0, 4, u'Funk', 15, 0.45507115)], 4: [(4, 11, 'Technik', 0, 1.0)]}
-{0: [(0, 13, 'Mobiltelefone', 0, 1.0), (0, 5, u'Mobil', 2, 0.62820697)], 5: [(5, 13, 'Telefone', 0, 1.0)]}
-{0: [(0, 12, 'Aktenkoffers', 0, 1.0), (0, 5, u'Akten', 4, 0.48674276), (0, 5, u'Akten', 3, 0.43912473), (0, 5, u'Akten', 75, 0.4618212)], 5: [(5, 12, 'Koffers', 0, 1.0)]}
-{0: [(0, 8, 'Vorstufe', 0, 1.0)]}
-{0: [(0, 13, 'Kohlendioxids', 0, 1.0)]}
-{0: [(0, 13, 'Kohlendioxids', 0, 1.0)]}
-{0: [(0, 15, 'Computermodelle', 0, 1.0)]}
-{0: [(0, 9, 'Sch\xc3\xbcTzen', 0, 1.0)]}
-{0: [(0, 11, 'Climategate', 0, 1.0)]}
-{0: [(0, 7, 'Skandal', 0, 1.0)]}
-{0: [(0, 18, 'Forschungsinstitut', 0, 1.0), (0, 10, u'Forschungs', 50, 0.55834067), (0, 10, u'Forschungs', 6, 0.60329753), (0, 10, u'Forschungs', 20, 0.56474352), (0, 10, u'Forschungs', 3, 0.54519069)], 10: [(10, 18, 'Institut', 0, 1.0)]}
-{0: [(0, 7, 'Climate', 0, 1.0)]}
-{0: [(0, 8, 'Research', 0, 1.0)]}
-{0: [(0, 15, 'Folgenschwerste', 0, 1.0)]}
-{0: [(0, 15, 'Folgenschwerste', 0, 1.0)]}
-{0: [(0, 20, 'Wissenschaftsdebatte', 0, 1.0)]}
-{0: [(0, 14, 'Computerhacker', 0, 1.0), (0, 8, u'Computer', 151, 0.43809646), (0, 8, u'Computer', 8, 0.44188744)], 8: [(8, 14, 'Hacker', 0, 1.0)]}
-{0: [(0, 9, 'Instituts', 0, 1.0)]}
-{0: [(0, 8, 'Forscher', 0, 1.0)]}
-{0: [(0, 8, 'Prognose', 0, 1.0)]}
-{0: [(0, 10, 'Erw\xc3\xa4Rmung', 0, 1.0)]}
-{0: [(0, 15, 'Wissenschaftler', 0, 1.0), (0, 12, u'Wissenschaft', 3, 0.36515111)], 12: [(12, 15, 'ler', 0, 1.0)]}
-{0: [(0, 16, 'Datenlieferanten', 0, 1.0)]}
-{0: [(0, 13, 'Weltklimarats', 0, 1.0), (0, 4, u'Welt', 1, 0.67320156), (0, 4, u'Welt', 4, 0.63538074), (0, 4, u'Welt', 4, 0.54996479), (0, 4, u'Welt', 1, 0.65712398), (0, 9, u'Weltklima', 35, 0.40853232)], 9: [(9, 13, 'Rats', 0, 1.0)], 4: [(4, 13, 'Klimarats', 0, 1.0), (4, 9, u'Klima', 24, 0.449417)]}
-{0: [(0, 10, 'Fraktionen', 0, 1.0)]}
-{0: [(0, 7, 'Debatte', 0, 1.0)]}
-{0: [(0, 6, 'Schule', 0, 1.0)]}
-{0: [(0, 14, 'Repr\xc3\xa4Sentiert', 0, 1.0)]}
-{0: [(0, 8, 'Mehrheit', 0, 1.0)]}
-{0: [(0, 15, 'Wissenschaftler', 0, 1.0), (0, 12, u'Wissenschaft', 3, 0.36515111)], 12: [(12, 15, 'ler', 0, 1.0)]}
-{0: [(0, 6, 'Stelle', 0, 1.0)]}
-{0: [(0, 8, 'Forscher', 0, 1.0)]}
-{0: [(0, 12, 'Klimamodelle', 0, 1.0), (0, 5, u'Klima', 73, 0.48331901)], 5: [(5, 12, 'Modelle', 0, 1.0)]}
-{0: [(0, 20, 'Computersimulationen', 0, 1.0), (0, 8, u'Computer', 2, 0.52981782), (0, 8, u'Computer', 1, 0.59137404), (0, 8, u'Computer', 3, 0.4937512), (0, 8, u'Computer', 51, 0.57687378)], 8: [(8, 20, 'Simulationen', 0, 1.0)]}
-{0: [(0, 21, 'Hauptverantwortlichen', 0, 1.0), (0, 5, u'Haupt', 9, 0.42636526), (0, 5, u'Haupt', 6, 0.45217949)], 5: [(5, 21, 'verantwortlichen', 0, 1.0)]}
-{0: [(0, 10, 'Erw\xc3\xa4Rmung', 0, 1.0)]}
-{0: [(0, 8, 'Menschen', 0, 1.0)]}
-{0: [(0, 11, 'Spatenstich', 0, 1.0)]}
-{0: [(0, 13, 'Kirchenneubau', 0, 1.0), (0, 7, u'Kirchen', 213, 0.50433272), (0, 7, u'Kirchen', 205, 0.45582786)], 7: [(7, 13, 'Neubau', 0, 1.0)]}
-{0: [(0, 15, 'Ostdeutschlands', 0, 1.0)]}
-{0: [(0, 9, 'Rum\xc3\xa4Nien', 0, 1.0)]}
-{0: [(0, 6, 'Berlin', 0, 1.0)]}
-{0: [(0, 9, 'Regierung', 0, 1.0)]}
-{0: [(0, 12, 'Ank\xc3\xbcNdigung', 0, 1.0)]}
-{0: [(0, 12, 'Deutschlands', 0, 1.0)]}
-{0: [(0, 11, 'Frankreichs', 0, 1.0)]}
-{0: [(0, 10, 'Rum\xc3\xa4Niens', 0, 1.0)]}
-{0: [(0, 10, 'Bulgariens', 0, 1.0)]}
-{0: [(0, 8, 'Schengen', 0, 1.0)]}
-{0: [(0, 8, 'Bukarest', 0, 1.0)]}
-{0: [(0, 13, 'Informationen', 0, 1.0)]}
-{0: [(0, 10, 'Verletzung', 0, 1.0)]}
-{0: [(0, 8, 'Vertrags', 0, 1.0), (0, 7, u'Vertrag', 161, 0.31392384)], 7: [(7, 8, 'S', 0, 1.0)]}
-{0: [(0, 8, 'Lissabon', 0, 1.0)]}
-{0: [(0, 12, 'Rum\xc3\xa4Nischer', 0, 1.0)]}
-{0: [(0, 11, 'Zollbeamter', 0, 1.0), (0, 4, u'Zoll', 4, 0.46207678)], 4: [(4, 11, 'Beamter', 0, 1.0)]}
-{0: [(0, 6, 'Grenze', 0, 1.0)]}
-{0: [(0, 9, 'Rum\xc3\xa4Nien', 0, 1.0)]}
-{0: [(0, 8, 'Republik', 0, 1.0)]}
-{0: [(0, 6, 'Moldau', 0, 1.0)]}
-{0: [(0, 8, 'Dezember', 0, 1.0)]}
-{0: [(0, 9, 'Regierung', 0, 1.0)]}
-{0: [(0, 8, 'Bukarest', 0, 1.0)]}
-{0: [(0, 10, 'Kontrollen', 0, 1.0)]}
-{0: [(0, 7, 'Grenzen', 0, 1.0)]}
-{0: [(0, 9, 'Rum\xc3\xa4Nien', 0, 1.0)]}
-{0: [(0, 9, 'Bulgarien', 0, 1.0)]}
-{0: [(0, 7, 'L\xc3\xa4Nder', 0, 1.0)]}
-{0: [(0, 12, 'Fortschritte', 0, 1.0), (0, 4, u'Fort', 52, 0.42766547), (0, 4, u'Fort', 17, 0.36335915)], 4: [(4, 12, 'Schritte', 0, 1.0)]}
-{0: [(0, 10, 'Korruption', 0, 1.0)]}
-{0: [(0, 13, 'Kriminalit\xc3\xa4T', 0, 1.0)]}
-{0: [(0, 13, 'Informationen', 0, 1.0)]}
-{0: [(0, 7, 'Zeitung', 0, 1.0)]}
-{0: [(0, 18, 'Vertragsverletzung', 0, 1.0)]}
-{0: [(0, 11, 'Deutschland', 0, 1.0)]}
-{0: [(0, 10, 'Frankreich', 0, 1.0)]}
-{0: [(0, 7, 'Haltung', 0, 1.0)]}
-{0: [(0, 10, 'Rum\xc3\xa4Niens', 0, 1.0)]}
-{0: [(0, 17, 'Au\xc3\x9fEnministerium', 0, 1.0)]}
-{0: [(0, 14, 'Pr\xc3\xa4Zedenzfall', 0, 1.0)]}
-{0: [(0, 16, 'Staatspr\xc3\xa4Sident', 0, 1.0)]}
-{0: [(0, 6, 'Georgi', 0, 1.0)]}
-{0: [(0, 8, 'Parwanow', 0, 1.0)]}
-{0: [(0, 12, 'Verst\xc3\xa4Ndnis', 0, 1.0)]}
-{0: [(0, 9, 'Bulgarien', 0, 1.0)]}
-{0: [(0, 9, 'Verstehen', 0, 1.0)]}
-{0: [(0, 10, 'Erkl\xc3\xa4Rung', 0, 1.0)]}
-{0: [(0, 12, 'Verz\xc3\xb6Gerung', 0, 1.0)]}
-{0: [(0, 8, 'Mittwoch', 0, 1.0)]}
-{0: [(0, 7, 'Haltung', 0, 1.0)]}
-{0: [(0, 11, 'Hintergrund', 0, 1.0), (0, 6, u'Hinter', 18, 0.40446696)], 6: [(6, 11, 'Grund', 0, 1.0)]}
-{0: [(0, 7, 'Streits', 0, 1.0)]}
-{0: [(0, 9, 'Regierung', 0, 1.0)]}
-{0: [(0, 18, 'Ministerpr\xc3\xa4Sident', 0, 1.0)]}
-{0: [(0, 15, 'Grenzkontrollen', 0, 1.0), (0, 5, u'Grenz', 6, 0.48336613), (0, 5, u'Grenz', 42, 0.54788673), (0, 5, u'Grenz', 18, 0.50127709)], 5: [(5, 15, 'Kontrollen', 0, 1.0)]}
-{0: [(0, 9, 'Weltkrieg', 0, 1.0), (0, 4, u'Welt', 215, 0.51457226), (0, 4, u'Welt', 9, 0.49052233), (0, 4, u'Welt', 20, 0.52091801)], 4: [(4, 9, 'Krieg', 0, 1.0)]}
-{0: [(0, 6, 'Abwehr', 0, 1.0)]}
-{0: [(0, 8, 'Admirals', 0, 1.0)]}
-{0: [(0, 7, 'Canaris', 0, 1.0)]}
-{0: [(0, 12, 'Sprengs\xc3\xa4Tze', 0, 1.0)]}
-{0: [(0, 16, 'Apfelsinenkisten', 0, 1.0)]}
-{0: [(0, 13, 'Hafenarbeiter', 0, 1.0), (0, 5, u'Hafen', 8, 0.47505108), (0, 5, u'Hafen', 5, 0.43803483)], 5: [(5, 13, 'Arbeiter', 0, 1.0)]}
-{0: [(0, 7, 'Schiffe', 0, 1.0)]}
-{0: [(0, 6, 'Zeiten', 0, 1.0)]}
-{0: [(0, 16, 'Milit\xc3\xa4Rdiktatur', 0, 1.0)]}
-{0: [(0, 17, 'Widerstandsgruppe', 0, 1.0), (0, 11, u'Widerstands', 2, 0.43703195), (0, 11, u'Widerstands', 21, 0.38075179)], 11: [(11, 17, 'gruppe', 0, 1.0)]}
-{0: [(0, 9, 'Pfirsiche', 0, 1.0)]}
-{0: [(0, 9, 'Aprikosen', 0, 1.0)]}
-{0: [(0, 9, 'Vergiftet', 0, 1.0)]}
-{0: [(0, 7, 'Kuklina', 0, 1.0)]}
-{0: [(0, 9, 'Tr\xc3\xa4Gerin', 0, 1.0)]}
-{0: [(0, 12, 'Alternativen', 0, 1.0)]}
-{0: [(0, 10, 'Nobelpreis', 0, 1.0), (0, 5, u'Nobel', 1, 0.55850583), (0, 5, u'Nobel', 0, 1.0)], 5: [(5, 10, 'preis', 0, 1.0)]}
-{0: [(0, 7, 'K\xc3\xa4Mpft', 0, 1.0)]}
-{0: [(0, 6, 'Rechte', 0, 1.0)]}
-{0: [(0, 8, 'Soldaten', 0, 1.0)]}
-{0: [(0, 9, 'Russlands', 0, 1.0)]}
-{0: [(0, 6, 'Online', 0, 1.0)]}
-{0: [(0, 6, 'Sprach', 0, 1.0)]}
-{0: [(0, 14, 'Menschenrechte', 0, 1.0), (0, 8, u'Menschen', 15, 0.46688187), (0, 8, u'Menschen', 8, 0.38561094)], 8: [(8, 14, 'Rechte', 0, 1.0)]}
-{0: [(0, 6, 'Heimat', 0, 1.0)]}
-{0: [(0, 10, 'Kaufrausch', 0, 1.0), (0, 4, u'Kauf', 14, 0.43346396)], 4: [(4, 10, 'Rausch', 0, 1.0)]}
-{0: [(0, 18, 'Kommerzialisierung', 0, 1.0)]}
-{0: [(0, 11, 'Weihnachten', 0, 1.0), (0, 4, u'Weih', 10, 0.51386714), (0, 10, u'Weihnacht', 27, 0.29699171)], 10: [(10, 11, 'N', 0, 1.0)], 4: [(4, 11, 'nachten', 0, 1.0)]}
-{0: [(0, 9, 'Wikileaks', 0, 1.0)]}
-{0: [(0, 18, 'Verfassungsgericht', 0, 1.0), (0, 11, u'Verfassungs', 172, 0.45174557), (0, 11, u'Verfassungs', 2, 0.58598971), (0, 11, u'Verfassungs', 16, 0.51952243), (0, 11, u'Verfassungs', 14, 0.593045), (0, 11, u'Verfassungs', 26, 0.57069671), (0, 11, u'Verfassungs', 169, 0.52138245)], 11: [(11, 18, 'gericht', 0, 1.0)]}
-{0: [(0, 11, 'Berlusconis', 0, 1.0)]}
-{0: [(0, 10, 'Immunit\xc3\xa4T', 0, 1.0)]}
-{0: [(0, 11, 'Zinspolitik', 0, 1.0)]}
-{0: [(0, 9, 'Inflation', 0, 1.0)]}
-{0: [(0, 8, 'Eurozone', 0, 1.0), (0, 4, u'Euro', 1, 0.58198929), (0, 4, u'Euro', 2, 0.67638773), (0, 4, u'Euro', 190, 0.53980684), (0, 4, u'Euro', 87, 0.44794115), (0, 4, u'Euro', 3, 0.56715906)], 4: [(4, 8, 'zone', 0, 1.0)]}
-{0: [(0, 9, 'Kontrolle', 0, 1.0)]}
-{0: [(0, 21, 'Futtermittelindustrie', 0, 1.0), (0, 12, u'Futtermittel', 34, 0.48408121), (0, 12, u'Futtermittel', 5, 0.55418211)], 12: [(12, 21, 'Industrie', 0, 1.0)]}
-{0: [(0, 11, 'Deutschland', 0, 1.0)]}
-{0: [(0, 9, 'Regierung', 0, 1.0)]}
-{0: [(0, 9, 'Vertrauen', 0, 1.0)]}
-{0: [(0, 11, 'Westerwelle', 0, 1.0)]}
-{0: [(0, 11, 'Abzugsdatum', 0, 1.0), (0, 6, u'Abzugs', 3, 0.55614936)], 6: [(6, 11, 'Datum', 0, 1.0)]}
-{0: [(0, 13, 'Ghettoblaster', 0, 1.0)]}
-{0: [(0, 6, 'Alltag', 0, 1.0)]}
-{0: [(0, 6, 'Ikonen', 0, 1.0)]}
-{0: [(0, 12, 'Jugendkultur', 0, 1.0), (0, 6, u'Jugend', 21, 0.43816748)], 6: [(6, 12, 'Kultur', 0, 1.0)]}
-{0: [(0, 14, 'Hochrechnungen', 0, 1.0)]}
-{0: [(0, 8, 'Mckinsey', 0, 1.0)]}
-{0: [(0, 7, 'Company', 0, 1.0)]}
-{0: [(0, 9, 'Kaufkraft', 0, 1.0)]}
-{0: [(0, 13, 'Aufstrebenden', 0, 1.0)]}
-{0: [(0, 13, 'Mittelschicht', 0, 1.0)]}
-{0: [(0, 10, 'Jahrzehnts', 0, 1.0)]}
-{0: [(0, 9, 'Billionen', 0, 1.0)]}
-{0: [(0, 6, 'Dollar', 0, 1.0)]}
-{0: [(0, 15, 'Erbrauchsniveau', 0, 1.0)]}
-{0: [(0, 7, 'Staaten', 0, 1.0)]}
-{0: [(0, 16, 'Schwellenl\xc3\xa4Nder', 0, 1.0)]}
-{0: [(0, 16, 'Schwellenl\xc3\xa4Nder', 0, 1.0)]}
-{0: [(0, 9, 'Brasilien', 0, 1.0)]}
-{0: [(0, 8, 'Russland', 0, 1.0)]}
-{0: [(0, 6, 'Indien', 0, 1.0)]}
-{0: [(0, 11, 'Fr\xc3\xbcHst\xc3\xbcCk', 0, 1.0)]}
-{0: [(0, 11, 'Fortschritt', 0, 1.0), (0, 4, u'Fort', 23, 0.44230855), (0, 4, u'Fort', 90, 0.34656441)], 4: [(4, 11, 'Schritt', 0, 1.0)]}
-{0: [(0, 17, 'Fr\xc3\xbcHst\xc3\xbcCkstisch', 0, 1.0)]}
-{0: [(0, 7, 'Familie', 0, 1.0)]}
-{0: [(0, 6, 'Jahren', 0, 1.0)]}
-{0: [(0, 12, 'Tageszeitung', 0, 1.0), (0, 5, u'Tages', 1, 0.52212489), (0, 5, u'Tages', 4, 0.52416098)], 5: [(5, 12, 'Zeitung', 0, 1.0)]}
+{0: [(0, 22, u'Untersuchungsausschuss', 0, 1.0), (0, 13, u'Untersuchungs', 3, 0.53245044), (0, 13, u'Untersuchungs', 2, 0.6406967), (0, 13, u'Untersuchungs', 31, 0.56912231), (0, 13, u'Untersuchungs', 4, 0.53633964)], 13: [(13, 22, u'Ausschuss', 0, 1.0)]}
+{0: [(0, 10, u'Hochzeiten', 0, 1.0)]}
+{0: [(0, 8, u'Damalige', 0, 1.0)]}
+{0: [(0, 9, u'Siegfried', 0, 1.0)]}
+{0: [(0, 10, u'Jaschinski', 0, 1.0)]}
+{0: [(0, 17, u'Verd\xe4chtigenkreis', 0, 1.0)]}
+{0: [(0, 18, u'Staatsanwaltschaft', 0, 1.0)]}
+{0: [(0, 10, u'Landesbank', 0, 1.0), (0, 6, u'Landes', 1, 0.63086814), (0, 6, u'Landes', 0, 0.99999988), (0, 6, u'Landes', 83, 0.53912413), (0, 6, u'Landes', 5, 0.50620848), (0, 6, u'Land', 1, 0.63086814), (0, 6, u'Land', 142, 0.48870814), (0, 6, u'Land', 0, 0.99999988)], 6: [(6, 10, u'bank', 0, 1.0)]}
+{0: [(0, 9, u'Feldherrn', 0, 1.0)]}
+{0: [(0, 12, u'Handelsblatt', 0, 1.0), (0, 7, u'Handels', 132, 0.34551975)], 7: [(7, 12, u'Blatt', 0, 1.0)]}
+{0: [(0, 9, u'Alexander', 0, 1.0)]}
+{0: [(0, 6, u'Gro\xdfen', 0, 1.0)]}
+{0: [(0, 15, u'Wachstumspl\xe4nen', 0, 1.0), (0, 9, u'Wachstums', 28, 0.43042547), (0, 9, u'Wachstums', 38, 0.38727692)], 9: [(9, 15, u'Pl\xe4nen', 0, 1.0)]}
+{0: [(0, 14, u'Konsolidierung', 0, 1.0)]}
+{0: [(0, 7, u'Branche', 0, 1.0)]}
+{0: [(0, 8, u'Institut', 0, 1.0)]}
+{0: [(0, 9, u'Augenh\xf6he', 0, 1.0)]}
+{0: [(0, 9, u'Augenh\xf6he', 0, 1.0)]}
+{0: [(0, 17, u'Wiederherstellung', 0, 1.0)]}
+{0: [(0, 10, u'Grundst\xfcck', 0, 1.0)]}
+{0: [(0, 10, u'Grundst\xfcck', 0, 1.0)]}
+{0: [(0, 9, u'Ruhestand', 0, 1.0)]}
+{0: [(0, 10, u'Widerstand', 0, 1.0)]}
+{0: [(0, 18, u'Versammlungsgesetz', 0, 1.0), (0, 12, u'Versammlungs', 1, 0.66569817)], 12: [(12, 18, u'Gesetz', 0, 1.0)]}
+{0: [(0, 8, u'Verst\xf6\xdfe', 0, 1.0)]}
+{0: [(0, 16, u'Sachbesch\xe4digung', 0, 1.0), (0, 4, u'Sach', 62, 0.40077537), (0, 4, u'Sach', 91, 0.45603198)], 4: [(4, 16, u'Besch\xe4digung', 0, 1.0)]}
+{0: [(0, 13, u'Vereinigungen', 0, 1.0)]}
+{0: [(0, 8, u'Glashaus', 0, 1.0)]}
+{0: [(0, 14, u'Auenlandschaft', 0, 1.0), (0, 4, u'Auen', 5, 0.65532231)], 4: [(4, 14, u'Landschaft', 0, 1.0)]}
+{0: [(0, 9, u'Fundament', 0, 1.0)]}
+{0: [(0, 8, u'Vierhock', 0, 1.0)]}
+{0: [(0, 6, u'Idylle', 0, 1.0)]}
+{0: [(0, 8, u'Johannes', 0, 1.0)]}
+{0: [(0, 10, u'Sportjacke', 0, 1.0), (0, 5, u'Sport', 26, 0.55328107), (0, 5, u'Sport', 31, 0.58602834), (0, 5, u'Sport', 101, 0.57169259), (0, 5, u'Sport', 14, 0.56838), (0, 5, u'Sport', 15, 0.49965557)], 5: [(5, 10, u'Jacke', 0, 1.0)]}
+{0: [(0, 16, u'Mittelmeerinseln', 0, 1.0), (0, 10, u'Mittelmeer', 0, 1.0000001), (0, 10, u'Mittelmeer', 13, 0.53245962)], 10: [(10, 16, u'Inseln', 0, 1.0)]}
+{0: [(0, 14, u'Stiefelf\xf6rmige', 0, 1.0)]}
+{0: [(0, 14, u'Wiederaufnahme', 0, 1.0), (0, 6, u'Wieder', 8, 0.36210817)], 6: [(6, 14, u'Aufnahme', 0, 1.0)]}
+{0: [(0, 15, u'Tonbandaufnahme', 0, 1.0)]}
+{0: [(0, 15, u'Korrekturzucker', 0, 1.0)]}
+{0: [(0, 13, u'Meeresspiegel', 0, 1.0)]}
+{0: [(0, 13, u'Gesamtausgabe', 0, 1.0)]}
+{0: [(0, 12, u'Losfertigung', 0, 1.0)]}
+{0: [(0, 9, u'Reichstag', 0, 1.0)]}
+{0: [(0, 7, u'Monntag', 0, 1.0)]}
+{0: [(0, 8, u'Mittwoch', 0, 1.0)]}
+{0: [(0, 7, u'Freitag', 0, 1.0)]}
+{0: [(0, 7, u'Sonntag', 0, 1.0)]}
+{0: [(0, 25, u'Nachbarschaftsbeziehungen', 0, 1.0), (0, 14, u'Nachbarschafts', 47, 0.45702985), (0, 14, u'Nachbarschafts', 3, 0.51037145), (0, 14, u'Nachbarschafts', 8, 0.45390785)], 14: [(14, 25, u'Beziehungen', 0, 1.0)]}
+{0: [(0, 7, u'Saftbar', 0, 1.0)]}
+{0: [(0, 20, u'Produktionsprozesses', 0, 1.0), (0, 11, u'Produktions', 1, 0.5808323)], 18: [(18, 20, u'Es', 0, 1.0)], 11: [(11, 20, u'Prozesses', 0, 1.0), (11, 18, u'Prozess', 182, 0.43648782)]}
+{0: [(0, 18, u'Gesamtzusammenhang', 0, 1.0), (0, 6, u'Gesamt', 73, 0.38719282)], 6: [(6, 18, u'Zusammenhang', 0, 1.0)]}
+{0: [(0, 21, u'Volkswirtschaftslehre', 0, 1.0), (0, 5, u'Volks', 12, 0.45278138), (0, 5, u'Volks', 161, 0.39893898)], 16: [(16, 21, u'Lehre', 0, 1.0)], 5: [(5, 21, u'Wirtschaftslehre', 0, 1.0), (5, 16, u'Wirtschafts', 155, 0.39184004), (5, 16, u'Wirtschafts', 80, 0.38657355)]}
+{0: [(0, 12, u'Losverfahren', 0, 1.0)]}
+{0: [(0, 11, u'Schifffahrt', 0, 1.0), (0, 6, u'Schiff', 22, 0.43958431), (0, 6, u'Schiff', 156, 0.38293439)], 6: [(6, 11, u'Fahrt', 0, 1.0)]}
+{0: [(0, 8, u'Dienstag', 0, 1.0)]}
+{0: [(0, 10, u'Donnerstag', 0, 1.0)]}
+{0: [(0, 7, u'Samstag', 0, 1.0)]}
+{0: [(0, 9, u'Sonnabend', 0, 1.0)]}
+{0: [(0, 8, u'Mitglied', 0, 1.0)]}
+{0: [(0, 12, u'Abblendlicht', 0, 1.0)]}
+{0: [(0, 15, u'Abbrucharbeiten', 0, 1.0), (0, 7, u'Abbruch', 7, 0.57514173)], 7: [(7, 15, u'Arbeiten', 0, 1.0)]}
+{0: [(0, 15, u'Abergl\xe4ubischen', 0, 1.0)]}
+{0: [(0, 32, u'Abfallbewirtschaftungshierarchie', 0, 1.0)]}
+{0: [(0, 28, u'Abfallbewirtschaftungspl\xe4nen', 0, 1.0)]}
+{0: [(0, 20, u'Abfertigungsgeb\xfchren', 0, 1.0), (0, 12, u'Abfertigungs', 67, 0.56550837)], 12: [(12, 20, u'Geb\xfchren', 0, 1.0)]}
+{0: [(0, 18, u'Beitragsunabh\xe4ngig', 0, 1.0)]}
+{0: [(0, 17, u'Einreichungsfrist', 0, 1.0)]}
+{0: [(0, 17, u'Europaabgeordnete', 0, 1.0), (0, 6, u'Europa', 8, 0.5749054), (0, 6, u'Europa', 5, 0.52215093), (0, 6, u'Europa', 12, 0.50875372)], 6: [(6, 17, u'Abgeordnete', 0, 1.0)]}
+{0: [(0, 23, u'Fr\xfcherkennungskampagnen', 0, 1.0)]}
+{0: [(0, 14, u'Hilfsagenturen', 0, 1.0), (0, 5, u'Hilfs', 187, 0.46670741), (0, 5, u'Hilfs', 17, 0.52105325), (0, 5, u'Hilfs', 166, 0.59952998), (0, 5, u'Hilfs', 222, 0.50576228)], 5: [(5, 14, u'agenturen', 0, 1.0)]}
+{0: [(0, 18, u'Hilfsinstitutionen', 0, 1.0), (0, 5, u'Hilfs', 3, 0.52144039), (0, 5, u'Hilfs', 30, 0.53092927), (0, 5, u'Hilfs', 200, 0.5813458), (0, 5, u'Hilfs', 226, 0.48535675)], 5: [(5, 18, u'Institutionen', 0, 1.0)]}
+{0: [(0, 12, u'Kaisergranat', 0, 1.0)]}
+{0: [(0, 11, u'Kalifornien', 0, 1.0)]}
+{0: [(0, 13, u'Kampfflugzeug', 0, 1.0), (0, 5, u'Kampf', 49, 0.44387734), (0, 5, u'Kampf', 74, 0.47823769), (0, 5, u'Kampf', 67, 0.51047033)], 9: [(9, 13, u'Zeug', 0, 1.0)], 5: [(5, 13, u'Flugzeug', 0, 1.0), (5, 9, u'Flug', 75, 0.3640421)]}
+{0: [(0, 13, u'Luftangriffen', 0, 1.0), (0, 4, u'Luft', 5, 0.50782001), (0, 4, u'Luft', 35, 0.56558371), (0, 4, u'Luft', 7, 0.47196507)], 4: [(4, 13, u'Angriffen', 0, 1.0)]}
+{0: [(0, 14, u'Luftsicherheit', 0, 1.0), (0, 4, u'Luft', 125, 0.41031414)], 4: [(4, 14, u'Sicherheit', 0, 1.0)]}
+{0: [(0, 13, u'Mith\xe4ftlingen', 0, 1.0)]}
+{0: [(0, 16, u'Wartungsarbeiten', 0, 1.0)]}
+{0: [(0, 26, u'Wasseraufbereitungsanlagen', 0, 1.0), (0, 6, u'Wasser', 41, 0.49991426), (0, 6, u'Wasser', 6, 0.56877494), (0, 6, u'Wasser', 73, 0.5156194)], 6: [(6, 26, u'Aufbereitungsanlagen', 0, 1.0)]}
+{0: [(0, 22, u'Wasserdienstleistungen', 0, 1.0)]}
+{0: [(0, 18, u'Weihnachtsgeschenk', 0, 1.0), (0, 10, u'Weihnachts', 3, 0.61424589), (0, 10, u'Weihnachts', 2, 0.58450931), (0, 10, u'Weihnachts', 2, 0.5812341)], 10: [(10, 18, u'Geschenk', 0, 1.0)]}
+{0: [(0, 23, u'Weltarbeitsorganisation', 0, 1.0), (0, 4, u'Welt', 5, 0.54413795), (0, 4, u'Welt', 6, 0.56938732)], 11: [(11, 23, u'Organisation', 0, 1.0)], 4: [(4, 23, u'Arbeitsorganisation', 0, 1.0), (4, 11, u'Arbeits', 10, 0.4026053), (4, 11, u'Arbeits', 9, 0.36247575)]}
+{0: [(0, 9, u'Zeitdruck', 0, 1.0), (0, 4, u'Zeit', 19, 0.37520549), (0, 4, u'Zeit', 2, 0.50043643), (0, 4, u'Zeit', 5, 0.34901327)], 4: [(4, 9, u'druck', 0, 1.0)]}
+{0: [(0, 13, u'Bundesagentur', 0, 1.0), (0, 6, u'Bundes', 165, 0.38316554), (0, 6, u'Bundes', 157, 0.36867309), (0, 6, u'Bundes', 10, 0.35553473), (0, 6, u'Bund', 165, 0.38316554), (0, 6, u'Bund', 13, 0.38401076), (0, 6, u'Bund', 27, 0.24440661)], 6: [(6, 13, u'Agentur', 0, 1.0)]}
+{0: [(0, 18, u'Fahrstuhlsch\xe4chten', 0, 1.0)]}
+{0: [(0, 16, u'Elektroindustrie', 0, 1.0), (0, 4, u'Elek', 24, 0.47701365), (0, 7, u'Elektro', 89, 0.51960564)], 4: [(4, 16, u'troindustrie', 0, 1.0)], 7: [(7, 16, u'Industrie', 0, 1.0)]}
+{0: [(0, 11, u'Sonderpreis', 0, 1.0), (0, 6, u'Sonder', 6, 0.4562071), (0, 6, u'Sonder', 23, 0.45342463), (0, 6, u'Sonder', 3, 0.44882885)], 6: [(6, 11, u'Preis', 0, 1.0)]}
+{0: [(0, 14, u'Modellrechnung', 0, 1.0)]}
+{0: [(0, 15, u'Treibhauseffekt', 0, 1.0)]}
+{0: [(0, 13, u'Europatournee', 0, 1.0), (0, 6, u'Europa', 13, 0.4721595), (0, 6, u'Europa', 3, 0.50620574), (0, 6, u'Europa', 18, 0.52116591), (0, 6, u'Europa', 11, 0.47859398)], 6: [(6, 13, u'Tournee', 0, 1.0)]}
+{0: [(0, 16, u'Wirtschaftskrise', 0, 1.0), (0, 11, u'Wirtschafts', 6, 0.55742228), (0, 11, u'Wirtschafts', 2, 0.65387523), (0, 11, u'Wirtschafts', 2, 0.63127935), (0, 11, u'Wirtschafts', 75, 0.56687701), (0, 11, u'Wirtschafts', 8, 0.58570713), (0, 11, u'Wirtschafts', 3, 0.55677688)], 11: [(11, 16, u'Krise', 0, 1.0)]}
+{0: [(0, 13, u'Mittwochabend', 0, 1.0), (0, 8, u'Mittwoch', 3, 0.52555346), (0, 8, u'Mittwoch', 4, 0.55480242)], 8: [(8, 13, u'abend', 0, 1.0)]}
+{0: [(0, 13, u'Abschiedsgala', 0, 1.0), (0, 9, u'Abschieds', 42, 0.45628667), (0, 9, u'Abschieds', 37, 0.48466337), (0, 9, u'Abschieds', 24, 0.47507304)], 9: [(9, 13, u'Gala', 0, 1.0)]}
+{0: [(0, 11, u'Betriebstag', 0, 1.0), (0, 8, u'Betriebs', 10, 0.43702799)], 8: [(8, 11, u'Tag', 0, 1.0)]}
+{0: [(0, 9, u'Flughafen', 0, 1.0), (0, 4, u'Flug', 0, 0.68825364), (0, 4, u'Flug', 0, 1.0)], 4: [(4, 9, u'Hafen', 0, 1.0)]}
+{0: [(0, 8, u'Truthahn', 0, 1.0)]}
+{0: [(0, 12, u'Gehirnregion', 0, 1.0)]}
+{0: [(0, 12, u'Feststellung', 0, 1.0)]}
+{0: [(0, 12, u'Thanksgiving', 0, 1.0)]}
+{0: [(0, 13, u'B\xf6rsenh\xe4ndler', 0, 1.0)]}
+{0: [(0, 15, u'Risikoforschung', 0, 1.0), (0, 6, u'Risiko', 47, 0.50392747), (0, 6, u'Risiko', 3, 0.51172471)], 6: [(6, 15, u'Forschung', 0, 1.0)]}
+{0: [(0, 11, u'Finanzkrise', 0, 1.0), (0, 6, u'Finanz', 2, 0.60796833), (0, 6, u'Finanz', 4, 0.61498934), (0, 6, u'Finanz', 2, 0.58288246), (0, 6, u'Finanz', 10, 0.64010668), (0, 6, u'Finanz', 2, 0.58451992)], 6: [(6, 11, u'Krise', 0, 1.0)]}
+{0: [(0, 10, u'Erkenntnis', 0, 1.0)]}
+{0: [(0, 13, u'Vergangenheit', 0, 1.0)]}
+{0: [(0, 19, u'Festtagsbratenesser', 0, 1.0)]}
+{0: [(0, 15, u'Ungem\xfctlichkeit', 0, 1.0)]}
+{0: [(0, 14, u'Privatanlegern', 0, 1.0), (0, 6, u'Privat', 3, 0.56445873), (0, 6, u'Privat', 3, 0.5761416), (0, 6, u'Privat', 2, 0.60724604), (0, 6, u'Privat', 3, 0.59356433), (0, 6, u'Privat', 1, 0.57428479)], 6: [(6, 14, u'Anlegern', 0, 1.0)]}
+{0: [(0, 12, u'Finanzmakler', 0, 1.0)]}
+{0: [(0, 15, u'Immobilienfonds', 0, 1.0), (0, 10, u'Immobilien', 1, 0.59630471), (0, 10, u'Immobilien', 6, 0.54614151), (0, 10, u'Immobilien', 6, 0.52285361), (0, 10, u'Immobilien', 54, 0.55491257)], 10: [(10, 15, u'Fonds', 0, 1.0)]}
+{0: [(0, 11, u'Wertzuwachs', 0, 1.0), (0, 4, u'Wert', 27, 0.50315022)], 4: [(4, 11, u'Zuwachs', 0, 1.0)]}
+{0: [(0, 9, u'Marmelade', 0, 1.0)]}
+{0: [(0, 11, u'Roboterzofe', 0, 1.0)]}
+{0: [(0, 8, u'Heinrich', 0, 1.0)]}
+{0: [(0, 11, u'Zeitdehnung', 0, 1.0)]}
+{0: [(0, 13, u'Zeitlosigkeit', 0, 1.0)]}
+{0: [(0, 18, u'Auseinandersetzung', 0, 1.0)]}
+{0: [(0, 20, u'Immobilienfondskrise', 0, 1.0)]}
+{0: [(0, 11, u'Stackelberg', 0, 1.0)]}
+{0: [(0, 51, u'Bodenseedampfschifffahrtsgesellschaftskapit\xe4nsm\xfctze', 0, 1.0)]}
+{0: [(0, 7, u'Hamburg', 0, 1.0)]}
+{0: [(0, 6, u'Justiz', 0, 1.0)]}
+{0: [(0, 7, u'Bischof', 0, 1.0)]}
+{0: [(0, 7, u'Richard', 0, 1.0)]}
+{0: [(0, 10, u'Williamson', 0, 1.0)]}
+{0: [(0, 7, u'Standes', 0, 1.0)]}
+{0: [(0, 7, u'Soutane', 0, 1.0)]}
+{0: [(0, 9, u'Millionen', 0, 1.0)]}
+{0: [(0, 10, u'Gaskammern', 0, 1.0)]}
+{0: [(0, 16, u'Holocaustleugner', 0, 1.0), (0, 9, u'Holocaust', 1, 0.64782017)], 9: [(9, 16, u'Leugner', 0, 1.0)]}
+{0: [(0, 11, u'Gro\xdfansicht', 0, 1.0)]}
+{0: [(0, 10, u'Gegenfrage', 0, 1.0), (0, 5, u'Gegen', 63, 0.43656325), (0, 5, u'Gegen', 104, 0.43029553), (0, 5, u'Gegen', 6, 0.53361672), (0, 5, u'Gegen', 6, 0.53408861)], 5: [(5, 10, u'Frage', 0, 1.0)]}
+{0: [(0, 12, u'Journalisten', 0, 1.0)]}
+{0: [(0, 13, u'Fernsehsender', 0, 1.0), (0, 7, u'Fernseh', 3, 0.61194694), (0, 7, u'Fernseh', 2, 0.63960141), (0, 7, u'Fernseh', 3, 0.68230438), (0, 7, u'Fernseh', 15, 0.61095238), (0, 7, u'Fernseh', 2, 0.6323911), (0, 7, u'Fernseh', 2, 0.60629958)], 7: [(7, 13, u'Sender', 0, 1.0)]}
+{0: [(0, 13, u'Revisionisten', 0, 1.0)]}
+{0: [(0, 18, u'Dreihunderttausend', 0, 1.0)]}
+{0: [(0, 20, u'Konzentrationslagern', 0, 1.0)]}
+{0: [(0, 16, u'Schornsteinh\xf6hen', 0, 1.0)]}
+{0: [(0, 9, u'Touristen', 0, 1.0)]}
+{0: [(0, 9, u'Auschwitz', 0, 1.0)]}
+{0: [(0, 8, u'Birkenau', 0, 1.0)]}
+{0: [(0, 14, u'Antisemitismus', 0, 1.0), (0, 4, u'Anti', 41, 0.52712178)], 4: [(4, 14, u'Semitismus', 0, 1.0)]}
+{0: [(0, 11, u'Interviewer', 0, 1.0)]}
+{0: [(0, 7, u'Bischof', 0, 1.0)]}
+{0: [(0, 10, u'Williamson', 0, 1.0)]}
+{0: [(0, 8, u'Wahrheit', 0, 1.0)]}
+{0: [(0, 8, u'Schlecht', 0, 1.0)]}
+{0: [(0, 12, u'Interessiert', 0, 1.0)]}
+{0: [(0, 9, u'Entr\xfcckte', 0, 1.0)]}
+{0: [(0, 9, u'Deutscher', 0, 1.0)]}
+{0: [(0, 8, u'Blamiert', 0, 1.0)]}
+{0: [(0, 11, u'Katholische', 0, 1.0)]}
+{0: [(0, 7, u'Ausgabe', 0, 1.0)]}
+{0: [(0, 7, u'Skandal', 0, 1.0)]}
+{0: [(0, 9, u'Interview', 0, 1.0)]}
+{0: [(0, 9, u'Berichtet', 0, 1.0)]}
+{0: [(0, 11, u'Bayerischen', 0, 1.0)]}
+{0: [(0, 10, u'Zaitzhofen', 0, 1.0)]}
+{0: [(0, 9, u'Fernsehen', 0, 1.0), (0, 8, u'Fernseh', 61, 0.30041853)], 8: [(8, 9, u'N', 0, 1.0)]}
+{0: [(0, 12, u'Regensburger', 0, 1.0)]}
+{0: [(0, 11, u'Ruckd\xe4schel', 0, 1.0)]}
+{0: [(0, 7, u'Artikel', 0, 1.0)]}
+{0: [(0, 7, u'Leitete', 0, 1.0)]}
+{0: [(0, 7, u'Angaben', 0, 1.0)]}
+{0: [(0, 20, u'Ermittlungsverfahren', 0, 1.0), (0, 11, u'Ermittlungs', 141, 0.56753796), (0, 11, u'Ermittlungs', 22, 0.52500379), (0, 11, u'Ermittlungs', 149, 0.58489835), (0, 11, u'Ermittlungs', 12, 0.54865324), (0, 11, u'Ermittlungs', 4, 0.58094126)], 11: [(11, 20, u'Verfahren', 0, 1.0)]}
+{0: [(0, 8, u'Verdacht', 0, 1.0)]}
+{0: [(0, 15, u'Volksverhetzung', 0, 1.0), (0, 5, u'Volks', 9, 0.447056), (0, 5, u'Volks', 77, 0.52036762), (0, 5, u'Volks', 92, 0.41605747)], 5: [(5, 15, u'Verhetzung', 0, 1.0)]}
+{0: [(0, 12, u'Rechtsanwalt', 0, 1.0), (0, 6, u'Rechts', 1, 0.66651833), (0, 6, u'Rechts', 1, 0.67794681), (0, 6, u'Rechts', 1, 0.62781423), (0, 6, u'Rechts', 1, 0.68538857), (0, 6, u'Rechts', 1, 0.63186085)], 6: [(6, 12, u'Anwalt', 0, 1.0)]}
+{0: [(0, 10, u'Einlassung', 0, 1.0)]}
+{0: [(0, 7, u'Beh\xf6rde', 0, 1.0)]}
+{0: [(0, 8, u'Gespr\xe4ch', 0, 1.0)]}
+{0: [(0, 16, u'Ver\xf6ffentlichung', 0, 1.0)]}
+{0: [(0, 11, u'Deutschland', 0, 1.0)]}
+{0: [(0, 15, u'Exkommunikation', 0, 1.0)]}
+{0: [(0, 11, u'Hintergrund', 0, 1.0), (0, 6, u'Hinter', 18, 0.40446696)], 6: [(6, 11, u'Grund', 0, 1.0)]}
+{0: [(0, 16, u'Strafgesetzbuchs', 0, 1.0), (0, 5, u'Straf', 169, 0.54265857), (0, 5, u'Straf', 5, 0.56118125), (0, 5, u'Straf', 27, 0.44293195), (0, 5, u'Straf', 123, 0.48047161)], 5: [(5, 16, u'Gesetzbuchs', 0, 1.0)]}
+{0: [(0, 8, u'Leugnung', 0, 1.0)]}
+{0: [(0, 15, u'Strafverfolgung', 0, 1.0), (0, 5, u'Straf', 174, 0.43417725), (0, 5, u'Straf', 2, 0.48135898), (0, 5, u'Straf', 195, 0.34125298), (0, 5, u'Straf', 194, 0.50725245), (0, 5, u'Straf', 2, 0.463673)], 5: [(5, 15, u'Verfolgung', 0, 1.0)]}
+{0: [(0, 9, u'Hintert\xfcr', 0, 1.0)]}
+{0: [(0, 9, u'Entziehen', 0, 1.0)]}
+{0: [(0, 10, u'Inzwischen', 0, 1.0)]}
+{0: [(0, 8, u'Einsicht', 0, 1.0)]}
+{0: [(0, 16, u'Ermittlungsakten', 0, 1.0), (0, 11, u'Ermittlungs', 25, 0.5858072), (0, 11, u'Ermittlungs', 4, 0.58415151), (0, 11, u'Ermittlungs', 4, 0.61253464), (0, 11, u'Ermittlungs', 8, 0.57790303), (0, 11, u'Ermittlungs', 3, 0.61736357)], 11: [(11, 16, u'Akten', 0, 1.0)]}
+{0: [(0, 11, u'Ruckd\xe4schel', 0, 1.0)]}
+{0: [(0, 9, u'\xdcberlegen', 0, 1.0)]}
+{0: [(0, 12, u'Schwedischen', 0, 1.0)]}
+{0: [(0, 12, u'Journalisten', 0, 1.0)]}
+{0: [(0, 13, u'Hintergr\xfcnden', 0, 1.0)]}
+{0: [(0, 10, u'Absprachen', 0, 1.0)]}
+{0: [(0, 7, u'Vorfeld', 0, 1.0)]}
+{0: [(0, 16, u'Oberstaatsanwalt', 0, 1.0), (0, 4, u'Ober', 1, 0.61771196), (0, 4, u'Ober', 3, 0.57985413), (0, 4, u'Ober', 2, 0.58751076)], 10: [(10, 16, u'Anwalt', 0, 1.0)], 4: [(4, 16, u'Staatsanwalt', 0, 1.0), (4, 10, u'Staats', 25, 0.51622343), (4, 10, u'Staats', 51, 0.47442228), (4, 10, u'Staats', 40, 0.46118084)]}
+{0: [(0, 11, u'Mendelssohn', 0, 1.0)]}
+{0: [(0, 9, u'Bartholdy', 0, 1.0)]}
+{0: [(0, 7, u'Familie', 0, 1.0)]}
+{0: [(0, 11, u'Philosophen', 0, 1.0)]}
+{0: [(0, 7, u'Abraham', 0, 1.0)]}
+{0: [(0, 18, u'Bankkaufmannslehre', 0, 1.0), (0, 4, u'Bank', 34, 0.51014423), (0, 4, u'Bank', 40, 0.5758698), (0, 4, u'Bank', 19, 0.58898878), (0, 4, u'Bank', 30, 0.65484774)], 4: [(4, 18, u'Kaufmannslehre', 0, 1.0)]}
+{0: [(0, 9, u'Kompagnon', 0, 1.0)]}
+{0: [(0, 6, u'Mutter', 0, 1.0)]}
+{0: [(0, 7, u'Salomon', 0, 1.0)]}
+{0: [(0, 18, u'Fabrikantenfamilie', 0, 1.0)]}
+{0: [(0, 9, u'Schwester', 0, 1.0)]}
+{0: [(0, 6, u'Hensel', 0, 1.0)]}
+{0: [(0, 11, u'Geschwister', 0, 1.0)]}
+{0: [(0, 7, u'Rebecca', 0, 1.0)]}
+{0: [(0, 12, u'Mathematiker', 0, 1.0)]}
+{0: [(0, 9, u'Dirichlet', 0, 1.0)]}
+{0: [(0, 6, u'Kinder', 0, 1.0)]}
+{0: [(0, 7, u'Pfarrer', 0, 1.0), (0, 5, u'Pfarr', 77, 0.42432863), (0, 6, u'Pfarr', 5, 0.40116423), (0, 6, u'Pfarr', 144, 0.45203644), (0, 5, u'Pfarr', 55, 0.41689968)], 5: [(5, 7, u'er', 0, 1.0)], 6: [(6, 7, u'R', 0, 1.0)]}
+{0: [(0, 8, u'Gemeinde', 0, 1.0)]}
+{0: [(0, 8, u'Berliner', 0, 1.0)]}
+{0: [(0, 10, u'Jerusalems', 0, 1.0)]}
+{0: [(0, 9, u'Haustaufe', 0, 1.0)]}
+{0: [(0, 11, u'Gelegenheit', 0, 1.0)]}
+{0: [(0, 9, u'Taufnamen', 0, 1.0), (0, 4, u'Tauf', 38, 0.41750497)], 4: [(4, 9, u'Namen', 0, 1.0)]}
+{0: [(0, 6, u'Ludwig', 0, 1.0)]}
+{0: [(0, 13, u'Familiennamen', 0, 1.0), (0, 8, u'Familien', 4, 0.47138864), (0, 8, u'Familien', 10, 0.46571115), (0, 8, u'Familien', 28, 0.45988834)], 8: [(8, 13, u'Namen', 0, 1.0)]}
+{0: [(0, 11, u'Christliche', 0, 1.0)]}
+{0: [(0, 12, u'Vorbesitzers', 0, 1.0)]}
+{0: [(0, 7, u'Gartens', 0, 1.0)]}
+{0: [(0, 7, u'Abraham', 0, 1.0)]}
+{0: [(0, 11, u'Mendelssohn', 0, 1.0)]}
+{0: [(0, 13, u'Konvertierten', 0, 1.0)]}
+{0: [(0, 11, u'Christentum', 0, 1.0)]}
+{0: [(0, 8, u'Kindheit', 0, 1.0)]}
+{0: [(0, 9, u'Besetzung', 0, 1.0)]}
+{0: [(0, 7, u'Familie', 0, 1.0)]}
+{0: [(0, 10, u'Gro\xdfmutter', 0, 1.0), (0, 4, u'Gro\xdf', 4, 0.52189177), (0, 4, u'Gro\xdf', 1, 0.67365074), (0, 4, u'Gro\xdf', 2, 0.61163807)], 4: [(4, 10, u'Mutter', 0, 1.0)]}
+{0: [(0, 9, u'Gro\xdfvater', 0, 1.0), (0, 4, u'Gro\xdf', 2, 0.57410812), (0, 4, u'Gro\xdf', 2, 0.66106319), (0, 4, u'Gro\xdf', 2, 0.638309)], 4: [(4, 9, u'Vater', 0, 1.0)]}
+{0: [(0, 15, u'Musikunterricht', 0, 1.0), (0, 5, u'Musik', 87, 0.4854154), (0, 5, u'Musik', 21, 0.51059669), (0, 5, u'Musik', 19, 0.43739453), (0, 5, u'Musik', 3, 0.56105053), (0, 5, u'Musik', 2, 0.58977807), (0, 5, u'Musik', 1, 0.57636726), (0, 5, u'Musik', 4, 0.5577178)], 5: [(5, 15, u'Unterricht', 0, 1.0)]}
+{0: [(0, 9, u'Sch\xfclerin', 0, 1.0)]}
+{0: [(0, 7, u'Philipp', 0, 1.0)]}
+{0: [(0, 11, u'Kirnbergers', 0, 1.0)]}
+{0: [(0, 9, u'Gro\xdftante', 0, 1.0), (0, 4, u'Gro\xdf', 3, 0.59266949), (0, 4, u'Gro\xdf', 14, 0.54121792)], 4: [(4, 9, u'Tante', 0, 1.0)]}
+{0: [(0, 7, u'Tochter', 0, 1.0)]}
+{0: [(0, 11, u'Finanzmanns', 0, 1.0)]}
+{0: [(0, 6, u'Daniel', 0, 1.0)]}
+{0: [(0, 11, u'Preu\xdfischer', 0, 1.0)]}
+{0: [(0, 9, u'Friedrich', 0, 1.0)]}
+{0: [(0, 7, u'Wilhelm', 0, 1.0)]}
+{0: [(0, 21, u'Naturalisationspatent', 0, 1.0)]}
+{0: [(0, 9, u'Tradition', 0, 1.0)]}
+{0: [(0, 8, u'G\xf6nnerin', 0, 1.0)]}
+{0: [(0, 8, u'Lehrerin', 0, 1.0)]}
+{0: [(0, 11, u'Aufenthalts', 0, 1.0)]}
+{0: [(0, 8, u'R\xfcckkehr', 0, 1.0)]}
+{0: [(0, 10, u'Unterricht', 0, 1.0)]}
+{0: [(0, 11, u'Komposition', 0, 1.0)]}
+{0: [(0, 10, u'Ausbildung', 0, 1.0)]}
+{0: [(0, 15, u'Schriftstellers', 0, 1.0), (0, 14, u'Schriftsteller', 44, 0.42964181)], 14: [(14, 15, u'S', 0, 1.0)]}
+{0: [(0, 12, u'Neunj\xe4hriger', 0, 1.0), (0, 4, u'Neun', 111, 0.48437506)], 4: [(4, 12, u'J\xe4hriger', 0, 1.0)]}
+{0: [(0, 11, u'Klavierpart', 0, 1.0), (0, 7, u'Klavier', 102, 0.48375797), (0, 7, u'Klavier', 7, 0.53056061), (0, 7, u'Klavier', 6, 0.49631977)], 7: [(7, 11, u'Part', 0, 1.0)]}
+{0: [(0, 11, u'Klaviertrio', 0, 1.0), (0, 7, u'Klavier', 135, 0.47383904), (0, 7, u'Klavier', 74, 0.45124269)], 7: [(7, 11, u'Trio', 0, 1.0)]}
+{0: [(0, 9, u'Alts\xe4nger', 0, 1.0)]}
+{0: [(0, 8, u'Akademie', 0, 1.0)]}
+{0: [(0, 12, u'Kirchenmusik', 0, 1.0), (0, 7, u'Kirchen', 87, 0.46611688), (0, 7, u'Kirchen', 46, 0.41992125), (0, 7, u'Kirchen', 91, 0.56826162), (0, 7, u'Kirchen', 1, 0.55390519), (0, 7, u'Kirchen', 2, 0.51967275)], 7: [(7, 12, u'Musik', 0, 1.0)]}
+{0: [(0, 13, u'Schnelligkeit', 0, 1.0)]}
+{0: [(0, 14, u'Klaviersonaten', 0, 1.0), (0, 7, u'Klavier', 6, 0.67686832), (0, 7, u'Klavier', 53, 0.65648091), (0, 7, u'Klavier', 4, 0.62820691), (0, 7, u'Klavier', 13, 0.59748465)], 7: [(7, 14, u'Sonaten', 0, 1.0)]}
+{0: [(0, 11, u'Klaviertrio', 0, 1.0), (0, 7, u'Klavier', 135, 0.47383904), (0, 7, u'Klavier', 74, 0.45124269)], 7: [(7, 11, u'Trio', 0, 1.0)]}
+{0: [(0, 11, u'Orgelst\xfccke', 0, 1.0), (0, 5, u'Orgel', 9, 0.56685257), (0, 5, u'Orgel', 90, 0.56008697), (0, 5, u'Orgel', 108, 0.60740983)], 5: [(5, 11, u'St\xfccke', 0, 1.0)]}
+{0: [(0, 18, u'Streichersinfonien', 0, 1.0)]}
+{0: [(0, 8, u'Motetten', 0, 1.0)]}
+{0: [(0, 10, u'Singspiele', 0, 1.0)]}
+{0: [(0, 18, u'Soldatenliebschaft', 0, 1.0)]}
+{0: [(0, 10, u'Singspiels', 0, 1.0)]}
+{0: [(0, 11, u'Kom\xf6dianten', 0, 1.0)]}
+{0: [(0, 12, u'Freundschaft', 0, 1.0)]}
+{0: [(0, 6, u'Barack', 0, 1.0)]}
+{0: [(0, 7, u'Getappt', 0, 1.0)]}
+{0: [(0, 11, u'Anstehenden', 0, 1.0)]}
+{0: [(0, 16, u'Herkulesaufgaben', 0, 1.0)]}
+{0: [(0, 6, u'Westen', 0, 1.0)]}
+{0: [(0, 21, u'Regierungsgrunds\xe4tzen', 0, 1.0)]}
+{0: [(0, 7, u'Gen\xfcgen', 0, 1.0)]}
+{0: [(0, 7, u'Problem', 0, 1.0)]}
+{0: [(0, 9, u'Krankheit', 0, 1.0)]}
+{0: [(0, 10, u'Washington', 0, 1.0)]}
+{0: [(0, 8, u'Symptome', 0, 1.0)]}
+{0: [(0, 11, u'Verquickung', 0, 1.0)]}
+{0: [(0, 12, u'\xd6ffentlichen', 0, 1.0)]}
+{0: [(0, 10, u'Interessen', 0, 1.0)]}
+{0: [(0, 18, u'Lobbyistenumtriebe', 0, 1.0)]}
+{0: [(0, 20, u'Steuerzahlungsphobie', 0, 1.0)]}
+{0: [(0, 9, u'Krankheit', 0, 1.0)]}
+{0: [(0, 8, u'Probleme', 0, 1.0)]}
+{0: [(0, 17, u'Problembew\xe4ltiger', 0, 1.0)]}
+{0: [(0, 10, u'Verzichten', 0, 1.0)]}
+{0: [(0, 9, u'Ausnahmen', 0, 1.0)]}
+{0: [(0, 6, u'Nummer', 0, 1.0)]}
+{0: [(0, 24, u'Verteidigungsministerium', 0, 1.0), (0, 13, u'Verteidigungs', 1, 0.61807311), (0, 13, u'Verteidigungs', 7, 0.53035796), (0, 13, u'Verteidigungs', 88, 0.53689885), (0, 13, u'Verteidigungs', 3, 0.59100187), (0, 13, u'Verteidigungs', 3, 0.51066864), (0, 13, u'Verteidigungs', 2, 0.59206629)], 13: [(13, 24, u'Ministerium', 0, 1.0)]}
+{0: [(0, 8, u'Fachmann', 0, 1.0)]}
+{0: [(0, 16, u'R\xfcstungslobbyist', 0, 1.0), (0, 8, u'R\xfcstungs', 5, 0.50659984), (0, 8, u'R\xfcstungs', 50, 0.4448961)], 8: [(8, 16, u'Lobbyist', 0, 1.0)]}
+{0: [(0, 8, u'Geithner', 0, 1.0)]}
+{0: [(0, 14, u'Finanzminister', 0, 1.0), (0, 6, u'Finanz', 227, 0.4435038), (0, 6, u'Finanz', 26, 0.46214303), (0, 6, u'Finanz', 7, 0.53030264), (0, 6, u'Finanz', 17, 0.56110263), (0, 6, u'Finanz', 15, 0.49093503)], 6: [(6, 14, u'Minister', 0, 1.0)]}
+{0: [(0, 6, u'Fiskus', 0, 1.0)]}
+{0: [(0, 7, u'Daschle', 0, 1.0)]}
+{0: [(0, 6, u'Obamas', 0, 1.0)]}
+{0: [(0, 14, u'Wunschkandidat', 0, 1.0), (0, 6, u'Wunsch', 28, 0.50753039)], 6: [(6, 14, u'Kandidat', 0, 1.0)]}
+{0: [(0, 22, u'Gesundheitsministerium', 0, 1.0), (0, 11, u'Gesundheits', 2, 0.58322382), (0, 11, u'Gesundheits', 7, 0.53506148), (0, 11, u'Gesundheits', 2, 0.59040862)], 11: [(11, 22, u'Ministerium', 0, 1.0)]}
+{0: [(0, 11, u'Begleichung', 0, 1.0)]}
+{0: [(0, 9, u'Feststand', 0, 1.0)]}
+{0: [(0, 9, u'Regierung', 0, 1.0)]}
+{0: [(0, 12, u'Proteststurm', 0, 1.0), (0, 7, u'Protest', 144, 0.34655124)], 7: [(7, 12, u'Sturm', 0, 1.0)]}
+{0: [(0, 8, u'Handtuch', 0, 1.0)]}
+{0: [(0, 19, u'Konzentrationslager', 0, 1.0)]}
+{0: [(0, 19, u'Entwicklungspolitik', 0, 1.0), (0, 12, u'Entwicklungs', 33, 0.44544715)], 12: [(12, 19, u'Politik', 0, 1.0)]}
+{0: [(0, 15, u'Zeitungsbericht', 0, 1.0), (0, 8, u'Zeitungs', 67, 0.41167954)], 8: [(8, 15, u'Bericht', 0, 1.0)]}
+{0: [(0, 15, u'Managergeh\xe4lter', 0, 1.0), (0, 7, u'Manager', 124, 0.44400692), (0, 7, u'Manager', 41, 0.54390943)], 7: [(7, 15, u'Geh\xe4lter', 0, 1.0)]}
+{0: [(0, 11, u'Unternehmen', 0, 1.0)]}
+{0: [(0, 12, u'Staatshilfen', 0, 1.0), (0, 6, u'Staats', 57, 0.53262097), (0, 6, u'Staats', 106, 0.47707859)], 6: [(6, 12, u'Hilfen', 0, 1.0)]}
+{0: [(0, 11, u'Pr\xe4sidenten', 0, 1.0)]}
+{0: [(0, 17, u'Gehaltsobergrenze', 0, 1.0)]}
+{0: [(0, 13, u'Sonnensystems', 0, 1.0)]}
+{0: [(0, 6, u'Planet', 0, 1.0)]}
+{0: [(0, 9, u'Exoplanet', 0, 1.0)]}
+{0: [(0, 10, u'Durchbruch', 0, 1.0)]}
+{0: [(0, 6, u'Ulrich', 0, 1.0)]}
+{0: [(0, 8, u'Schnabel', 0, 1.0)]}
+{0: [(0, 16, u'Kulturgeschichte', 0, 1.0), (0, 6, u'Kultur', 4, 0.50933951), (0, 6, u'Kultur', 3, 0.47599447), (0, 6, u'Kultur', 70, 0.50622404)], 6: [(6, 16, u'Geschichte', 0, 1.0)]}
+{0: [(0, 15, u'Milchwirtschaft', 0, 1.0), (0, 5, u'Milch', 66, 0.4670617)], 5: [(5, 15, u'Wirtschaft', 0, 1.0)]}
+{0: [(0, 8, u'Menschen', 0, 1.0)]}
+{0: [(0, 16, u'Gesch\xe4ftsf\xfchrung', 0, 1.0)]}
+{0: [(0, 11, u'Amtsgericht', 0, 1.0), (0, 4, u'Amts', 60, 0.48908147), (0, 4, u'Amts', 3, 0.52197522), (0, 4, u'Amts', 42, 0.44861078)], 4: [(4, 11, u'Gericht', 0, 1.0)]}
+{0: [(0, 9, u'G\xf6ppingen', 0, 1.0)]}
+{0: [(0, 6, u'Antrag', 0, 1.0)]}
+{0: [(0, 9, u'Er\xf6ffnung', 0, 1.0)]}
+{0: [(0, 19, u'Insolvenzverfahrens', 0, 1.0), (0, 9, u'Insolvenz', 2, 0.56226265), (0, 9, u'Insolvenz', 14, 0.55811119), (0, 9, u'Insolvenz', 26, 0.53232652)], 9: [(9, 19, u'Verfahrens', 0, 1.0)]}
+{0: [(0, 6, u'Dieter', 0, 1.0)]}
+{0: [(0, 20, u'Informationsangebote', 0, 1.0), (0, 12, u'Informations', 5, 0.50335896), (0, 12, u'Informations', 192, 0.46183756), (0, 12, u'Informations', 1, 0.61922014)], 12: [(12, 20, u'Angebote', 0, 1.0)]}
+{0: [(0, 11, u'Vereinfacht', 0, 1.0)]}
+{0: [(0, 14, u'Vokabelglossar', 0, 1.0)]}
+{0: [(0, 9, u'Gewaltige', 0, 1.0)]}
+{0: [(0, 8, u'Haushohe', 0, 1.0)]}
+{0: [(0, 6, u'Segler', 0, 1.0)]}
+{0: [(0, 7, u'Oktober', 0, 1.0)]}
+{0: [(0, 9, u'Gibraltar', 0, 1.0)]}
+{0: [(0, 13, u'Bronzekanonen', 0, 1.0), (0, 6, u'Bronze', 174, 0.50130248)], 6: [(6, 13, u'Kanonen', 0, 1.0)]}
+{0: [(0, 6, u'Tonnen', 0, 1.0)]}
+{0: [(0, 10, u'Goldm\xfcnzen', 0, 1.0), (0, 4, u'Gold', 6, 0.52337122), (0, 4, u'Gold', 3, 0.42435738), (0, 4, u'Gold', 1, 0.64030766), (0, 4, u'Gold', 2, 0.56363702), (0, 4, u'Gold', 47, 0.56088644)], 4: [(4, 10, u'm\xfcnzen', 0, 1.0)]}
+{0: [(0, 9, u'Kaufleute', 0, 1.0)]}
+{0: [(0, 11, u'Sch\xe4tzungen', 0, 1.0)]}
+{0: [(0, 11, u'Vergangenen', 0, 1.0)]}
+{0: [(0, 9, u'Millionen', 0, 1.0)]}
+{0: [(0, 7, u'Schiffe', 0, 1.0)]}
+{0: [(0, 11, u'Meeresgrund', 0, 1.0), (0, 6, u'Meer', 74, 0.31636021)], 6: [(6, 11, u'grund', 0, 1.0)]}
+{0: [(0, 15, u'Wasserfahrzeuge', 0, 1.0), (0, 6, u'Wasser', 30, 0.46405244)], 6: [(6, 15, u'Fahrzeuge', 0, 1.0)]}
+{0: [(0, 13, u'Kriegsschiffe', 0, 1.0), (0, 6, u'Kriegs', 5, 0.54569381), (0, 6, u'Kriegs', 4, 0.58045888), (0, 6, u'Kriegs', 5, 0.54551792), (0, 6, u'Kriegs', 50, 0.59433466)], 6: [(6, 13, u'Schiffe', 0, 1.0)]}
+{0: [(0, 16, u'Passagierdampfer', 0, 1.0), (0, 9, u'Passagier', 42, 0.48745757), (0, 9, u'Passagier', 11, 0.51990241)], 9: [(9, 16, u'Dampfer', 0, 1.0)]}
+{0: [(0, 14, u'Handelsflotten', 0, 1.0), (0, 7, u'Handels', 189, 0.38756412), (0, 7, u'Handels', 166, 0.33427039)], 7: [(7, 14, u'Flotten', 0, 1.0)]}
+{0: [(0, 12, u'Piratenboote', 0, 1.0), (0, 7, u'Piraten', 6, 0.5427475), (0, 7, u'Piraten', 7, 0.49086124), (0, 7, u'Piraten', 17, 0.5477494)], 7: [(7, 12, u'Boote', 0, 1.0)]}
+{0: [(0, 6, u'Tanker', 0, 1.0)]}
+{0: [(0, 14, u'Gro\xdfbritannien', 0, 1.0), (0, 4, u'Gro\xdf', 3, 0.50518215), (0, 4, u'Gro\xdf', 1, 0.52111983), (0, 4, u'Gro\xdf', 9, 0.50508291)], 4: [(4, 14, u'Britannien', 0, 1.0)]}
+{0: [(0, 8, u'\xc4ltesten', 0, 1.0)]}
+{0: [(0, 17, u'Seefahrernationen', 0, 1.0)]}
+{0: [(0, 10, u'Auffassung', 0, 1.0)]}
+{0: [(0, 16, u'Marinehistoriker', 0, 1.0)]}
+{0: [(0, 7, u'Schiffe', 0, 1.0)]}
+{0: [(0, 6, u'Ortung', 0, 1.0)]}
+{0: [(0, 7, u'Victory', 0, 1.0)]}
+{0: [(0, 19, u'Bergungsunternehmen', 0, 1.0)]}
+{0: [(0, 11, u'Meeresfunde', 0, 1.0)]}
+{0: [(0, 10, u'Geschichte', 0, 1.0)]}
+{0: [(0, 10, u'Entdeckern', 0, 1.0)]}
+{0: [(0, 10, u'Kriegsboot', 0, 1.0)]}
+{0: [(0, 11, u'Jahrhundert', 0, 1.0)]}
+{0: [(0, 7, u'Tausend', 0, 1.0)]}
+{0: [(0, 8, u'Schiffen', 0, 1.0)]}
+{0: [(0, 10, u'Entdeckung', 0, 1.0)]}
+{0: [(0, 9, u'Tauchjagd', 0, 1.0)]}
+{0: [(0, 9, u'\xdcberreste', 0, 1.0), (0, 4, u'\xdcber', 1, 0.58991873), (0, 4, u'\xdcber', 3, 0.36686245)], 4: [(4, 9, u'Reste', 0, 1.0)]}
+{0: [(0, 7, u'Epochen', 0, 1.0)]}
+{0: [(0, 6, u'L\xe4nder', 0, 1.0)]}
+{0: [(0, 8, u'Streiten', 0, 1.0)]}
+{0: [(0, 16, u'Schiffsfriedh\xf6fe', 0, 1.0)]}
+{0: [(0, 9, u'Tauchjagd', 0, 1.0)]}
+{0: [(0, 11, u'Schatzj\xe4ger', 0, 1.0), (0, 6, u'Schatz', 224, 0.34966612)], 6: [(6, 11, u'J\xe4ger', 0, 1.0)]}
+{0: [(0, 7, u'Moderne', 0, 1.0)]}
+{0: [(0, 7, u'Technik', 0, 1.0)]}
+{0: [(0, 16, u'Jahrhundertealte', 0, 1.0)]}
+{0: [(0, 6, u'Wracks', 0, 1.0)]}
+{0: [(0, 11, u'Geheimnisse', 0, 1.0)]}
+{0: [(0, 12, u'Besitzrechte', 0, 1.0)]}
+{0: [(0, 18, u'Wahrscheinlichkeit', 0, 1.0)]}
+{0: [(0, 17, u'Minimaltemperatur', 0, 1.0), (0, 7, u'Minimal', 242, 0.45933509), (0, 7, u'Minimal', 152, 0.5854997)], 7: [(7, 17, u'Temperatur', 0, 1.0)]}
+{0: [(0, 14, u'Winterhalbjahr', 0, 1.0)]}
+{0: [(0, 7, u'Celsius', 0, 1.0)]}
+{0: [(0, 14, u'Sommerhalbjahr', 0, 1.0)]}
+{0: [(0, 17, u'Maximaltemperatur', 0, 1.0), (0, 7, u'Maximal', 8, 0.61032522), (0, 7, u'Maximal', 14, 0.52215493), (0, 7, u'Maximal', 1, 0.67849195), (0, 7, u'Maximal', 13, 0.61499035)], 7: [(7, 17, u'Temperatur', 0, 1.0)]}
+{0: [(0, 17, u'Kreuzungsversuche', 0, 1.0)]}
+{0: [(0, 14, u'Erbsenpflanzen', 0, 1.0)]}
+{0: [(0, 13, u'Klostergarten', 0, 1.0), (0, 7, u'Kloster', 9, 0.52527744)], 7: [(7, 13, u'Garten', 0, 1.0)]}
+{0: [(0, 13, u'Befruchtungen', 0, 1.0)]}
+{0: [(0, 12, u'Zehntausende', 0, 1.0), (0, 4, u'Zehn', 3, 0.73219931), (0, 4, u'Zehn', 5, 0.69699371)], 4: [(4, 12, u'Tausende', 0, 1.0)]}
+{0: [(0, 16, u'Pflanzenhybriden', 0, 1.0)]}
+{0: [(0, 12, u'Flei\xdfaufgabe', 0, 1.0)]}
+{0: [(0, 12, u'Flei\xdfaufgabe', 0, 1.0)]}
+{0: [(0, 14, u'Hartn\xe4ckigkeit', 0, 1.0)]}
+{0: [(0, 14, u'Naturforschers', 0, 1.0), (0, 5, u'Natur', 4, 0.4769049)], 5: [(5, 14, u'Forschers', 0, 1.0)]}
+{0: [(0, 13, u'Innenminister', 0, 1.0), (0, 5, u'Innen', 27, 0.49857166), (0, 5, u'Innen', 16, 0.4578737)], 5: [(5, 13, u'Minister', 0, 1.0)]}
+{0: [(0, 19, u'Falschinformationen', 0, 1.0), (0, 6, u'Falsch', 5, 0.43732825)], 6: [(6, 19, u'Informationen', 0, 1.0)]}
+{0: [(0, 8, u'Analysen', 0, 1.0)]}
+{0: [(0, 12, u'Hintergr\xfcnde', 0, 1.0), (0, 6, u'Hinter', 12, 0.41767579), (0, 6, u'Hinter', 9, 0.37946936)], 6: [(6, 12, u'Gr\xfcnde', 0, 1.0)]}
+{0: [(0, 8, u'Menschen', 0, 1.0)]}
+{0: [(0, 15, u'Containerschiff', 0, 1.0), (0, 9, u'Container', 2, 0.6297034), (0, 9, u'Container', 3, 0.54978025), (0, 9, u'Container', 20, 0.52891397)], 9: [(9, 15, u'Schiff', 0, 1.0)]}
+{0: [(0, 6, u'Unfall', 0, 1.0)]}
+{0: [(0, 14, u'Umweltdesaster', 0, 1.0), (0, 6, u'Umwelt', 20, 0.44047001), (0, 6, u'Umwelt', 9, 0.38483894)], 6: [(6, 14, u'Desaster', 0, 1.0)]}
+{0: [(0, 10, u'Australien', 0, 1.0)]}
+{0: [(0, 15, u'Containerschiff', 0, 1.0), (0, 9, u'Container', 2, 0.6297034), (0, 9, u'Container', 3, 0.54978025), (0, 9, u'Container', 20, 0.52891397)], 9: [(9, 15, u'Schiff', 0, 1.0)]}
+{0: [(0, 6, u'Unfall', 0, 1.0)]}
+{0: [(0, 10, u'Australien', 0, 1.0)]}
+{0: [(0, 8, u'Schwer\xf6l', 0, 1.0), (0, 6, u'Schwer', 55, 0.41243544), (0, 6, u'Schwer', 70, 0.43993181)], 6: [(6, 8, u'\xd6l', 0, 1.0)]}
+{0: [(0, 7, u'Freitag', 0, 1.0)]}
+{0: [(0, 11, u'Fl\xfcssigkeit', 0, 1.0)]}
+{0: [(0, 7, u'Str\xe4nde', 0, 1.0)]}
+{0: [(0, 10, u'Kilometern', 0, 1.0), (0, 4, u'Kilo', 0, 1.0), (0, 4, u'Kilo', 0, 0.69171464)], 4: [(4, 10, u'Metern', 0, 1.0)]}
+{0: [(0, 7, u'Kapit\xe4n', 0, 1.0)]}
+{0: [(0, 7, u'Pacific', 0, 1.0)]}
+{0: [(0, 10, u'Adventurer', 0, 1.0)]}
+{0: [(0, 8, u'Hongkong', 0, 1.0)]}
+{0: [(0, 7, u'Verlust', 0, 1.0)]}
+{0: [(0, 6, u'Tonnen', 0, 1.0)]}
+{0: [(0, 14, u'Regierungschef', 0, 1.0)]}
+{0: [(0, 10, u'Queensland', 0, 1.0)]}
+{0: [(0, 7, u'Samstag', 0, 1.0)]}
+{0: [(0, 7, u'Kapit\xe4n', 0, 1.0)]}
+{0: [(0, 6, u'Vortag', 0, 1.0)]}
+{0: [(0, 11, u'Vertuschung', 0, 1.0)]}
+{0: [(0, 11, u'Vorgeworfen', 0, 1.0)]}
+{0: [(0, 8, u'Mittwoch', 0, 1.0)]}
+{0: [(0, 15, u'Containerschiff', 0, 1.0), (0, 9, u'Container', 2, 0.6297034), (0, 9, u'Container', 3, 0.54978025), (0, 9, u'Container', 20, 0.52891397)], 9: [(9, 15, u'Schiff', 0, 1.0)]}
+{0: [(0, 14, u'Naturreservate', 0, 1.0), (0, 5, u'Natur', 244, 0.4615033)], 5: [(5, 14, u'Reservate', 0, 1.0)]}
+{0: [(0, 16, u'Touristenstr\xe4nde', 0, 1.0), (0, 9, u'Touristen', 21, 0.53723633), (0, 9, u'Touristen', 14, 0.62454265)], 9: [(9, 16, u'Str\xe4nde', 0, 1.0)]}
+{0: [(0, 8, u'Ostk\xfcste', 0, 1.0)]}
+{0: [(0, 8, u'N\xf6rdlich', 0, 1.0)]}
+{0: [(0, 8, u'Brisbane', 0, 1.0)]}
+{0: [(0, 18, u'Bestechungsversuch', 0, 1.0), (0, 11, u'Bestechungs', 105, 0.42316893), (0, 11, u'Bestechungs', 1, 0.55754888)], 11: [(11, 18, u'versuch', 0, 1.0)]}
+{0: [(0, 13, u'Campingkocher', 0, 1.0)]}
+{0: [(0, 11, u'Integration', 0, 1.0)]}
+{0: [(0, 11, u'Funktechnik', 0, 1.0), (0, 4, u'Funk', 164, 0.31504676), (0, 4, u'Funk', 15, 0.45507115)], 4: [(4, 11, u'Technik', 0, 1.0)]}
+{0: [(0, 13, u'Mobiltelefone', 0, 1.0), (0, 5, u'Mobil', 2, 0.62820697)], 5: [(5, 13, u'Telefone', 0, 1.0)]}
+{0: [(0, 12, u'Aktenkoffers', 0, 1.0), (0, 5, u'Akten', 4, 0.48674276), (0, 5, u'Akten', 3, 0.43912473), (0, 5, u'Akten', 75, 0.4618212)], 5: [(5, 12, u'Koffers', 0, 1.0)]}
+{0: [(0, 8, u'Vorstufe', 0, 1.0)]}
+{0: [(0, 13, u'Kohlendioxids', 0, 1.0)]}
+{0: [(0, 13, u'Kohlendioxids', 0, 1.0)]}
+{0: [(0, 15, u'Computermodelle', 0, 1.0)]}
+{0: [(0, 8, u'Sch\xfctzen', 0, 1.0)]}
+{0: [(0, 11, u'Climategate', 0, 1.0)]}
+{0: [(0, 7, u'Skandal', 0, 1.0)]}
+{0: [(0, 18, u'Forschungsinstitut', 0, 1.0), (0, 10, u'Forschungs', 50, 0.55834067), (0, 10, u'Forschungs', 6, 0.60329753), (0, 10, u'Forschungs', 20, 0.56474352), (0, 10, u'Forschungs', 3, 0.54519069)], 10: [(10, 18, u'Institut', 0, 1.0)]}
+{0: [(0, 7, u'Climate', 0, 1.0)]}
+{0: [(0, 8, u'Research', 0, 1.0)]}
+{0: [(0, 15, u'Folgenschwerste', 0, 1.0)]}
+{0: [(0, 15, u'Folgenschwerste', 0, 1.0)]}
+{0: [(0, 20, u'Wissenschaftsdebatte', 0, 1.0)]}
+{0: [(0, 14, u'Computerhacker', 0, 1.0), (0, 8, u'Computer', 151, 0.43809646), (0, 8, u'Computer', 8, 0.44188744)], 8: [(8, 14, u'Hacker', 0, 1.0)]}
+{0: [(0, 9, u'Instituts', 0, 1.0)]}
+{0: [(0, 8, u'Forscher', 0, 1.0)]}
+{0: [(0, 8, u'Prognose', 0, 1.0)]}
+{0: [(0, 9, u'Erw\xe4rmung', 0, 1.0)]}
+{0: [(0, 15, u'Wissenschaftler', 0, 1.0), (0, 12, u'Wissenschaft', 3, 0.36515111)], 12: [(12, 15, u'ler', 0, 1.0)]}
+{0: [(0, 16, u'Datenlieferanten', 0, 1.0)]}
+{0: [(0, 13, u'Weltklimarats', 0, 1.0), (0, 4, u'Welt', 1, 0.67320156), (0, 4, u'Welt', 4, 0.63538074), (0, 4, u'Welt', 4, 0.54996479), (0, 4, u'Welt', 1, 0.65712398), (0, 9, u'Weltklima', 35, 0.40853232)], 9: [(9, 13, u'Rats', 0, 1.0)], 4: [(4, 13, u'Klimarats', 0, 1.0), (4, 9, u'Klima', 24, 0.449417)]}
+{0: [(0, 10, u'Fraktionen', 0, 1.0)]}
+{0: [(0, 7, u'Debatte', 0, 1.0)]}
+{0: [(0, 6, u'Schule', 0, 1.0)]}
+{0: [(0, 13, u'Repr\xe4sentiert', 0, 1.0)]}
+{0: [(0, 8, u'Mehrheit', 0, 1.0)]}
+{0: [(0, 15, u'Wissenschaftler', 0, 1.0), (0, 12, u'Wissenschaft', 3, 0.36515111)], 12: [(12, 15, u'ler', 0, 1.0)]}
+{0: [(0, 6, u'Stelle', 0, 1.0)]}
+{0: [(0, 8, u'Forscher', 0, 1.0)]}
+{0: [(0, 12, u'Klimamodelle', 0, 1.0), (0, 5, u'Klima', 73, 0.48331901)], 5: [(5, 12, u'Modelle', 0, 1.0)]}
+{0: [(0, 20, u'Computersimulationen', 0, 1.0), (0, 8, u'Computer', 2, 0.52981782), (0, 8, u'Computer', 1, 0.59137404), (0, 8, u'Computer', 3, 0.4937512), (0, 8, u'Computer', 51, 0.57687378)], 8: [(8, 20, u'Simulationen', 0, 1.0)]}
+{0: [(0, 21, u'Hauptverantwortlichen', 0, 1.0), (0, 5, u'Haupt', 9, 0.42636526), (0, 5, u'Haupt', 6, 0.45217949)], 5: [(5, 21, u'verantwortlichen', 0, 1.0)]}
+{0: [(0, 9, u'Erw\xe4rmung', 0, 1.0)]}
+{0: [(0, 8, u'Menschen', 0, 1.0)]}
+{0: [(0, 11, u'Spatenstich', 0, 1.0)]}
+{0: [(0, 13, u'Kirchenneubau', 0, 1.0), (0, 7, u'Kirchen', 213, 0.50433272), (0, 7, u'Kirchen', 205, 0.45582786)], 7: [(7, 13, u'Neubau', 0, 1.0)]}
+{0: [(0, 15, u'Ostdeutschlands', 0, 1.0)]}
+{0: [(0, 8, u'Rum\xe4nien', 0, 1.0)]}
+{0: [(0, 6, u'Berlin', 0, 1.0)]}
+{0: [(0, 9, u'Regierung', 0, 1.0)]}
+{0: [(0, 11, u'Ank\xfcndigung', 0, 1.0)]}
+{0: [(0, 12, u'Deutschlands', 0, 1.0)]}
+{0: [(0, 11, u'Frankreichs', 0, 1.0)]}
+{0: [(0, 9, u'Rum\xe4niens', 0, 1.0)]}
+{0: [(0, 10, u'Bulgariens', 0, 1.0)]}
+{0: [(0, 8, u'Schengen', 0, 1.0)]}
+{0: [(0, 8, u'Bukarest', 0, 1.0)]}
+{0: [(0, 13, u'Informationen', 0, 1.0)]}
+{0: [(0, 10, u'Verletzung', 0, 1.0)]}
+{0: [(0, 8, u'Vertrags', 0, 1.0), (0, 7, u'Vertrag', 161, 0.31392384)], 7: [(7, 8, u'S', 0, 1.0)]}
+{0: [(0, 8, u'Lissabon', 0, 1.0)]}
+{0: [(0, 11, u'Rum\xe4nischer', 0, 1.0)]}
+{0: [(0, 11, u'Zollbeamter', 0, 1.0), (0, 4, u'Zoll', 4, 0.46207678)], 4: [(4, 11, u'Beamter', 0, 1.0)]}
+{0: [(0, 6, u'Grenze', 0, 1.0)]}
+{0: [(0, 8, u'Rum\xe4nien', 0, 1.0)]}
+{0: [(0, 8, u'Republik', 0, 1.0)]}
+{0: [(0, 6, u'Moldau', 0, 1.0)]}
+{0: [(0, 8, u'Dezember', 0, 1.0)]}
+{0: [(0, 9, u'Regierung', 0, 1.0)]}
+{0: [(0, 8, u'Bukarest', 0, 1.0)]}
+{0: [(0, 10, u'Kontrollen', 0, 1.0)]}
+{0: [(0, 7, u'Grenzen', 0, 1.0)]}
+{0: [(0, 8, u'Rum\xe4nien', 0, 1.0)]}
+{0: [(0, 9, u'Bulgarien', 0, 1.0)]}
+{0: [(0, 6, u'L\xe4nder', 0, 1.0)]}
+{0: [(0, 12, u'Fortschritte', 0, 1.0), (0, 4, u'Fort', 52, 0.42766547), (0, 4, u'Fort', 17, 0.36335915)], 4: [(4, 12, u'Schritte', 0, 1.0)]}
+{0: [(0, 10, u'Korruption', 0, 1.0)]}
+{0: [(0, 12, u'Kriminalit\xe4t', 0, 1.0)]}
+{0: [(0, 13, u'Informationen', 0, 1.0)]}
+{0: [(0, 7, u'Zeitung', 0, 1.0)]}
+{0: [(0, 18, u'Vertragsverletzung', 0, 1.0)]}
+{0: [(0, 11, u'Deutschland', 0, 1.0)]}
+{0: [(0, 10, u'Frankreich', 0, 1.0)]}
+{0: [(0, 7, u'Haltung', 0, 1.0)]}
+{0: [(0, 9, u'Rum\xe4niens', 0, 1.0)]}
+{0: [(0, 16, u'Au\xdfenministerium', 0, 1.0)]}
+{0: [(0, 13, u'Pr\xe4zedenzfall', 0, 1.0)]}
+{0: [(0, 15, u'Staatspr\xe4sident', 0, 1.0), (0, 6, u'Staats', 8, 0.56672651), (0, 6, u'Staats', 3, 0.56268156), (0, 6, u'Staats', 4, 0.58651012), (0, 6, u'Staats', 40, 0.45918524)], 6: [(6, 15, u'pr\xe4sident', 0, 1.0)]}
+{0: [(0, 6, u'Georgi', 0, 1.0)]}
+{0: [(0, 8, u'Parwanow', 0, 1.0)]}
+{0: [(0, 11, u'Verst\xe4ndnis', 0, 1.0)]}
+{0: [(0, 9, u'Bulgarien', 0, 1.0)]}
+{0: [(0, 9, u'Verstehen', 0, 1.0)]}
+{0: [(0, 9, u'Erkl\xe4rung', 0, 1.0)]}
+{0: [(0, 11, u'Verz\xf6gerung', 0, 1.0)]}
+{0: [(0, 8, u'Mittwoch', 0, 1.0)]}
+{0: [(0, 7, u'Haltung', 0, 1.0)]}
+{0: [(0, 11, u'Hintergrund', 0, 1.0), (0, 6, u'Hinter', 18, 0.40446696)], 6: [(6, 11, u'Grund', 0, 1.0)]}
+{0: [(0, 7, u'Streits', 0, 1.0)]}
+{0: [(0, 9, u'Regierung', 0, 1.0)]}
+{0: [(0, 17, u'Ministerpr\xe4sident', 0, 1.0), (0, 8, u'Minister', 8, 0.5220769), (0, 8, u'Minister', 40, 0.57539827), (0, 8, u'Minister', 1, 0.60467327), (0, 8, u'Minister', 0, 0.66299462)], 8: [(8, 17, u'pr\xe4sident', 0, 1.0)]}
+{0: [(0, 15, u'Grenzkontrollen', 0, 1.0), (0, 5, u'Grenz', 6, 0.48336613), (0, 5, u'Grenz', 42, 0.54788673), (0, 5, u'Grenz', 18, 0.50127709)], 5: [(5, 15, u'Kontrollen', 0, 1.0)]}
+{0: [(0, 9, u'Weltkrieg', 0, 1.0), (0, 4, u'Welt', 215, 0.51457226), (0, 4, u'Welt', 9, 0.49052233), (0, 4, u'Welt', 20, 0.52091801)], 4: [(4, 9, u'Krieg', 0, 1.0)]}
+{0: [(0, 6, u'Abwehr', 0, 1.0)]}
+{0: [(0, 8, u'Admirals', 0, 1.0)]}
+{0: [(0, 7, u'Canaris', 0, 1.0)]}
+{0: [(0, 11, u'Sprengs\xe4tze', 0, 1.0), (0, 6, u'Spreng', 1, 0.63005304)], 6: [(6, 11, u'S\xe4tze', 0, 1.0)]}
+{0: [(0, 16, u'Apfelsinenkisten', 0, 1.0)]}
+{0: [(0, 13, u'Hafenarbeiter', 0, 1.0), (0, 5, u'Hafen', 8, 0.47505108), (0, 5, u'Hafen', 5, 0.43803483)], 5: [(5, 13, u'Arbeiter', 0, 1.0)]}
+{0: [(0, 7, u'Schiffe', 0, 1.0)]}
+{0: [(0, 6, u'Zeiten', 0, 1.0)]}
+{0: [(0, 15, u'Milit\xe4rdiktatur', 0, 1.0), (0, 7, u'Milit\xe4r', 2, 0.55606532), (0, 7, u'Milit\xe4r', 28, 0.57931298), (0, 7, u'Milit\xe4r', 19, 0.55088997), (0, 7, u'Milit\xe4r', 6, 0.53207707)], 7: [(7, 15, u'Diktatur', 0, 1.0)]}
+{0: [(0, 17, u'Widerstandsgruppe', 0, 1.0), (0, 11, u'Widerstands', 2, 0.43703195), (0, 11, u'Widerstands', 21, 0.38075179)], 11: [(11, 17, u'gruppe', 0, 1.0)]}
+{0: [(0, 9, u'Pfirsiche', 0, 1.0)]}
+{0: [(0, 9, u'Aprikosen', 0, 1.0)]}
+{0: [(0, 9, u'Vergiftet', 0, 1.0)]}
+{0: [(0, 7, u'Kuklina', 0, 1.0)]}
+{0: [(0, 8, u'Tr\xe4gerin', 0, 1.0)]}
+{0: [(0, 12, u'Alternativen', 0, 1.0)]}
+{0: [(0, 10, u'Nobelpreis', 0, 1.0), (0, 5, u'Nobel', 1, 0.55850583), (0, 5, u'Nobel', 0, 1.0)], 5: [(5, 10, u'preis', 0, 1.0)]}
+{0: [(0, 6, u'K\xe4mpft', 0, 1.0)]}
+{0: [(0, 6, u'Rechte', 0, 1.0)]}
+{0: [(0, 8, u'Soldaten', 0, 1.0)]}
+{0: [(0, 9, u'Russlands', 0, 1.0)]}
+{0: [(0, 6, u'Online', 0, 1.0)]}
+{0: [(0, 6, u'Sprach', 0, 1.0)]}
+{0: [(0, 14, u'Menschenrechte', 0, 1.0), (0, 8, u'Menschen', 15, 0.46688187), (0, 8, u'Menschen', 8, 0.38561094)], 8: [(8, 14, u'Rechte', 0, 1.0)]}
+{0: [(0, 6, u'Heimat', 0, 1.0)]}
+{0: [(0, 10, u'Kaufrausch', 0, 1.0), (0, 4, u'Kauf', 14, 0.43346396)], 4: [(4, 10, u'Rausch', 0, 1.0)]}
+{0: [(0, 18, u'Kommerzialisierung', 0, 1.0)]}
+{0: [(0, 11, u'Weihnachten', 0, 1.0), (0, 4, u'Weih', 10, 0.51386714), (0, 10, u'Weihnacht', 27, 0.29699171)], 10: [(10, 11, u'N', 0, 1.0)], 4: [(4, 11, u'nachten', 0, 1.0)]}
+{0: [(0, 9, u'Wikileaks', 0, 1.0)]}
+{0: [(0, 18, u'Verfassungsgericht', 0, 1.0), (0, 11, u'Verfassungs', 172, 0.45174557), (0, 11, u'Verfassungs', 2, 0.58598971), (0, 11, u'Verfassungs', 16, 0.51952243), (0, 11, u'Verfassungs', 14, 0.593045), (0, 11, u'Verfassungs', 26, 0.57069671), (0, 11, u'Verfassungs', 169, 0.52138245)], 11: [(11, 18, u'gericht', 0, 1.0)]}
+{0: [(0, 11, u'Berlusconis', 0, 1.0)]}
+{0: [(0, 9, u'Immunit\xe4t', 0, 1.0)]}
+{0: [(0, 11, u'Zinspolitik', 0, 1.0)]}
+{0: [(0, 9, u'Inflation', 0, 1.0)]}
+{0: [(0, 8, u'Eurozone', 0, 1.0), (0, 4, u'Euro', 1, 0.58198929), (0, 4, u'Euro', 2, 0.67638773), (0, 4, u'Euro', 190, 0.53980684), (0, 4, u'Euro', 87, 0.44794115), (0, 4, u'Euro', 3, 0.56715906)], 4: [(4, 8, u'zone', 0, 1.0)]}
+{0: [(0, 9, u'Kontrolle', 0, 1.0)]}
+{0: [(0, 21, u'Futtermittelindustrie', 0, 1.0), (0, 12, u'Futtermittel', 34, 0.48408121), (0, 12, u'Futtermittel', 5, 0.55418211)], 12: [(12, 21, u'Industrie', 0, 1.0)]}
+{0: [(0, 11, u'Deutschland', 0, 1.0)]}
+{0: [(0, 9, u'Regierung', 0, 1.0)]}
+{0: [(0, 9, u'Vertrauen', 0, 1.0)]}
+{0: [(0, 11, u'Westerwelle', 0, 1.0)]}
+{0: [(0, 11, u'Abzugsdatum', 0, 1.0), (0, 6, u'Abzugs', 3, 0.55614936)], 6: [(6, 11, u'Datum', 0, 1.0)]}
+{0: [(0, 13, u'Ghettoblaster', 0, 1.0)]}
+{0: [(0, 6, u'Alltag', 0, 1.0)]}
+{0: [(0, 6, u'Ikonen', 0, 1.0)]}
+{0: [(0, 12, u'Jugendkultur', 0, 1.0), (0, 6, u'Jugend', 21, 0.43816748)], 6: [(6, 12, u'Kultur', 0, 1.0)]}
+{0: [(0, 14, u'Hochrechnungen', 0, 1.0)]}
+{0: [(0, 8, u'Mckinsey', 0, 1.0)]}
+{0: [(0, 7, u'Company', 0, 1.0)]}
+{0: [(0, 9, u'Kaufkraft', 0, 1.0)]}
+{0: [(0, 13, u'Aufstrebenden', 0, 1.0)]}
+{0: [(0, 13, u'Mittelschicht', 0, 1.0)]}
+{0: [(0, 10, u'Jahrzehnts', 0, 1.0)]}
+{0: [(0, 9, u'Billionen', 0, 1.0)]}
+{0: [(0, 6, u'Dollar', 0, 1.0)]}
+{0: [(0, 15, u'Erbrauchsniveau', 0, 1.0)]}
+{0: [(0, 7, u'Staaten', 0, 1.0)]}
+{0: [(0, 15, u'Schwellenl\xe4nder', 0, 1.0), (0, 9, u'Schwellen', 9, 0.51894295), (0, 9, u'Schwellen', 87, 0.37868655)], 9: [(9, 15, u'l\xe4nder', 0, 1.0)]}
+{0: [(0, 15, u'Schwellenl\xe4nder', 0, 1.0), (0, 9, u'Schwellen', 9, 0.51894295), (0, 9, u'Schwellen', 87, 0.37868655)], 9: [(9, 15, u'l\xe4nder', 0, 1.0)]}
+{0: [(0, 9, u'Brasilien', 0, 1.0)]}
+{0: [(0, 8, u'Russland', 0, 1.0)]}
+{0: [(0, 6, u'Indien', 0, 1.0)]}
+{0: [(0, 9, u'Fr\xfchst\xfcck', 0, 1.0), (0, 4, u'Fr\xfch', 0, 0.99999994)], 4: [(4, 9, u'St\xfcck', 0, 1.0)]}
+{0: [(0, 11, u'Fortschritt', 0, 1.0), (0, 4, u'Fort', 23, 0.44230855), (0, 4, u'Fort', 90, 0.34656441)], 4: [(4, 11, u'Schritt', 0, 1.0)]}
+{0: [(0, 15, u'Fr\xfchst\xfcckstisch', 0, 1.0), (0, 10, u'Fr\xfchst\xfccks', 80, 0.42068771)], 10: [(10, 15, u'Tisch', 0, 1.0)]}
+{0: [(0, 7, u'Familie', 0, 1.0)]}
+{0: [(0, 6, u'Jahren', 0, 1.0)]}
+{0: [(0, 12, u'Tageszeitung', 0, 1.0), (0, 5, u'Tages', 1, 0.52212489), (0, 5, u'Tages', 4, 0.52416098)], 5: [(5, 12, u'Zeitung', 0, 1.0)]}

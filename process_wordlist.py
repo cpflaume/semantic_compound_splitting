@@ -12,6 +12,6 @@ def viterbi(c):
         Lattice(lattice(c))))
 
 for line in fileinput.input():
-    c = line.strip()
+    c = line.decode('utf8').strip()
     print " ".join(map(lambda p: "%d,%d" % p, viterbi(c)))
 
