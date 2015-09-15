@@ -56,6 +56,7 @@ class ViterbiDecompounder:
 
         return path[ b ]
 
+
     def arc_score(self, compound, prev_split, split, lattice):
         return np.dot(self.w, self.fs(compound, prev_split, split, lattice))
 
@@ -65,16 +66,31 @@ class ViterbiDecompounder:
 
         # Additional features:
 
+        segment = compound.string[split[0]:split[1]]
+        is_default = split[1] - split[0] == len(compound.string)
+
         base_features = list(lattice.get_features(split, compound))
-        base_features[0] = base_features[0] / 100
 
-        base_features.append(1 if split[1] - split[0] == len(compound.string) else 0)  # Length of the split
-        base_features.append(0 if split[1] - split[0] == len(compound.string) else 1)  # Length of the split
+        if is_default:
+            base_features[0] = 0
+            base_features[1] = 1.0
 
-        #base_features.append(split[1] - split[0])  # Length of the split
+        base_features[0] = 1.0 - (base_features[0] / 100)
+
+        base_features.append(1 if is_default else 0)
+        base_features.append(0 if is_default else 1)
+
+        base_features.append(1 if (split[1] - split[0]) > 12 and not is_default else 0)  # Length of the split
+        base_features.append(1 if (split[1] - split[0]) < 4 else 0)  # Length of the split
+
+        #base_features.append(1 if segment.endswith("es") or segment.endswith("s") else 0)
+
+        base_features.append((split[1] - split[0]) / len(compound.string))  # Length of the split
+
         #base_features.append(prev_split[1] - prev_split[0])  # Length of the previous split
         base_features.append(1.0)  # Bias
 
-        return np.array(base_features)
+        return np.array([ 0 if f == 0 else 1 for f in base_features])
 
+    n_features = 8
 
