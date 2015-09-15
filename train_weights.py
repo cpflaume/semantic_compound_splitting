@@ -186,12 +186,19 @@ def split_gold(l):
  
     return sorted(splits)
 
+def all_gold_splits_in_lattice(c):
+    lattice_splits = set(c.predicted_lattice.get_splits())
+    return all([ gsplit in lattice_splits for gsplit in c.get_gold_splits() ])
 
-HELDOUT_SIZE = 50
+def correct_in_lattice(cs):
+    split_in_lattice = [ all_gold_splits_in_lattice(c) for c in cs ]
+    return sum(split_in_lattice) / len(split_in_lattice)
+
+HELDOUT_SIZE = 60
 if __name__ == '__main__':
-    compound_names = codecs.open("data/cdec_nouns").readlines()
-    compounds_gold = codecs.open("data/cdec_nouns.references").readlines()
-    compounds_pred = codecs.open("data/cdec_nouns.lattices").readlines()
+    compound_names = codecs.open("data/cdec_nouns", encoding="utf-8").readlines()
+    compounds_gold = codecs.open("data/cdec_nouns.references", encoding="utf-8").readlines()
+    compounds_pred = codecs.open("data/cdec_nouns.lattices", encoding="utf-8").readlines()
 
     compounds = map(lambda (compound, lineGold, latticePredicted):
             Compound(compound.strip(),  split_gold(lineGold), Lattice(latticePredicted)), zip(compound_names, compounds_gold, compounds_pred))
@@ -201,6 +208,10 @@ if __name__ == '__main__':
 
     train, heldout = compounds[HELDOUT_SIZE:], compounds[:HELDOUT_SIZE]
 
+    print "% Gold path in the lattice: ", correct_in_lattice(heldout)
+    for c in train:
+        if not all_gold_splits_in_lattice(c):
+            print "  Unreachable training instance:", c.string, "Gold:", c.gold_splits, "Predicted:", c.predicted_lattice.get_splits()
 
     trainer = StructuredPerceptron(epochs=10)
     trainer.train(train, heldout, verbose=1)

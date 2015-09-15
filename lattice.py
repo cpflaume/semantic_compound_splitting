@@ -18,7 +18,7 @@ class Lattice(object):
         self.arc_offsets = {}
 
         # parse from string, if needed
-        if isinstance(arg, str):
+        if isinstance(arg, str) or isinstance(arg, unicode):
             arg = ast.literal_eval(arg)
 
         self.lattice = arg
@@ -52,4 +52,3 @@ class Lattice(object):
 
     def get_features(self, split, compound):
         return self.features[split]
-
