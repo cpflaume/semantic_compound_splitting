@@ -22,7 +22,7 @@ For more information see [our paper](http://jodaiber.github.io/doc/compound_anal
 ## Coming soon
 
 - precomputed models
-- fast and Memory safe splitter
+- fast and efficient splitter
 
 
 
