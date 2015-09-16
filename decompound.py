@@ -4,8 +4,6 @@ import fileinput
 from compound import Compound
 from lattice import Lattice
 
-__author__ = 'lqrz'
-
 # import cPickle as pickle
 import pickle
 import logging

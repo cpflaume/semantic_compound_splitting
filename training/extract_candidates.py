@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'rwechsler'
 import sys
 import time
 import datetime

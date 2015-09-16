@@ -1,5 +1,3 @@
-__author__ = 'rwechsler'
-
 import cPickle as pickle
 import sys
 import numpy as np

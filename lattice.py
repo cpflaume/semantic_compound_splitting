@@ -1,11 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 from collections import defaultdict
-
-__author__ = 'dvorkjoker,jodaiber'
-"""
-Script to train weights for features for decomposition lattice.
-"""
-
 import ast
 
 def edge_to_split(edge):

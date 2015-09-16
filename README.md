@@ -1,8 +1,9 @@
-# Splitting Compounds by Semantic Analog
+# Splitting Compounds by Semantic Analogy
 
 A compound splitter based on the semantic regularities in the vector space of word embeddings.
+For more information see [this presentation](http://jodaiber.github.io/doc/compound_analogy_slides.pdf) or [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf).
 
-For more information see [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf). If you use this splitter in your work, please cite:
+If you use this splitter in your work, please cite:
 
 ```
 @inproceedings{daiber2015compoundsplitting,
@@ -25,7 +26,6 @@ For more information see [our paper](http://jodaiber.github.io/doc/compound_anal
 - fast and efficient splitter
 
 
-
 ## Contributers
 
 - Roger Wechsler, University of Amsterdam
@@ -35,4 +35,4 @@ For more information see [our paper](http://jodaiber.github.io/doc/compound_anal
 
 ## License
 
-Coming soon
+Apache 2.0

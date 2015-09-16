@@ -10,7 +10,6 @@ import ast
 from collections import defaultdict
 from viterbi_decompounder import ViterbiDecompounder
 
-
 def get_prev_split(splits, split):
     i = splits.index(split)
     if i == 0:

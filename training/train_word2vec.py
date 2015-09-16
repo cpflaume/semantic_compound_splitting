@@ -1,5 +1,3 @@
-__author__ = 'rwechsler'
-
 import gensim
 import sys
 import glob

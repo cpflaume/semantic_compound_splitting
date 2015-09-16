@@ -28,9 +28,6 @@ class ViterbiDecompounder:
         path = {(0, 0): []}
         alphas[0] = defaultdict(lambda: 1.0)
 
-        START_SPLIT = (0, 0)
-        END_SPLIT = (len(compound.string), len(compound.string))
-
         lattice = compound.predicted_lattice
 
         for split in lattice.splits_from(0):
