@@ -28,11 +28,9 @@ For more information see [our paper](http://jodaiber.github.io/doc/compound_anal
 
 ## Contributers
 
-Roger Wechsler
-
-Lautaro Quiroz
-
-Joachim Daiber
+- Roger Wechsler, University of Amsterdam
+- Lautaro Quiroz, University of Amsterdam
+- [Joachim Daiber](http://jodaiber.de), ILLC, University of Amsterdam
 
 
 ## License
