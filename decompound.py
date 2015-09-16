@@ -196,7 +196,7 @@ if __name__ == '__main__':
 
     if args.mode == "lattices":
         for line in sys.stdin:
-            print(get_decompound_lattice(line.decode('utf8').rstrip('\n').title(), nAccuracy, similarityThreshold))
+            print(get_decompound_lattice(line.decode('utf8').rstrip('\n').title(), args.nAccuracy, args.similarityThreshold))
     elif args.mode == "1-best":
         vit = ViterbiDecompounder()
         vit.load_weights(args.weightsFile)
