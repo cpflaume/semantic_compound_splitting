@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
+import argparse
+import fileinput
+from compound import Compound
+from lattice import Lattice
+
 __author__ = 'lqrz'
 
-#import cPickle as pickle
+# import cPickle as pickle
 import pickle
 import logging
 import pdb
@@ -16,9 +21,10 @@ import gensim
 
 from viterbi_decompounder import ViterbiDecompounder
 
+
 def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
     global annoy_tree
-    global vectors
+    global prototypes
     global model
     global globalNN
 
@@ -39,24 +45,24 @@ def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
     #
     logger.info('Getting all matching prefixes')
     prefixes = set()
-    for prefix in vectors.keys():
+    for prefix in prototypes.keys():
         if len(inputCompound) > len(prefix) and inputCompound.startswith(prefix):
             prefixes.add(prefix)
     logger.debug('Possible prefixes: %r' % prefixes)
     if len(prefixes) == 0:  # cannot split
         return []
-    
+
     # 3. Get all possible splits (so that we have representations for both prefix and tail)
     #
     logger.info('Getting possible splits')
     splits = set()
 
-    FUGENLAUTE = ['', 'e', 'es'] #Needs to include '' !!!
+    FUGENLAUTE = ['', 'e', 'es']  # Needs to include '' !!!
     for prefix in prefixes:
         rest = inputCompound[len(prefix):]
 
         # get all possible tails
-        possible_tails = [] #(haus, 4)
+        possible_tails = []  # (haus, 4)
         for fug in FUGENLAUTE:
             if rest.startswith(fug):
                 tail_offset = len(prefix) + len(fug)
@@ -80,13 +86,13 @@ def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
     logger.info('Applying direction vectors to possible splits')
 
     for prefix, tail, tail_offset in splits:
-        logger.debug('Applying %d directions vectors to split %s %s' % (len(vectors[prefix]), prefix, tail))
+        logger.debug('Applying %d directions vectors to split %s %s' % (len(prototypes[prefix]), prefix, tail))
 
-        for origin, evidence in vectors[prefix]:
+        for origin, evidence in prototypes[prefix]:
             logger.debug('Prefix %s by indexes %d and %d' % (prefix, origin[0], origin[1]))
 
             dirVectorCompoundRepresentation = model[model.index2word[origin[0]]]
-            dirVectorTailRepresentation = model[model.index2word[origin[1]]] 
+            dirVectorTailRepresentation = model[model.index2word[origin[1]]]
             dirVectorDifference = dirVectorCompoundRepresentation - dirVectorTailRepresentation
 
             predictionRepresentation = model[tail] + dirVectorDifference
@@ -121,8 +127,10 @@ def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
 
     return result
 
+
 vertices_count = 0
 distances = []
+
 
 def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
     # 1. Initialize
@@ -135,7 +143,7 @@ def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
         candidates = decompound(label, nAccuracy, similarityThreshold)
         tails = set()
 
-        lattice[from_] = [(from_, from_+len(label), label, 0, 1.0)]
+        lattice[from_] = [(from_, from_ + len(label), label, 0, 1.0)]
         for index, candidate in enumerate(candidates):
             prefix, tail, tail_offset, origin0, origin1, rank, similarity = candidate
 
@@ -144,40 +152,60 @@ def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
 
             tails.add((tail, tail_offset))
 
-
         for (tail, next_tail_offset) in tails:
-            add_edges(from_+next_tail_offset, tail)
+            add_edges(from_ + next_tail_offset, tail)
 
     add_edges(0, inputCompound)
 
     return lattice
 
 
-# logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger('')
-hdlr = logging.FileHandler('decompound_annoy.log')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr)
-logger.setLevel(logging.CRITICAL)
+if __name__ == '__main__':
 
+    parser = argparse.ArgumentParser(description='Decompound words.')
 
-globalNN = 500
-annoyTreeFile = '/home/jdaiber1/compound_analogy/model/tree.ann'
-w2vPath = '/home/jdaiber1/compound_analogy/model/w2v_500_de.bin'
-resultsPath = '/home/jdaiber1/compound_analogy/model/prototypes/dir_vecs_10_100.p'
-print  >> sys.stderr, "Loading models..."
-nAccuracy = 250
-similarityThreshold = .0
-vectors = pickle.load(open(resultsPath, 'rb'))
-annoy_tree = AnnoyIndex(500)
-annoy_tree.load(annoyTreeFile)
-model = gensim.models.Word2Vec.load_word2vec_format(w2vPath, binary=True) 
+    parser.add_argument('model_folder')
 
-print  >> sys.stderr, "Loaded!"
-for line in sys.stdin:
-    print(get_decompound_lattice(line.decode('utf8').rstrip('\n').title(), nAccuracy, similarityThreshold))
+    parser.add_argument('mode', choices=['1-best', 'lattices'], default='1-best')
+    parser.add_argument('--globalNN', default=500)
+    parser.add_argument('--nAccuracy', default=250)
+    parser.add_argument('--similarityThreshold', default=0.0)
+    parser.add_argument('--weightsFile', default='weights')
 
-#vit = ViterbiDecompounder()
-#vit.load_weights("weights")
+    args = parser.parse_args()
+
+    # Basic Logging:
+    logger = logging.getLogger('')
+    hdlr = logging.FileHandler('decompound_annoy.log')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    hdlr.setFormatter(formatter)
+    logger.addHandler(hdlr)
+    logger.setLevel(logging.CRITICAL)
+
+    print >> sys.stderr, "Loading prototypes..."
+    prototypes = pickle.load(open(args.model_folder + '/prototypes.p', 'rb'))
+
+    print >> sys.stderr, "Loading KNN search..."
+    annoy_tree = AnnoyIndex(500)
+    annoy_tree.load(args.model_folder + '/tree.ann')
+
+    print >> sys.stderr, "Loading gensim model..."
+    model = gensim.models.Word2Vec.load_word2vec_format(args.model_folder + '/w2v.bin', binary=True)
+
+    print >> sys.stderr, "Done."
+
+    if args.mode == "lattices":
+        for line in sys.stdin:
+            print(get_decompound_lattice(line.decode('utf8').rstrip('\n').title(), nAccuracy, similarityThreshold))
+    elif args.mode == "1-best":
+        vit = ViterbiDecompounder()
+        vit.load_weights(args.weightsFile)
+
+        for line in fileinput.input():
+            c = line.decode('utf8').strip()
+            lattice = Lattice(get_decompound_lattice(c, args.nAccuracy, args.similarityThreshold))
+
+            viterbi_path = vit.viterbi_decode(Compound(c, None, lattice))
+            print " ".join(map(lambda p: "%d,%d" % p, viterbi_path))
+
 
