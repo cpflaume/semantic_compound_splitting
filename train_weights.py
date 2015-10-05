@@ -19,8 +19,7 @@ def get_prev_split(splits, split):
 
 
 class StructuredPerceptron:
-
-    def __init__(self, epochs=10, eta=.005):
+    def __init__(self, epochs=10, eta=.0001):
 
         self.decoder = ViterbiDecompounder()
         self.parameters_for_epoch = []
@@ -28,8 +27,7 @@ class StructuredPerceptron:
         self.n_epochs = epochs
         self.eta = eta
 
-        self.n_features = 5
-
+        self.n_features = ViterbiDecompounder.n_features
 
     def train(self, data, heldout, verbose=0, run_label=None):
 
@@ -53,7 +51,7 @@ class StructuredPerceptron:
             f1 = 2 * ((precision * recall) / (precision + recall))
             training_accuracy.append(f1)
 
-            if verbose==1:
+            if verbose == 1:
                 acc = self.test(heldout)
                 heldout_accuracy.append(acc)
 
@@ -61,7 +59,7 @@ class StructuredPerceptron:
             # Stop if the error on the training data does not decrease
             if training_accuracy[-1] <= training_accuracy[-2]:
                 break
-            
+
             print >> sys.stderr, "Weights: %s" % self.decoder.w
             print >> sys.stderr, "Epoch %i, F1: %f" % (i_epoch, f1)
 
@@ -111,14 +109,14 @@ class StructuredPerceptron:
             if split in predicted_splits_set and split in gold_splits_set:  # Do nothing
                 tp += 1
 
-            if split[1] == len(compound.string) and split[0] != 0:
+            if split[1] == len(compound.string) and split[0] != 0:  # Ignore the final artificial path
                 continue
 
             if split in predicted_splits_set and split not in gold_splits_set:  # This is a bad split!
                 prev_split = get_prev_split(predicted_splits, split)
 
                 predicted_split_features = self.decoder.fs(compound, prev_split, split, compound.predicted_lattice)
-                print >>sys.stderr, "Pred fs:", predicted_split_features
+                print >> sys.stderr, "Pred fs:", predicted_split_features
                 self.decoder.w -= self.eta * (self.decoder.w * predicted_split_features)
 
                 fp += 1
@@ -127,8 +125,8 @@ class StructuredPerceptron:
                 prev_split = get_prev_split(gold_splits, split)
 
                 gold_split_features = self.decoder.fs(compound, prev_split, split, compound.predicted_lattice)
-                print >>sys.stderr, "Gold fs:", gold_split_features
-                print >>sys.stderr, "w:", self.decoder.w
+                print >> sys.stderr, "Gold fs:", gold_split_features
+                print >> sys.stderr, "w:", self.decoder.w
                 self.decoder.w += self.eta * (self.decoder.w * gold_split_features)
 
                 fn += 1
@@ -164,14 +162,14 @@ class StructuredPerceptron:
 
 
 def split_gold(l):
-    l1=l.split("|||")[0].strip()
-    l2=l.split("|||")[1].strip()[2:].split(" ")
-    
+    l1 = l.split("|||")[0].strip()
+    l2 = l.split("|||")[1].strip()[2:].split(" ")
+
     ps = []
     for lp in l2:
         assert l1.count(lp) == 1
-        ps.append( l1.find(lp) )
-    
+        ps.append(l1.find(lp))
+
     splits = []
     for i in range(len(ps)):
         if i == 0:
@@ -179,32 +177,49 @@ def split_gold(l):
         elif i == 1:
             splits.append((0, ps[i]))
         else:
-           splits.append((ps[i-1], ps[i]))
+            splits.append((ps[i - 1], ps[i]))
 
-        if i == len(ps)-1:
+        if i == len(ps) - 1:
             splits.append((ps[i], len(l1)))
- 
+
     return sorted(splits)
 
 
-HELDOUT_SIZE = 50
+def all_gold_splits_in_lattice(c):
+    lattice_splits = set(c.predicted_lattice.get_splits())
+    return all([gsplit in lattice_splits for gsplit in c.get_gold_splits()])
+
+
+def correct_in_lattice(cs):
+    split_in_lattice = [all_gold_splits_in_lattice(c) for c in cs]
+    return sum(split_in_lattice) / len(split_in_lattice)
+
+
+HELDOUT_SIZE = 75
 if __name__ == '__main__':
-    compound_names = codecs.open("data/cdec_nouns").readlines()
-    compounds_gold = codecs.open("data/cdec_nouns.references").readlines()
-    compounds_pred = codecs.open("data/cdec_nouns.lattices").readlines()
+    compound_names = codecs.open("data/cdec_nouns", encoding="utf-8").readlines()
+    compounds_gold = codecs.open("data/cdec_nouns.references", encoding="utf-8").readlines()
+    compounds_pred = codecs.open("data/cdec_nouns.lattices", encoding="utf-8").readlines()
 
     compounds = map(lambda (compound, lineGold, latticePredicted):
-            Compound(compound.strip(),  split_gold(lineGold), Lattice(latticePredicted)), zip(compound_names, compounds_gold, compounds_pred))
+                    Compound(compound.strip(), split_gold(lineGold), Lattice(latticePredicted)),
+                    zip(compound_names, compounds_gold, compounds_pred))
 
     import random
+
     random.shuffle(compounds)
 
     train, heldout = compounds[HELDOUT_SIZE:], compounds[:HELDOUT_SIZE]
 
+    for c in train:
+        if not all_gold_splits_in_lattice(c):
+            print "  Unreachable training instance:", c.string, "Gold:", c.gold_splits, "Predicted:", c.predicted_lattice.get_splits()
 
     trainer = StructuredPerceptron(epochs=10)
     trainer.train(train, heldout, verbose=1)
+    print "% Gold path in the lattice: ", correct_in_lattice(heldout)
 
-    import yaml 
+    import yaml
+
     with open('weights', 'w') as outfile:
-            outfile.write( yaml.dump(trainer.decoder.w.tolist(), default_flow_style=True) )
+        outfile.write(yaml.dump(trainer.decoder.w.tolist(), default_flow_style=True))

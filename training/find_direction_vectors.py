@@ -1,4 +1,3 @@
-__author__ = 'rwechsler'
 import datetime
 import cPickle as pickle
 from annoy import AnnoyIndex

@@ -58,7 +58,7 @@ wait_step 2
 #Step 3: Collect and filter candidates
 
 if [ "$STEP" -le "3" ]; then
-  $PYTHON filter_and_split_candidates.py $OUT_DIR/candidates_index.p $PROTOTYPE_JOBS $MIN_SUPPORT
+  $PYTHON training/filter_and_split_candidates.py $OUT_DIR/candidates_index.p $PROTOTYPE_JOBS $MIN_SUPPORT
 fi
 
 #Step 4: Extract prototypes

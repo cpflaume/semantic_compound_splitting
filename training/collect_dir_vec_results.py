@@ -1,5 +1,3 @@
-__author__ = 'lqrz'
-
 import pickle
 import glob
 import codecs

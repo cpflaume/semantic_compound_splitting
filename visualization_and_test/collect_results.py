@@ -9,9 +9,9 @@ sums = np.array([0,0,0,0,0])
 
 prefixes = defaultdict(list)
 
-vectors = 0
+prototypes = 0
 for line in infile:
-    vectors += 1
+    prototypes += 1
     els = line.strip().split("\t")
     result =  map(float, els[2:])
     prefixes[els[0]].append(result)
@@ -21,7 +21,7 @@ infile.close()
 
 
 
-results = sums / float(vectors)
+results = sums / float(prototypes)
 
 print "Total results"
 print results
