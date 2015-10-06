@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import argparse
 import fileinput
 from compound import Compound
 from lattice import Lattice
 
-# import cPickle as pickle
 import pickle
 import logging
 import pdb
@@ -16,146 +15,175 @@ import codecs
 from annoy import AnnoyIndex
 from sklearn.metrics.pairwise import cosine_similarity
 import gensim
+import yaml
 
 from viterbi_decompounder import ViterbiDecompounder
 
+class BaseDecompounder:
 
-def decompound(inputCompound, nAccuracy, similarityThreshold, offset=0):
-    global annoy_tree
-    global prototypes
-    global model
-    global globalNN
+    def __init__(self, model_folder, nAccuracy=250, globalNN=500,
+            similarityThreshold=0.0):
 
-    # 1. See if we can deal with compound
-    #
-    if len(inputCompound) == 0:
-        return []
+        # Basic Logging:
+        self.logger = logging.getLogger('')
+        hdlr = logging.FileHandler('decompound.log')
+        formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+        hdlr.setFormatter(formatter)
+        self.logger.addHandler(hdlr)
+        self.logger.setLevel(logging.DEBUG)
+        ########################################
 
-    logger.debug('Looking up word %s in Word2Vec model' % inputCompound)
-    if inputCompound not in model.vocab:  # We haven't vector representation for compound
-        logger.debug('ERROR COULDNT FIND KEY %s IN WORD2VEC MODEL' % inputCompound)
-        return []
-    logger.debug('Found key in index dict for word %s' % inputCompound)
-    inputCompoundRep = model[inputCompound]
-    inputCompoundIndex = model.vocab[inputCompound].index
+        print >> sys.stderr, "Loading model..."
+        modelSetup = yaml.load(open(model_folder + "/model.yaml", 'r'))
 
-    # 2. See if we have prefixes of compound in vocabulary
-    #
-    logger.info('Getting all matching prefixes')
-    prefixes = set()
-    for prefix in prototypes.keys():
-        if len(inputCompound) > len(prefix) and inputCompound.startswith(prefix):
-            prefixes.add(prefix)
-    logger.debug('Possible prefixes: %r' % prefixes)
-    if len(prefixes) == 0:  # cannot split
-        return []
+        self.nAccuracy = nAccuracy
+        self.similarityThreshold = similarityThreshold
+        self.globalNN = globalNN
+        self.FUGENLAUTE = modelSetup["FUGENLAUTE"]
 
-    # 3. Get all possible splits (so that we have representations for both prefix and tail)
-    #
-    logger.info('Getting possible splits')
-    splits = set()
+        print >> sys.stderr, "Loading prototypes..."
+        self.prototypes = pickle.load(open(args.model_folder + '/prototypes.p', 'rb'))
 
-    FUGENLAUTE = ['', 'e', 'es']  # Needs to include '' !!!
-    for prefix in prefixes:
-        rest = inputCompound[len(prefix):]
+        print >> sys.stderr, "Loading KNN search..."
+        self.annoy_tree = AnnoyIndex(500)
+        self.annoy_tree.load(model_folder + '/tree.ann')
 
-        # get all possible tails
-        possible_tails = []  # (haus, 4)
-        for fug in FUGENLAUTE:
-            if rest.startswith(fug):
-                tail_offset = len(prefix) + len(fug)
-                possible_tails += [(rest[len(fug):], tail_offset), (rest[len(fug):].title(), tail_offset)]
+        print >> sys.stderr, "Loading gensim model..."
+        self.model = gensim.models.Word2Vec.load_word2vec_format(args.model_folder + '/w2v.bin', binary=True)
 
-        for (tail, tail_offset) in possible_tails:
-            logger.debug('Tail: %s' % tail)
-            if tail not in model.vocab:  # we haven't representation for this tail
-                logger.debug('Discarding split %s %s %s' % (inputCompound, prefix, tail))
-                continue
-            splits.add((prefix, tail, tail_offset))
-            logger.debug('Considering split %s %s %s' % (inputCompound, prefix, tail))
-
-    if len(splits) == 0:
-        logger.error('Cannot decompound %s' % inputCompound)
-        return []
-
-    # 4. See if retrieved splits are good in terms of word embeddings
-    #
-    result = []
-    logger.info('Applying direction vectors to possible splits')
-
-    for prefix, tail, tail_offset in splits:
-        logger.debug('Applying %d directions vectors to split %s %s' % (len(prototypes[prefix]), prefix, tail))
-
-        for origin, evidence in prototypes[prefix]:
-            logger.debug('Prefix %s by indexes %d and %d' % (prefix, origin[0], origin[1]))
-
-            dirVectorCompoundRepresentation = model[model.index2word[origin[0]]]
-            dirVectorTailRepresentation = model[model.index2word[origin[1]]]
-            dirVectorDifference = dirVectorCompoundRepresentation - dirVectorTailRepresentation
-
-            predictionRepresentation = model[tail] + dirVectorDifference
-
-            logger.debug('Getting Annoy KNN')
-            try:
-                neighbours = annoy_tree.get_nns_by_vector(list(predictionRepresentation), globalNN)[:nAccuracy]
-                logger.debug(neighbours)
-            except:
-                logger.error('Problem found when retrieving KNN for prediction representation')
-                logger.error(list(predictionRepresentation))
-                exit()
-
-            # Find rank
-            rank = -1
-            for i, nei in enumerate(neighbours):
-                if nei == inputCompoundIndex:
-                    rank = i
-            if rank == -1:
-                logger.debug('%d not found in neighbours. NO RANK. WONT SPLIT' % inputCompoundIndex)
-                continue
-            logger.debug('%d found in neighbours. Rank: %d' % (inputCompoundIndex, rank))
-
-            # compare cosine against threshold
-            similarity = cosine_similarity(predictionRepresentation, inputCompoundRep)[0][0]
-            logger.debug('Computed cosine similarity: %f' % similarity)
-            if similarity < similarityThreshold:
-                logger.debug('%d has too small cosine similarity, discarding' % inputCompoundIndex)
-                continue
-
-            result.append((prefix, tail, tail_offset, origin[0], origin[1], rank, similarity))
-
-    return result
+        print >> sys.stderr, "Done."
 
 
-vertices_count = 0
-distances = []
+    def decompound(self, inputCompound, offset=0):
+
+        # 1. See if we can deal with compound
+        #
+        if len(inputCompound) == 0:
+            return []
+
+        self.logger.debug('Looking up word %s in Word2Vec model' % inputCompound)
+        if inputCompound not in self.model.vocab:  # We haven't vector representation for compound
+            self.logger.debug('ERROR COULDNT FIND KEY %s IN WORD2VEC MODEL' % inputCompound)
+            return []
+        self.logger.debug('Found key in index dict for word %s' % inputCompound)
+        inputCompoundRep = self.model[inputCompound]
+        inputCompoundIndex = self.model.vocab[inputCompound].index
+
+        # 2. See if we have prefixes of compound in vocabulary
+        #
+        self.logger.info('Getting all matching prefixes')
+        prefixes = set()
+        for prefix in self.prototypes.keys():
+            if len(inputCompound) > len(prefix) and inputCompound.startswith(prefix):
+                prefixes.add(prefix)
+        self.logger.debug('Possible prefixes: %r' % prefixes)
+        if len(prefixes) == 0:  # cannot split
+            return []
+
+        # 3. Get all possible splits (so that we have representations for both prefix and tail)
+        #
+        self.logger.info('Getting possible splits')
+        splits = set()
+
+        for prefix in prefixes:
+            rest = inputCompound[len(prefix):]
+
+            # get all possible tails
+            possible_tails = []  # (haus, 4)
+            for fug in self.FUGENLAUTE:
+                if rest.startswith(fug):
+                    tail_offset = len(prefix) + len(fug)
+                    possible_tails += [(rest[len(fug):], tail_offset), (rest[len(fug):].title(), tail_offset)]
+
+            for (tail, tail_offset) in possible_tails:
+                self.logger.debug('Tail: %s' % tail)
+                if tail not in self.model.vocab:  # we haven't representation for this tail
+                    self.logger.debug('Discarding split %s %s %s' % (inputCompound, prefix, tail))
+                    continue
+                splits.add((prefix, tail, tail_offset))
+                self.logger.debug('Considering split %s %s %s' % (inputCompound, prefix, tail))
+
+        if len(splits) == 0:
+            self.logger.error('Cannot decompound %s' % inputCompound)
+            return []
+
+        # 4. See if retrieved splits are good in terms of word embeddings
+        #
+        result = []
+        self.logger.info('Applying direction vectors to possible splits')
+
+        for prefix, tail, tail_offset in splits:
+            self.logger.debug('Applying %d directions vectors to split %s %s' %
+                    (len(self.prototypes[prefix]), prefix, tail))
+
+            for origin, evidence in self.prototypes[prefix]:
+                self.logger.debug('Prefix %s by indexes %d and %d' % (prefix, origin[0], origin[1]))
+
+                dirVectorCompoundRepresentation = self.model[self.model.index2word[origin[0]]]
+                dirVectorTailRepresentation = self.model[self.model.index2word[origin[1]]]
+                dirVectorDifference = dirVectorCompoundRepresentation - dirVectorTailRepresentation
+
+                predictionRepresentation = self.model[tail] + dirVectorDifference
+
+                self.logger.debug('Getting Annoy KNN')
+                try:
+                    neighbours = self.annoy_tree.get_nns_by_vector(list(predictionRepresentation),
+                            self.globalNN)[:self.nAccuracy]
+                    self.logger.debug(neighbours)
+                except Exception as e:
+                    print e
+                    self.logger.error('Problem found when retrieving KNN for prediction representation')
+                    self.logger.error(list(predictionRepresentation))
+                    exit()
+
+                # Find rank
+                rank = -1
+                for i, nei in enumerate(neighbours):
+                    if nei == inputCompoundIndex:
+                        rank = i
+                if rank == -1:
+                    self.logger.debug('%d not found in neighbours. NO RANK. WONT SPLIT' % inputCompoundIndex)
+                    continue
+                self.logger.debug('%d found in neighbours. Rank: %d' % (inputCompoundIndex, rank))
+
+                # compare cosine against threshold
+                similarity = cosine_similarity(predictionRepresentation, inputCompoundRep)[0][0]
+                self.logger.debug('Computed cosine similarity: %f' % similarity)
+                if similarity < self.similarityThreshold:
+                    self.logger.debug('%d has too small cosine similarity, discarding' % inputCompoundIndex)
+                    continue
+
+                result.append((prefix, tail, tail_offset, origin[0], origin[1], rank, similarity))
+
+        return result
 
 
-def get_decompound_lattice(inputCompound, nAccuracy, similarityThreshold):
-    # 1. Initialize
-    #
-    lattice = {}  # from: from -> (to, label, rank, cosine)
+    def get_decompound_lattice(self, inputCompound):
+        # 1. Initialize
+        #
+        lattice = {}  # from: from -> (to, label, rank, cosine)
 
-    # 2. Make graph
-    #
-    def add_edges(from_, label):
-        candidates = decompound(label, nAccuracy, similarityThreshold)
-        tails = set()
+        # 2. Make graph
+        #
+        def add_edges(from_, label):
+            candidates = self.decompound(label)
+            tails = set()
 
-        lattice[from_] = [(from_, from_ + len(label), label, 0, 1.0)]
-        for index, candidate in enumerate(candidates):
-            prefix, tail, tail_offset, origin0, origin1, rank, similarity = candidate
+            lattice[from_] = [(from_, from_ + len(label), label, 0, 1.0)]
+            for index, candidate in enumerate(candidates):
+                prefix, tail, tail_offset, origin0, origin1, rank, similarity = candidate
 
-            to = from_ + tail_offset
-            lattice[from_] += [(from_, to, prefix, rank, similarity)]
+                to = from_ + tail_offset
+                lattice[from_] += [(from_, to, prefix, rank, similarity)]
 
-            tails.add((tail, tail_offset))
+                tails.add((tail, tail_offset))
 
-        for (tail, next_tail_offset) in tails:
-            add_edges(from_ + next_tail_offset, tail)
+            for (tail, next_tail_offset) in tails:
+                add_edges(from_ + next_tail_offset, tail)
 
-    add_edges(0, inputCompound)
+        add_edges(0, inputCompound)
 
-    return lattice
+        return lattice
 
 
 if __name__ == '__main__':
@@ -168,51 +196,36 @@ if __name__ == '__main__':
     parser.add_argument('--globalNN', default=500)
     parser.add_argument('--nAccuracy', default=250)
     parser.add_argument('--similarityThreshold', default=0.0)
-    parser.add_argument('--weightsFile', default='weights')
 
     args = parser.parse_args()
 
-    # Basic Logging:
-    logger = logging.getLogger('')
-    hdlr = logging.FileHandler('decompound_annoy.log')
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    hdlr.setFormatter(formatter)
-    logger.addHandler(hdlr)
-    logger.setLevel(logging.CRITICAL)
-
-    print >> sys.stderr, "Loading prototypes..."
-    prototypes = pickle.load(open(args.model_folder + '/prototypes.p', 'rb'))
-
-    print >> sys.stderr, "Loading KNN search..."
-    annoy_tree = AnnoyIndex(500)
-    annoy_tree.load(args.model_folder + '/tree.ann')
-
-    print >> sys.stderr, "Loading gensim model..."
-    model = gensim.models.Word2Vec.load_word2vec_format(args.model_folder + '/w2v.bin', binary=True)
-
-    print >> sys.stderr, "Done."
+    base_decompounder = BaseDecompounder(args.model_folder,
+            nAccuracy=args.nAccuracy, globalNN=args.globalNN,
+            similarityThreshold=args.similarityThreshold)
 
     if args.mode == "lattices":
         for line in sys.stdin:
             print(
-                get_decompound_lattice(
+                base_decompounder.get_decompound_lattice(
                     line.decode('utf8').rstrip('\n').title(),
-                    args.nAccuracy,
-                    args.similarityThreshold
                 )
             )
 
     elif args.mode in ["1-best", "dict_w2v"]:
         vit = ViterbiDecompounder()
-        vit.load_weights(args.weightsFile)
+        vit.load_weights(args.model_folder+"/weights")
 
+        words = []
         if args.mode == "1-best":
             words = map(lambda line: line.decode('utf8').strip(), fileinput.input())
         else:
-            words = list(model.vocab.keys())
+            words = base_decompounder.model.vocab.keys()
 
+        print >>sys.stderr, "# words: %d" % len(words)
         for word in words:
-            lattice = Lattice(get_decompound_lattice(word, args.nAccuracy, args.similarityThreshold))
+            print word
+            lattice = Lattice(base_decompounder.get_decompound_lattice(word))
+            print lattice
             viterbi_path = vit.viterbi_decode(Compound(word, None, lattice))
-            print " ".join(map(lambda p: "%d,%d" % p, viterbi_path)
+            print word, " ".join(map(lambda p: "%d,%d" % p, viterbi_path))
 
