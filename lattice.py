@@ -3,7 +3,7 @@ from collections import defaultdict
 import ast
 
 def edge_to_split(edge):
-    return edge[0], edge[1]
+    return edge[0], edge[1], edge[-1]
 
 class Lattice(object):
     def __init__(self, arg):
@@ -21,7 +21,7 @@ class Lattice(object):
         for (key, edges) in self.lattice.items():
             if edges:
                 for edge in edges:
-                    (edge_from, edge_to, prefix, rank, similarity) = edge
+                    (edge_from, edge_to, prefix, rank, similarity, fug) = edge
                     self.arcs_to[edge_to].append(edge)
                     self.edges.add(edge)
                     split = edge_to_split(edge)

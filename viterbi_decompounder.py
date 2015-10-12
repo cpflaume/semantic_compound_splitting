@@ -16,15 +16,15 @@ class ViterbiDecompounder:
     def __init__(self):
         pass
 
-    def load_weights(self, weight_file):
-        self.w = np.array(yaml.load(open(weight_file, 'r').read()))
+    def load_weights(self, weights):
+        self.w = np.array(weights)
 
     def viterbi_decode(self, compound):
 
         # print "\n"*4
         # print compound.string
 
-        alphas = [{} for _ in range(len(compound.string) + 1)]
+        alphas = [defaultdict(lambda: 0.0) for _ in range(len(compound.string) + 1)]
         path = {(0, 0): []}
         alphas[0] = defaultdict(lambda: 1.0)
 

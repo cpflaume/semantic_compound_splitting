@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# coding: utf-8
+
 import argparse
 import fileinput
 from compound import Compound
@@ -21,7 +23,7 @@ from viterbi_decompounder import ViterbiDecompounder
 
 class BaseDecompounder:
 
-    def __init__(self, model_folder, nAccuracy=250, globalNN=500,
+    def __init__(self, model_folder, modelSetup, nAccuracy=250, globalNN=500,
             similarityThreshold=0.0):
 
         # Basic Logging:
@@ -33,16 +35,13 @@ class BaseDecompounder:
         self.logger.setLevel(logging.DEBUG)
         ########################################
 
-        print >> sys.stderr, "Loading model..."
-        modelSetup = yaml.load(open(model_folder + "/model.yaml", 'r'))
-
         self.nAccuracy = nAccuracy
         self.similarityThreshold = similarityThreshold
         self.globalNN = globalNN
         self.FUGENLAUTE = modelSetup["FUGENLAUTE"]
 
         print >> sys.stderr, "Loading prototypes..."
-        self.prototypes = pickle.load(open(args.model_folder + '/prototypes.p', 'rb'))
+        self.prototypes = pickle.load(open(model_folder + '/prototypes.p', 'rb'))
 
         print >> sys.stderr, "Loading KNN search..."
         self.annoy_tree = AnnoyIndex(500)
@@ -93,14 +92,17 @@ class BaseDecompounder:
             for fug in self.FUGENLAUTE:
                 if rest.startswith(fug):
                     tail_offset = len(prefix) + len(fug)
-                    possible_tails += [(rest[len(fug):], tail_offset), (rest[len(fug):].title(), tail_offset)]
+                    possible_tails += [
+                            (rest[len(fug):], tail_offset, fug),         #original case
+                            (rest[len(fug):].title(), tail_offset, fug)  #title case
+                    ]
 
-            for (tail, tail_offset) in possible_tails:
-                self.logger.debug('Tail: %s' % tail)
+            for (tail, tail_offset, fug) in possible_tails:
+                self.logger.debug('Tail: %s, Fug: %s' % (tail, fug))
                 if tail not in self.model.vocab:  # we haven't representation for this tail
                     self.logger.debug('Discarding split %s %s %s' % (inputCompound, prefix, tail))
                     continue
-                splits.add((prefix, tail, tail_offset))
+                splits.add((prefix, tail, tail_offset, fug))
                 self.logger.debug('Considering split %s %s %s' % (inputCompound, prefix, tail))
 
         if len(splits) == 0:
@@ -112,7 +114,7 @@ class BaseDecompounder:
         result = []
         self.logger.info('Applying direction vectors to possible splits')
 
-        for prefix, tail, tail_offset in splits:
+        for prefix, tail, tail_offset, fug in splits:
             self.logger.debug('Applying %d directions vectors to split %s %s' %
                     (len(self.prototypes[prefix]), prefix, tail))
 
@@ -153,7 +155,8 @@ class BaseDecompounder:
                     self.logger.debug('%d has too small cosine similarity, discarding' % inputCompoundIndex)
                     continue
 
-                result.append((prefix, tail, tail_offset, origin[0], origin[1], rank, similarity))
+                result.append((prefix, tail, tail_offset, origin[0],
+                    origin[1], rank, similarity, fug))
 
         return result
 
@@ -169,12 +172,15 @@ class BaseDecompounder:
             candidates = self.decompound(label)
             tails = set()
 
-            lattice[from_] = [(from_, from_ + len(label), label, 0, 1.0)]
+            #Default path:
+            lattice[from_] = [(from_, from_ + len(label), label, 0, 1.0, "")]
+            
+            #Canidate pathes:
             for index, candidate in enumerate(candidates):
-                prefix, tail, tail_offset, origin0, origin1, rank, similarity = candidate
+                prefix, tail, tail_offset, origin0, origin1, rank, similarity, fug = candidate
 
                 to = from_ + tail_offset
-                lattice[from_] += [(from_, to, prefix, rank, similarity)]
+                lattice[from_] += [(from_, to, prefix, rank, similarity, fug)]
 
                 tails.add((tail, tail_offset))
 
@@ -184,6 +190,10 @@ class BaseDecompounder:
         add_edges(0, inputCompound)
 
         return lattice
+
+def print_path(p):
+    return " ".join(map(lambda p: "%d,%d,%s" % p, viterbi_path))
+
 
 
 if __name__ == '__main__':
@@ -199,7 +209,10 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    base_decompounder = BaseDecompounder(args.model_folder,
+    print >> sys.stderr, "Loading model..."
+    modelSetup = yaml.load(open(args.model_folder + "/model.yaml", 'r'))
+
+    base_decompounder = BaseDecompounder(args.model_folder, modelSetup,
             nAccuracy=args.nAccuracy, globalNN=args.globalNN,
             similarityThreshold=args.similarityThreshold)
 
@@ -213,7 +226,7 @@ if __name__ == '__main__':
 
     elif args.mode in ["1-best", "dict_w2v"]:
         vit = ViterbiDecompounder()
-        vit.load_weights(args.model_folder+"/weights")
+        vit.load_weights(modelSetup["WEIGHTS"])
 
         words = []
         if args.mode == "1-best":
@@ -223,9 +236,8 @@ if __name__ == '__main__':
 
         print >>sys.stderr, "# words: %d" % len(words)
         for word in words:
-            print word
             lattice = Lattice(base_decompounder.get_decompound_lattice(word))
-            print lattice
             viterbi_path = vit.viterbi_decode(Compound(word, None, lattice))
-            print word, " ".join(map(lambda p: "%d,%d" % p, viterbi_path))
+            print word.encode('utf-8'), print_path(viterbi_path).encode('utf-8')
+
 
