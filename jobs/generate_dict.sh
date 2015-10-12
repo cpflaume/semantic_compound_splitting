@@ -1,6 +1,6 @@
 #PBS -S /bin/bash
 #PBS -lnodes=1:mem64gb:ppn=15
-#PBS -lwalltime=00:20:00
+#PBS -lwalltime=00:60:00
 
 module load python 2>err_py
 
