@@ -27,7 +27,7 @@ die() { echo "$@" 1>&2 ; exit 1; }
 MIN_LENGTH=5
 PROTOTYPE_JOBS=100
 MIN_SUPPORT=10
-FUGENELEMENTE="" 
+FUGENELEMENTE=""
 
 if [ -z "$STEP" ]; then
   STEP=1
@@ -41,7 +41,7 @@ cd $CODE_DIR/jobs
 
 #Step 1: Train w2v
 if [ "$STEP" -le "1" ]; then
-  qsub -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" -v PYTHON="$PYTHON" -v INPUT_TEXTS="$INPUT_TEXTS" train_word2vec.sh
+  qsub -v CODE_DIR="$CODE_DIR",OUT_DIR="$OUT_DIR",PYTHON="$PYTHON",INPUT_TEXTS="$INPUT_TEXTS" train_word2vec.sh
 fi
 
 wait_step 1
@@ -50,7 +50,7 @@ wait_step 1
 #python extract_candidates.py -w /home/jdaiber1/compounds/out/w2v.bin -b /home/jdaiber1/compounds/out/dawg -c /home/jdaiber1/compounds/out/candidates -o /home/jdaiber1/compounds/out/annoy_index -i /home/jdaiber1/compounds/out/candidates_index.p -l 5 -n 100 -f ""
 
 if [ "$STEP" -le "2" ]; then
-  qsub -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" -v PYTHON="$PYTHON" -v MIN_LENGTH="$MIN_LENGTH" -v FUGENELEMENTE="$FUGENELEMENTE" extract_candidates.sh
+  qsub -v CODE_DIR="$CODE_DIR",OUT_DIR="$OUT_DIR",PYTHON="$PYTHON",MIN_LENGTH="$MIN_LENGTH",FUGENELEMENTE="$FUGENELEMENTE" extract_candidates.sh
 fi
 
 wait_step 2
@@ -67,7 +67,7 @@ if [ "$STEP" -le "4" ]; then
 
   for i in {1..$PROTOTYPE_JOBS}
   do
-   qsub -v INPUT="candidates_index.p.$i" -v OUTPUT="output$i" -v PYTHON="$PYTHON" -v CODE_DIR="$CODE_DIR" -v OUT_DIR="$OUT_DIR" find_dir_vectors.sh
+   qsub -v INPUT="candidates_index.p.$i",OUTPUT="output$i",PYTHON="$PYTHON",CODE_DIR="$CODE_DIR",OUT_DIR="$OUT_DIR" find_dir_vectors.sh
   done
 fi
 
