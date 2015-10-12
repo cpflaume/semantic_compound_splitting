@@ -3,7 +3,6 @@
 A compound splitter based on the semantic regularities in the vector space of word embeddings.
 For more information see [this presentation](http://jodaiber.github.io/doc/compound_analogy_slides.pdf) or [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf).
 
-
 ## Coming soon
 
 - precomputed models
@@ -26,7 +25,7 @@ The file `your_file` should contain tokenized sentences.
 ## Advanced usage
 
 
-## Citation
+# Citation
 
 If you use this splitter in your work, please cite:
 
@@ -45,13 +44,13 @@ If you use this splitter in your work, please cite:
 ```
 
 
-## Contributers
+# Contributers
 
 - Roger Wechsler, University of Amsterdam
 - Lautaro Quiroz, University of Amsterdam
 - [Joachim Daiber](http://jodaiber.de), ILLC, University of Amsterdam
 
 
-## License
+# License
 
 Apache 2.0
