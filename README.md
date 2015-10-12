@@ -26,6 +26,13 @@ If you use this splitter in your work, please cite:
 - fast and efficient splitter
 
 
+# Usage
+
+## Basic usage
+
+## Advanced usage
+
+
 ## Contributers
 
 - Roger Wechsler, University of Amsterdam
