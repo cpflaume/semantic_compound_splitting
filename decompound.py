@@ -5,6 +5,7 @@ import argparse
 import fileinput
 from compound import Compound
 from lattice import Lattice
+import multiprocessing
 
 import pickle
 import logging
@@ -191,10 +192,8 @@ class BaseDecompounder:
 
         return lattice
 
-def print_path(p):
+def print_path(viterbi_path):
     return " ".join(map(lambda p: "%d,%d,%s" % p, viterbi_path))
-
-
 
 if __name__ == '__main__':
 
@@ -202,7 +201,7 @@ if __name__ == '__main__':
 
     parser.add_argument('model_folder')
 
-    parser.add_argument('--mode', choices=['1-best', 'lattices', 'dict_w2v'], default='1-best')
+    parser.add_argument('--mode', choices=['1-best', 'lattices', 'dict_w2v', 'w2v_dict'], default='1-best')
     parser.add_argument('--globalNN', default=500)
     parser.add_argument('--nAccuracy', default=250)
     parser.add_argument('--similarityThreshold', default=0.0)
@@ -223,21 +222,28 @@ if __name__ == '__main__':
                     line.decode('utf8').rstrip('\n').title(),
                 )
             )
-
+    elif args.mode == "w2v_dict":
+        for word in base_decompounder.model.vocab.keys():
+            print word.encode('utf-8')
     elif args.mode in ["1-best", "dict_w2v"]:
         vit = ViterbiDecompounder()
         vit.load_weights(modelSetup["WEIGHTS"])
 
         words = []
         if args.mode == "1-best":
-            words = map(lambda line: line.decode('utf8').strip(), fileinput.input())
+            words = map(lambda line: line.decode('utf8').strip(),
+                    sys.stdin)
         else:
             words = base_decompounder.model.vocab.keys()
 
         print >>sys.stderr, "# words: %d" % len(words)
-        for word in words:
+
+        def process_word(word):
             lattice = Lattice(base_decompounder.get_decompound_lattice(word))
             viterbi_path = vit.viterbi_decode(Compound(word, None, lattice))
-            print word.encode('utf-8'), print_path(viterbi_path).encode('utf-8')
+            return [word.encode('utf-8'), print_path(viterbi_path).encode('utf-8')]
 
+        pool = multiprocessing.Pool()
+        for pword in pool.map(process_word, words):
+            print " ".join(pword)
 
