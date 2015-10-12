@@ -30,6 +30,17 @@ If you use this splitter in your work, please cite:
 
 ## Basic usage
 
+To use this tool with standard settings, do the following:
+
+```
+wget https://raw.githubusercontent.com/jodaiber/semantic_compound_splitting/master/decompound_dict.py https://raw.githubusercontent.com/jodaiber/semantic_compound_splitting/master/models/de.dict
+
+python decompound_dict.py de.dict < your_file > your_decompounded_file
+```
+
+The file `your_file` should contain tokenized sentences.
+
+
 ## Advanced usage
 
 
