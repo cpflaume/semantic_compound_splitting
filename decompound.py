@@ -248,7 +248,7 @@ if __name__ == '__main__':
             viterbi_path = vit.viterbi_decode(Compound(word, None, lattice))
             return [word.encode('utf-8'), print_path(viterbi_path).encode('utf-8')]
 
-        pool = multiprocessing.Pool()
+        pool = multiprocessing.Pool(4)
         for pword in pool.map(process_word, words):
             print " ".join(pword)
 
