@@ -165,7 +165,7 @@ class BaseDecompounder:
     def get_decompound_lattice(self, inputCompound):
         # 1. Initialize
         #
-        lattice = {}  # from: from -> (to, label, rank, cosine)
+        lattice = {}  # from: from -> (to, label, rank, cosine, fug)
 
         # 2. Make graph
         #
@@ -174,8 +174,11 @@ class BaseDecompounder:
             tails = set()
 
             #Default path:
-            lattice[from_] = [(from_, from_ + len(label), label, 0, 1.0, "")]
-            
+            if from_ not in lattice:
+                lattice[from_] = []
+
+            lattice[from_] += [(from_, from_ + len(label), label, 0, 1.0, "")]
+
             #Canidate pathes:
             for index, candidate in enumerate(candidates):
                 prefix, tail, tail_offset, origin0, origin1, rank, similarity, fug = candidate
@@ -184,11 +187,13 @@ class BaseDecompounder:
                 lattice[from_] += [(from_, to, prefix, rank, similarity, fug)]
 
                 tails.add((tail, tail_offset))
-
             for (tail, next_tail_offset) in tails:
                 add_edges(from_ + next_tail_offset, tail)
 
         add_edges(0, inputCompound)
+
+        for k in lattice.keys():
+            lattice[k] = list(set(lattice[k]))
 
         return lattice
 
