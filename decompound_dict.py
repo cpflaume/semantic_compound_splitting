@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Decompound words.')
     parser.add_argument('dict')
-    parser.add_argument('--drop_fugenlaute', default=False)
+    parser.add_argument('--drop_fugenlaute', action='store_true')
     args = parser.parse_args()
 
     splits = load_dict(args.dict)
@@ -36,7 +36,7 @@ if __name__ == '__main__':
             w_split = []
             for from_, to, fug in splits[w]:
                 if args.drop_fugenlaute:
-                    w_split.append( w[from_:to] )
+                    w_split.append( w[from_:to-len(fug)] )
                 else:
                     w_split.append( w[from_:to] )
             return u" ".join(w_split)
