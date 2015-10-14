@@ -23,4 +23,4 @@ for p in $all_jobs; do
     qsub -v CODE_DIR,PYTHON,COMPOUND_MODEL,PART=$p jobs/generate_dict.sh
 done
 
-#cat de_words/*.dict > de.dict
+#cat de_words/*.dict | awk 'NF > 2' | sort > models/de.dict
