@@ -1,6 +1,11 @@
 # Splitting compounds by semantic analogy
 
 A compound splitter based on the semantic regularities in the vector space of word embeddings.
+
+<div style="text-align:center;">
+  <img src="http://jodaiber.de/compound_slides.gif" />
+</div>
+
 For more information see [this presentation](http://jodaiber.github.io/doc/compound_analogy_slides.pdf) or [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf).
 
 ## Basic usage
