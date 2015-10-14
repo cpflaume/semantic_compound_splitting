@@ -11,7 +11,7 @@ To use this tool with standard settings, do the following:
 
 ```bash
 $ wget https://raw.githubusercontent.com/jodaiber/semantic_compound_splitting/master/decompound_dict.py https://raw.githubusercontent.com/jodaiber/semantic_compound_splitting/master/models/de.dict
-$ python decompound_dict.py de.dict < your_file > your_decompounded_file
+$ python decompound_dict.py de.dict < your_file
 Verhandlungs Ablauf
 ```
 
