@@ -19,12 +19,12 @@ The file `your_file` should contain tokenized sentences.
 
 ### Options:
 
-``--drop_fugenlaute`` If this flag is set, Fugenlaute (infixes such as -s, -es) are dropped from the final words. 
-``bash
+`--drop_fugenlaute` If this flag is set, Fugenlaute (infixes such as -s, -es) are dropped from the final words. 
+
+```bash
 $ python decompound_dict.py de.dict --drop_fugenlaute < your_file
 Verhandlung Ablauf
 ```
-
 
 
 ## Advanced usage
