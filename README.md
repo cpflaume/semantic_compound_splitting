@@ -3,8 +3,6 @@
 A compound splitter based on the semantic regularities in the vector space of word embeddings.
 For more information see [this presentation](http://jodaiber.github.io/doc/compound_analogy_slides.pdf) or [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf).
 
-# Usage
-
 ## Basic usage
 
 To use this tool with standard settings, do the following:
