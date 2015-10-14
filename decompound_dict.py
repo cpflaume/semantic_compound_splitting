@@ -27,18 +27,32 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Decompound words.')
     parser.add_argument('dict')
-    parser.add_argument('--drop_fugenlaute', action='store_true')
+    parser.add_argument('--drop_fugenlaute', help='If this flag is set, Fugenlaute (infixes such as -s, -es) are dropped from the final words.', action='store_true')
+    parser.add_argument('--lowercase', help='Lowercase all words.', action='store_true')
+    parser.add_argument('--restore_case', help='Restore the case (words will take case of the original word).', default=True)
     args = parser.parse_args()
 
     splits = load_dict(args.dict)
     def split_word(w):
         if w in splits:
+
             w_split = []
             for from_, to, fug in splits[w]:
                 if args.drop_fugenlaute:
-                    w_split.append( w[from_:to-len(fug)] )
+                    wordpart = w[from_:to-len(fug)]
                 else:
-                    w_split.append( w[from_:to] )
+                    wordpart = w[from_:to]
+
+                if args.lowercase:
+                    wordpart = wordpart.lower()
+                elif args.restore_case == True:
+                    if w == w.title():
+                        wordpart = wordpart.title()
+                    elif w == w.upper():
+                        wordpart = wordpart.upper()
+
+                w_split.append(wordpart)
+                    
             return u" ".join(w_split)
         else:
             return w
