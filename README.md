@@ -48,12 +48,6 @@ If you use this splitter in your work, please cite:
 }
 ```
 
-## Coming soon
-
-- precomputed models
-- fast and efficient splitter
-
-
 # Contributers
 
 - Roger Wechsler, University of Amsterdam
