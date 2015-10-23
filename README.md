@@ -1,14 +1,13 @@
-# Splitting Compounds by Semantic Analogy
+# Splitting compounds by semantic analogy
 
 A compound splitter based on the semantic regularities in the vector space of word embeddings.
 For more information see [this presentation](http://jodaiber.github.io/doc/compound_analogy_slides.pdf) or [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf).
 
-## Coming soon
+<p align="center">  
+    <a href="http://jodaiber.github.io/doc/compound_analogy_slides.pdf"><img align="center" src="http://jodaiber.de/compound_slides.gif" /></a>
+</p>
 
-- precomputed models
-- fast and efficient splitter
 
-# Usage
 
 ## Basic usage
 
@@ -16,10 +15,23 @@ To use this tool with standard settings, do the following:
 
 ```bash
 $ wget https://raw.githubusercontent.com/jodaiber/semantic_compound_splitting/master/decompound_dict.py https://raw.githubusercontent.com/jodaiber/semantic_compound_splitting/master/models/de.dict
-$ python decompound_dict.py de.dict < your_file > your_decompounded_file
+$ python decompound_dict.py de.dict < your_file
+Verhandlungs Ablauf
 ```
 
 The file `your_file` should contain tokenized sentences.
+
+### Options:
+
+`--drop_fugenlaute` If this flag is set, Fugenlaute (infixes such as -s, -es) are dropped from the final words. 
+```bash
+$ python decompound_dict.py de.dict --drop_fugenlaute < your_file
+Verhandlung Ablauf
+```
+
+`--lowercase` Lowercase all words.
+
+`--restore_case True/False` Restore the case of the parts of the compound (words will take the case of the original word). Default: True
 
 
 ## Advanced usage
@@ -42,7 +54,6 @@ If you use this splitter in your work, please cite:
   url={http://jodaiber.github.io/doc/compound_analogy.pdf}
 }
 ```
-
 
 # Contributers
 
