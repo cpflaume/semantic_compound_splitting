@@ -25,7 +25,7 @@ from viterbi_decompounder import ViterbiDecompounder
 class BaseDecompounder:
 
     def __init__(self, model_folder, modelSetup, nAccuracy=250, globalNN=500,
-            similarityThreshold=0.0):
+            similarityThreshold=0.0, prototype_file="prototypes.p"):
 
         # Basic Logging:
         self.logger = logging.getLogger('')
@@ -42,7 +42,8 @@ class BaseDecompounder:
         self.FUGENLAUTE = modelSetup["FUGENLAUTE"]
 
         print >> sys.stderr, "Loading prototypes..."
-        self.prototypes = pickle.load(open(model_folder + '/prototypes.p', 'rb'))
+
+        self.prototypes = pickle.load(open(model_folder + "/" + prototype_file, 'rb'))
 
         print >> sys.stderr, "Loading KNN search..."
         self.annoy_tree = AnnoyIndex(500)
@@ -210,6 +211,7 @@ if __name__ == '__main__':
     parser.add_argument('--globalNN', default=500)
     parser.add_argument('--nAccuracy', default=250)
     parser.add_argument('--similarityThreshold', default=0.0)
+    parser.add_argument('--prototypeFile', default="prototypes.p")
 
     args = parser.parse_args()
 
@@ -218,7 +220,8 @@ if __name__ == '__main__':
 
     base_decompounder = BaseDecompounder(args.model_folder, modelSetup,
             nAccuracy=args.nAccuracy, globalNN=args.globalNN,
-            similarityThreshold=args.similarityThreshold)
+            similarityThreshold=args.similarityThreshold,
+            prototype_file=args.prototypeFile)
 
     if args.mode == "lattices":
         for line in sys.stdin:

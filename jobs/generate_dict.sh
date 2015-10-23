@@ -8,8 +8,9 @@ echo $PYTHON
 echo $CODE_DIR
 cd $CODE_DIR
 
-echo "In folder: $PWD"
+echo "In folder: $IN_FOLDER"
+echo "Out folder: $OUT_FOLDER"
 
 # call the programs
-$PYTHON decompound.py $COMPOUND_MODEL < $PART > ${PART}.dict
+$PYTHON decompound.py $COMPOUND_MODEL --prototypeFile $PROTOTYPE_FILE < $IN_FOLDER/$PART > $OUT_FOLDER/${PART}.dict
 
