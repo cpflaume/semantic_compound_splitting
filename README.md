@@ -33,6 +33,8 @@ Verhandlung Ablauf
 
 `--restore_case True/False` Restore the case of the parts of the compound (words will take the case of the original word). Default: True
 
+`--ignore_case` Ignores case: all input words should be lowercase.
+
 
 ## Advanced usage
 
