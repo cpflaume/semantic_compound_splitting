@@ -34,7 +34,7 @@ if __name__ == '__main__':
     parser.add_argument('--drop_fugenlaute', help='If this flag is set, Fugenlaute (infixes such as -s, -es) are dropped from the final words.', action='store_true')
     parser.add_argument('--lowercase', help='Lowercase all output words.', action='store_true')
     parser.add_argument('--ignore_case', help='Ignore upper/lowercase (words passed should be all lowercase)', action='store_true', default=False)
-    parser.add_argument('--restore_case', help='Restore the case (words will take case of the original word).', action='store_true', default=True)
+    parser.add_argument('--restore_case', help='Restore the case (words will take case of the original word).', default=True)
     args = parser.parse_args()
 
     splits = load_dict(args.dict, ignore_case=args.ignore_case)
