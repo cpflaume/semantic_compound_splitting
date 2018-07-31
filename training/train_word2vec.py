@@ -29,7 +29,7 @@ class CorpusReader():
             print("Processing ", f)
             for line in open(f, "r"):
 		try:
-	                yield self.tokenizer.tokenize(line.decode("utf-8"))
+	                yield self.tokenizer.tokenize(line)
 		except:
 			pass
 

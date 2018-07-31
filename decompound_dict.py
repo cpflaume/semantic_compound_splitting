@@ -8,7 +8,7 @@ def load_dict(file, ignore_case=False):
     splits = {}
     with open(file) as f:
         for line in f:
-            es = line.decode('utf8').rstrip('\n').split(" ")
+            es = line.rstrip('\n').split(" ")
             w = es[0]
             if args.ignore_case:
                 # TODO, always using the last one in case of overlaps
@@ -66,5 +66,5 @@ if __name__ == '__main__':
             return w
 
     for line in sys.stdin:
-        print(" ".join(map(split_word, line.decode('utf-8').strip().split(" "))))
+        print(" ".join(map(split_word, line.strip().split(" "))))
 
