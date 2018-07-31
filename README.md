@@ -1,4 +1,7 @@
-# Unsupervised German Compound Splitter
+# Unsupervised German Compound Splitter --> Python3
+
+Edit: This fork has been converted to Python3 with the 2to3 tool and some custom adjustments.
+Only tested feature is the 'decompound_dict.py' example. 
 
 A compound splitter based on the semantic regularities in the vector space of word embeddings.
 For more information see [this presentation](http://jodaiber.github.io/doc/compound_analogy_slides.pdf) or [our paper](http://jodaiber.github.io/doc/compound_analogy.pdf).
