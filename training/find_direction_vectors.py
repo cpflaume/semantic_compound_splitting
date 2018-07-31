@@ -1,5 +1,5 @@
 import datetime
-import cPickle as pickle
+import pickle as pickle
 from annoy import AnnoyIndex
 import gensim
 import time
@@ -61,13 +61,13 @@ if __name__ == "__main__":
     arguments = parser.parse_args(sys.argv[1:])
 
 
-    print timestamp(), "loading candidates"
+    print(timestamp(), "loading candidates")
     candidates = load_candidate_dump(arguments.candidates_index_file)
 
-    print timestamp(), "loading word2vec model"
+    print(timestamp(), "loading word2vec model")
     word2vec_model = load_word2vecmodel(arguments.word2vec_file)
 
-    print timestamp(), "preprocess candidates"
+    print(timestamp(), "preprocess candidates")
     # only store vectors that we need. And sample already.
     word2vec_vectors = dict()
     for cand in candidates:
@@ -79,9 +79,9 @@ if __name__ == "__main__":
 
     del word2vec_model
 
-    print timestamp(), "number of vectors: ", len(word2vec_vectors)
+    print(timestamp(), "number of vectors: ", len(word2vec_vectors))
 
-    print timestamp(), "load annoy tree"
+    print(timestamp(), "load annoy tree")
     # global annoy_tree
     annoy_tree = load_annoy_tree(arguments.annoy_tree_file, arguments.vector_dims)
 
@@ -120,12 +120,12 @@ if __name__ == "__main__":
     def mp_wrapper_evaluate_set(argument):
         return find_direction_vectors(*argument)
 
-    print timestamp(), "evaluating direction vectors"
+    print(timestamp(), "evaluating direction vectors")
     pool = mp.Pool(processes=arguments.n_processes)
     params = candidate_generator(candidates, arguments.rank_threshold, arguments.evidence_threshold)
     results = pool.map(mp_wrapper_evaluate_set, params)
 
-    print timestamp(), "pickling"
+    print(timestamp(), "pickling")
     pickle.dump(results, open(arguments.result_output_file, "wb"))
 
-    print timestamp(), "done"
+    print(timestamp(), "done")

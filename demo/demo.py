@@ -25,7 +25,7 @@ def draw_lattice2(c, l, viterbi=set()):
     a.body.append("%s " % (" ".join([ str(key) for (i, key) in enumerate(allnodes) ]))) #"%s [ pos = \"%s, 0!\" ]; \n" % (key, i*3)
 
     red = set()
-    for (key, v) in l.items():
+    for (key, v) in list(l.items()):
         for (from_, to, label, rank, cosine) in v:
             lbl = "%s (%d, %.2f)" % (label,rank,cosine)
             style = {}
@@ -68,15 +68,15 @@ def apply_styles(graph, styles):
     return graph
 
 lattice = {0: [(0, 12, 'Hauptbahnhof', 0, 1.0),
-  (0, 5, u'Haupt', 3, 0.57081479),
-  (0, 5, u'Haupt', 2, 0.57828569),
-  (0, 5, u'Haupt', 227, 0.55057061),
-  (0, 5, u'Haupt', 232, 0.61008978),
-  (0, 5, u'Haupt', 1, 0.6191287)],
+  (0, 5, 'Haupt', 3, 0.57081479),
+  (0, 5, 'Haupt', 2, 0.57828569),
+  (0, 5, 'Haupt', 227, 0.55057061),
+  (0, 5, 'Haupt', 232, 0.61008978),
+  (0, 5, 'Haupt', 1, 0.6191287)],
  5: [(5, 12, 'Bahnhof', 0, 1.0),
-  (5, 9, u'Bahn', 14, 0.43744743),
-  (5, 9, u'Bahn', 159, 0.37221277),
-  (5, 9, u'Bahn', 2, 0.52165151)],
+  (5, 9, 'Bahn', 14, 0.43744743),
+  (5, 9, 'Bahn', 159, 0.37221277),
+  (5, 9, 'Bahn', 2, 0.52165151)],
  9: [(9, 12, 'hof', 0, 1.0)]}
 
 viterbiH = [(0, 5), (5, 9), (9, 12)]

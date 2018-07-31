@@ -12,13 +12,13 @@ class Lattice(object):
         self.arc_offsets = {}
 
         # parse from string, if needed
-        if isinstance(arg, str) or isinstance(arg, unicode):
+        if isinstance(arg, str) or isinstance(arg, str):
             arg = ast.literal_eval(arg)
 
         self.lattice = arg
         self.features = defaultdict(lambda: (100, 0.05))
         self.edges = set()
-        for (key, edges) in self.lattice.items():
+        for (key, edges) in list(self.lattice.items()):
             if edges:
                 for edge in edges:
                     (edge_from, edge_to, prefix, rank, similarity, fug) = edge
@@ -36,13 +36,13 @@ class Lattice(object):
         if i not in self.lattice:
             return []
         else:
-            return map(edge_to_split, self.lattice[i])
+            return list(map(edge_to_split, self.lattice[i]))
 
     def splits_to(self, i):
         if i == 0:
             return [(0,0)]
         else:
-            return map(edge_to_split, self.arcs_to[i])
+            return list(map(edge_to_split, self.arcs_to[i]))
 
     def get_features(self, split, compound):
         return self.features[split]

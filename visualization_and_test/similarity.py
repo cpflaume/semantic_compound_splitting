@@ -25,7 +25,7 @@ def load_prototypes(file_name):
 
 
 def get_vector(obj, word2vec_model, prototypes):
-    if isinstance(obj, unicode):
+    if isinstance(obj, str):
         try:
             return word2vec_model[obj], 0
         except KeyError:
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
     length = len(elements)
 
-    pairs = zip(elements[:length/2], elements[length/2:])
+    pairs = list(zip(elements[:length/2], elements[length/2:]))
 
     annotated = read_gold_sim("gold.txt")
 
@@ -99,9 +99,9 @@ if __name__ == "__main__":
         vec1, i = get_vector(w1, word2vec_model, prototypes)
         vec2, j = get_vector(w2, word2vec_model, prototypes)
 
-        if isinstance(w1, unicode):
+        if isinstance(w1, str):
             w1 = (w1,)
-        if isinstance(w2, unicode):
+        if isinstance(w2, str):
             w2 = (w2,)
 
         if vec1 is not None and vec2 is not None:

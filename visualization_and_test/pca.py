@@ -12,7 +12,7 @@ import random
 from nltk import FreqDist
 from nltk.corpus import PlaintextCorpusReader
 import gensim
-from tsne import tsne
+from .tsne import tsne
 import numpy as Math
 import pylab
 import codecs
@@ -34,7 +34,7 @@ def plotGraph(samples, word, dimensions):
         plt.legend()
         plt.title('Word embeddings PCA')
 
-        print sklearn_transf
+        print(sklearn_transf)
 
     elif dimensions == '3D':
         sklearn_pca = sklearnPCA(n_components=3)
@@ -51,7 +51,7 @@ def plotGraph(samples, word, dimensions):
         plt.title('Word embeddings PCA')
         ax.legend(loc='upper right')
 
-        print sklearn_transf
+        print(sklearn_transf)
 
     plt.savefig("%s-%s.png" % (word, dimensions), bbox_inches='tight', dpi=200)
     plt.close()
@@ -75,7 +75,7 @@ def constructSamplesAndPlot(word1, tail1, word2, tail2, model):
 
     idx = word2.find(tail2.lower())
     if idx == -1:
-        print 'Error.'
+        print('Error.')
         exit()
 
     head2 = word2[:idx]

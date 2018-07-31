@@ -1,4 +1,4 @@
-from __future__ import division
+
 import codecs
 import numpy as np
 import sys
@@ -32,12 +32,12 @@ class StructuredPerceptron:
     def train(self, data, heldout, verbose=0, run_label=None):
 
         self.decoder.w = np.ones(self.n_features, dtype=float) / self.n_features
-        print >> sys.stderr, "Start weights: %s" % self.decoder.w
+        print("Start weights: %s" % self.decoder.w, file=sys.stderr)
 
         training_accuracy = [0.0]
         heldout_accuracy = [0.0]
 
-        for i_epoch in xrange(self.n_epochs):
+        for i_epoch in range(self.n_epochs):
 
             tp, fp, fn = 0, 0, 0
 
@@ -55,13 +55,13 @@ class StructuredPerceptron:
                 acc = self.test(heldout)
                 heldout_accuracy.append(acc)
 
-            print "Training", training_accuracy
+            print("Training", training_accuracy)
             # Stop if the error on the training data does not decrease
             if training_accuracy[-1] <= training_accuracy[-2]:
                 break
 
-            print >> sys.stderr, "Weights: %s" % self.decoder.w
-            print >> sys.stderr, "Epoch %i, F1: %f" % (i_epoch, f1)
+            print("Weights: %s" % self.decoder.w, file=sys.stderr)
+            print("Epoch %i, F1: %f" % (i_epoch, f1), file=sys.stderr)
 
         # Average!
         averaged_parameters = 0
@@ -75,8 +75,8 @@ class StructuredPerceptron:
         self.trained = True
 
         if verbose == 1:
-            print "Heldout accs:", str(heldout_accuracy)
-            print self.decoder.w
+            print("Heldout accs:", str(heldout_accuracy))
+            print(self.decoder.w)
 
         # Export training info in verbose mode:
         if verbose == 2:
@@ -116,7 +116,7 @@ class StructuredPerceptron:
                 prev_split = get_prev_split(predicted_splits, split)
 
                 predicted_split_features = self.decoder.fs(compound, prev_split, split, compound.predicted_lattice)
-                print >> sys.stderr, "Pred fs:", predicted_split_features
+                print("Pred fs:", predicted_split_features, file=sys.stderr)
                 self.decoder.w -= self.eta * (self.decoder.w * predicted_split_features)
 
                 fp += 1
@@ -125,8 +125,8 @@ class StructuredPerceptron:
                 prev_split = get_prev_split(gold_splits, split)
 
                 gold_split_features = self.decoder.fs(compound, prev_split, split, compound.predicted_lattice)
-                print >> sys.stderr, "Gold fs:", gold_split_features
-                print >> sys.stderr, "w:", self.decoder.w
+                print("Gold fs:", gold_split_features, file=sys.stderr)
+                print("w:", self.decoder.w, file=sys.stderr)
                 self.decoder.w += self.eta * (self.decoder.w * gold_split_features)
 
                 fn += 1
@@ -154,9 +154,9 @@ class StructuredPerceptron:
         recall = tp / (tp + fn)
         f1 = 2 * ((precision * recall) / (precision + recall))
 
-        print "Test Precision: %f" % recall
-        print "Test Recall: %f" % precision
-        print "Test F1: %f" % f1
+        print("Test Precision: %f" % recall)
+        print("Test Recall: %f" % precision)
+        print("Test F1: %f" % f1)
 
         return f1
 
@@ -201,9 +201,7 @@ if __name__ == '__main__':
     compounds_gold = codecs.open("data/cdec_nouns.references", encoding="utf-8").readlines()
     compounds_pred = codecs.open("data/cdec_nouns.lattices", encoding="utf-8").readlines()
 
-    compounds = map(lambda (compound, lineGold, latticePredicted):
-                    Compound(compound.strip(), split_gold(lineGold), Lattice(latticePredicted)),
-                    zip(compound_names, compounds_gold, compounds_pred))
+    compounds = [Compound(compound_lineGold_latticePredicted[0].strip(), split_gold(compound_lineGold_latticePredicted[1]), Lattice(compound_lineGold_latticePredicted[2])) for compound_lineGold_latticePredicted in zip(compound_names, compounds_gold, compounds_pred)]
 
     import random
 
@@ -213,11 +211,11 @@ if __name__ == '__main__':
 
     for c in train:
         if not all_gold_splits_in_lattice(c):
-            print "  Unreachable training instance:", c.string, "Gold:", c.gold_splits, "Predicted:", c.predicted_lattice.get_splits()
+            print("  Unreachable training instance:", c.string, "Gold:", c.gold_splits, "Predicted:", c.predicted_lattice.get_splits())
 
     trainer = StructuredPerceptron(epochs=10)
     trainer.train(train, heldout, verbose=1)
-    print "% Gold path in the lattice: ", correct_in_lattice(heldout)
+    print("% Gold path in the lattice: ", correct_in_lattice(heldout))
 
     import yaml
 

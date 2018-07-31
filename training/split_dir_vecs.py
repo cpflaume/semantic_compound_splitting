@@ -1,4 +1,4 @@
-import cPickle as pickle
+import pickle as pickle
 import sys
 import numpy as np
 from collections import defaultdict
@@ -9,7 +9,7 @@ dir_vecs = pickle.load(open(sys.argv[1], "rb"))
 
 length_tuples = sorted([(prefix, prototype, evidence_set) for prefix in dir_vecs for prototype, evidence_set in dir_vecs[prefix]], key=lambda t: len(t[2]), reverse=True)
 
-print "Number of prototypes: ", len(length_tuples)
+print("Number of prototypes: ", len(length_tuples))
 
 num_splits = int(sys.argv[2])
 
@@ -23,7 +23,7 @@ for prefix, prototype, evidence_set in length_tuples:
     splits[target][prefix].append((prototype, evidence_set))
     lengths[target] += len(evidence_set)
 
-print "Length distribution:", lengths
+print("Length distribution:", lengths)
 
 for i, split in enumerate(splits):
     pickle.dump(split, open(sys.argv[1]+"."+str(i+1), "wb"))

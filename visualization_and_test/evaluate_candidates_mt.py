@@ -1,6 +1,6 @@
 __author__ = 'lqrz'
 
-import cPickle as pickle
+import pickle as pickle
 import gensim
 import itertools
 import random
@@ -11,7 +11,7 @@ import time
 import datetime
 import numpy as np
 import threading
-import Queue
+import queue
 
 
 def timestamp():
@@ -61,9 +61,9 @@ def test_pair(pair1, pair2, word2vec_model, k=100, show=30):
 
     neighbours = word2vec_model.most_similar([predicted], topn=k)
 
-    print neighbours[:show]
-    neighbours, _ = zip(*neighbours)
-    print "Found: ", true_word in neighbours
+    print(neighbours[:show])
+    neighbours, _ = list(zip(*neighbours))
+    print("Found: ", true_word in neighbours)
 
 
 def candidate_generator(candidates, annoy_tree_file, vector_dims, rank_threshold, sample_size):
@@ -77,8 +77,8 @@ def mp_wrapper_evaluate_set(argument):
 if __name__ == "__main__":
 
     #lqrz
-    contentQueue = Queue.Queue()
-    indexQueue = Queue.Queue()
+    contentQueue = queue.Queue()
+    indexQueue = queue.Queue()
 
     #### Default Parameters-------------------------------------------####
     rank_threshold = 100
@@ -99,13 +99,13 @@ if __name__ == "__main__":
     arguments = parser.parse_args(sys.argv[1:])
 
 
-    print timestamp(), "loading candidates"
+    print(timestamp(), "loading candidates")
     candidates = load_candidate_dump(arguments.candidates_index_file)
 
 
     annoy_tree = load_annoy_tree(arguments.annoy_tree_file, arguments.vector_dims)
 
-    print 'Global annoy tree', id(annoy_tree)
+    print('Global annoy tree', id(annoy_tree))
 
     def evaluate_set(contentQueue, indexQueue):
         while not contentQueue.empty():
@@ -119,7 +119,7 @@ if __name__ == "__main__":
             rank_threshold = t[3]
             sample_size = t[4]
 
-            print prefix, id(annoy_tree)
+            print(prefix, id(annoy_tree))
 
             if len(tails) > sample_size:
                 tails = random.sample(tails, sample_size)
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     for prefix in candidates:
         contentQueue.put(((prefix, candidates[prefix], annoy_tree, arguments.rank_threshold, arguments.sample_set_size)))
 
-    print timestamp(), "evaluating candidates"
+    print(timestamp(), "evaluating candidates")
 
     nThreads = arguments.n_processes
 
@@ -157,9 +157,9 @@ if __name__ == "__main__":
     # results = evaluate_candidates(candidates, arguments.annoy_tree_file, arguments.vector_dims, rank_threshold=arguments.rank_threshold,
     #                               sample_size=arguments.sample_set_size, processes=arguments.n_processes)
 
-    print timestamp(), "pickling"
+    print(timestamp(), "pickling")
     pickle.dump(results, open(arguments.result_output_file, "wb"))
 
-    print timestamp(), "done"
+    print(timestamp(), "done")
 
-    print results
+    print(results)

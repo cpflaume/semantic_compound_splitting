@@ -1,4 +1,4 @@
-import cPickle as pickle
+import pickle as pickle
 import sys
 import numpy as np
 
@@ -11,7 +11,7 @@ minimum_length = int(sys.argv[3])
 
 length_tuples = sorted([(c, min(500,len(candidates[c]))) for c in candidates if len(candidates[c]) >= minimum_length], key=lambda t: t[1], reverse=True)
 
-print "Number of valid rules: ", len(length_tuples)
+print("Number of valid rules: ", len(length_tuples))
 
 num_splits = int(sys.argv[2])
 
@@ -25,7 +25,7 @@ for prefix, length in length_tuples:
     splits[target][prefix] = candidates[prefix]
     lengths[target] += length**2
 
-print "Length distribution:", lengths
+print("Length distribution:", lengths)
 
 for i, split in enumerate(splits):
     pickle.dump(split, open(sys.argv[1]+"."+str(i+1), "wb"))

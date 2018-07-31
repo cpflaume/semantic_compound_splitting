@@ -1,5 +1,5 @@
 __author__ = 'rwechsler'
-import cPickle as pickle
+import pickle as pickle
 import itertools
 import random
 from annoy import AnnoyIndex
@@ -54,9 +54,9 @@ def test_pair(pair1, pair2, word2vec_model, k=100, show=30):
 
     neighbours = word2vec_model.most_similar([predicted], topn=k)
 
-    print neighbours[:show]
-    neighbours, _ = zip(*neighbours)
-    print "Found: ", true_word in neighbours
+    print(neighbours[:show])
+    neighbours, _ = list(zip(*neighbours))
+    print("Found: ", true_word in neighbours)
 
 
 def candidate_generator(candidates, rank_threshold, sample_size, annoy_tree_file, vector_dims, lock):
@@ -88,10 +88,10 @@ if __name__ == "__main__":
     arguments = parser.parse_args(sys.argv[1:])
 
 
-    print timestamp(), "loading candidates"
+    print(timestamp(), "loading candidates")
     candidates = load_candidate_dump(arguments.candidates_index_file)
 
-    print timestamp(), "load annoy tree"
+    print(timestamp(), "load annoy tree")
     # global annoy_tree
     #annoy_tree = load_annoy_tree(arguments.annoy_tree_file, arguments.vector_dims)
     annoy_tree_file = arguments.annoy_tree_file
@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
         # annoy_tree = load_annoy_tree(annoy_tree_file, vector_dims)
 
-        print mp.current_process().name, id(annoy_tree), prefix.encode('utf-8')
+        print(mp.current_process().name, id(annoy_tree), prefix.encode('utf-8'))
         sys.stdout.flush()
 
         counts = dict()
@@ -135,12 +135,12 @@ if __name__ == "__main__":
 
         return (prefix, float(counts[True]) / (counts[True] + counts[False])) if counts[True] + counts[False] > 0 else (prefix, 0.0)
 
-    print timestamp(), "evaluating candidates"
+    print(timestamp(), "evaluating candidates")
     pool = mp.Pool(processes=arguments.n_processes)
     params = candidate_generator(candidates, arguments.rank_threshold, arguments.sample_set_size, annoy_tree_file, vector_dims, lock)
     results = pool.map(mp_wrapper_evaluate_set, params)
 
-    print timestamp(), "pickling"
+    print(timestamp(), "pickling")
     pickle.dump(results, open(arguments.result_output_file, "wb"))
 
-    print timestamp(), "done"
+    print(timestamp(), "done")

@@ -1,6 +1,6 @@
 __author__ = 'rwechsler'
 import gensim
-import cPickle as pickle
+import pickle as pickle
 import argparse
 import sys
 import codecs

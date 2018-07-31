@@ -6,7 +6,7 @@ import datetime
 import gensim
 import dawg
 from collections import defaultdict
-import cPickle as pickle
+import pickle as pickle
 import numpy as np
 from annoy import AnnoyIndex
 import argparse
@@ -131,69 +131,69 @@ if __name__ == "__main__":
 
 
 
-    print timestamp(), "loading word2ved model"
+    print(timestamp(), "loading word2ved model")
     #word2vec_model = #gensim.models.Word2Vec.load_word2vec_format(arguments.word2vec_file, binary=True)
     word2vec_model = gensim.models.Word2Vec.load(arguments.word2vec_file)
 
-    print timestamp(), "building vocabulary ..."
+    print(timestamp(), "building vocabulary ...")
     prefix_vocab, suffix_vocab = build_vocabulary(word2vec_model, min_length=arguments.min_word_length)
 
     if arguments.build_dawg_name:
-        print timestamp(), "building dawg models"
+        print(timestamp(), "building dawg models")
         dawg_model = dawg.DAWG(prefix_vocab)
         lower_suffix_dawg_model = dawg.DAWG(set(w.lower() for w in suffix_vocab))
-        print timestamp(), "saving dawg models"
+        print(timestamp(), "saving dawg models")
         dawg_model.save(arguments.build_dawg_name + ".prefixes")
         lower_suffix_dawg_model.save(arguments.build_dawg_name + ".suffixes")
     else:
-        print timestamp(), "loading dawg models"
+        print(timestamp(), "loading dawg models")
         dawg_model = dawg.DAWG()
         dawg_model.load(arguments.dawg_name + ".prefixes")
         lower_suffix_dawg_model = dawg.DAWG(arguments.dawg_name + ".suffixes")
 
 
     candidates = defaultdict(set)
-    print timestamp(), "prefix pass ..."
+    print(timestamp(), "prefix pass ...")
     add_prefix_combinations(candidates, prefix_vocab, dawg_model, fugenlaute=fugenlaute)
-    print timestamp(), "suffix pass ..."
+    print(timestamp(), "suffix pass ...")
     add_suffix_combinations(candidates, suffix_vocab, lower_suffix_dawg_model, fugenlaute=fugenlaute)
 
-    print timestamp(), "pickling model ..."
+    print(timestamp(), "pickling model ...")
     pickle.dump(candidates, open(arguments.output_candidate_file, "wb"))
 
     if arguments.output_annoy_file:
-        print timestamp(), "building annoy tree"
+        print(timestamp(), "building annoy tree")
         annoy_tree_file = build_annoy_tree(word2vec_model, n_trees=arguments.n_annoy_trees, output_file_name=arguments.output_annoy_file)
 
-    print timestamp(), "producing candidate index file"
+    print(timestamp(), "producing candidate index file")
     produce_candidate_index(candidates, word2vec_model, arguments.candidate_index_file)
 
-    print timestamp(), "done."
+    print(timestamp(), "done.")
 
 
     # some statistics
-    print "Vocabulary size: ", len(prefix_vocab)
-    for k, v in candidates.items()[:40]:
+    print("Vocabulary size: ", len(prefix_vocab))
+    for k, v in list(candidates.items())[:40]:
         try:
-            print k.encode("utf-8"), v
+            print(k.encode("utf-8"), v)
         except:
             pass
 
 
-    tuples = sorted([(k, len(v)) for k,v in candidates.items()], key= lambda tup: tup[1], reverse=True)
-    print "------"
-    print "Longest keys: "
+    tuples = sorted([(k, len(v)) for k,v in list(candidates.items())], key= lambda tup: tup[1], reverse=True)
+    print("------")
+    print("Longest keys: ")
     for k, v in tuples[:40]:
         try:
-            print k.encode("utf-8"), v
+            print(k.encode("utf-8"), v)
         except:
             pass
 
-    keys, lengths = zip(*tuples)
+    keys, lengths = list(zip(*tuples))
 
-    print "----"
-    print "Keys: ", len(candidates)
-    print "Longest key: ", keys[np.argmax(lengths)], np.max(lengths)
-    print "Average length: ", np.mean(lengths)
+    print("----")
+    print("Keys: ", len(candidates))
+    print("Longest key: ", keys[np.argmax(lengths)], np.max(lengths))
+    print("Average length: ", np.mean(lengths))
 
 

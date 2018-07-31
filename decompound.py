@@ -41,18 +41,18 @@ class BaseDecompounder:
         self.globalNN = globalNN
         self.FUGENLAUTE = modelSetup["FUGENLAUTE"]
 
-        print >> sys.stderr, "Loading prototypes..."
+        print("Loading prototypes...", file=sys.stderr)
 
         self.prototypes = pickle.load(open(model_folder + "/" + prototype_file, 'rb'))
 
-        print >> sys.stderr, "Loading KNN search..."
+        print("Loading KNN search...", file=sys.stderr)
         self.annoy_tree = AnnoyIndex(500)
         self.annoy_tree.load(model_folder + '/tree.ann')
 
-        print >> sys.stderr, "Loading gensim model..."
+        print("Loading gensim model...", file=sys.stderr)
         self.model = gensim.models.Word2Vec.load_word2vec_format(args.model_folder + '/w2v.bin', binary=True)
 
-        print >> sys.stderr, "Done."
+        print("Done.", file=sys.stderr)
 
 
     def decompound(self, inputCompound, offset=0):
@@ -74,7 +74,7 @@ class BaseDecompounder:
         #
         self.logger.info('Getting all matching prefixes')
         prefixes = set()
-        for prefix in self.prototypes.keys():
+        for prefix in list(self.prototypes.keys()):
             if len(inputCompound) > len(prefix) and inputCompound.startswith(prefix):
                 prefixes.add(prefix)
         self.logger.debug('Possible prefixes: %r' % prefixes)
@@ -135,7 +135,7 @@ class BaseDecompounder:
                             self.globalNN)[:self.nAccuracy]
                     self.logger.debug(neighbours)
                 except Exception as e:
-                    print e
+                    print(e)
                     self.logger.error('Problem found when retrieving KNN for prediction representation')
                     self.logger.error(list(predictionRepresentation))
                     exit()
@@ -193,13 +193,13 @@ class BaseDecompounder:
 
         add_edges(0, inputCompound)
 
-        for k in lattice.keys():
+        for k in list(lattice.keys()):
             lattice[k] = list(set(lattice[k]))
 
         return lattice
 
 def print_path(viterbi_path):
-    return " ".join(map(lambda p: "%d,%d,%s" % p, viterbi_path))
+    return " ".join(["%d,%d,%s" % p for p in viterbi_path])
 
 if __name__ == '__main__':
 
@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print >> sys.stderr, "Loading model..."
+    print("Loading model...", file=sys.stderr)
     modelSetup = yaml.load(open(args.model_folder + "/model.yaml", 'r'))
 
     base_decompounder = BaseDecompounder(args.model_folder, modelSetup,
@@ -225,26 +225,25 @@ if __name__ == '__main__':
 
     if args.mode == "lattices":
         for line in sys.stdin:
-            print(
+            print((
                 base_decompounder.get_decompound_lattice(
                     line.decode('utf8').rstrip('\n').title(),
                 )
-            )
+            ))
     elif args.mode == "w2v_dict":
-        for word in base_decompounder.model.vocab.keys():
-            print word.encode('utf-8')
+        for word in list(base_decompounder.model.vocab.keys()):
+            print(word.encode('utf-8'))
     elif args.mode in ["1-best", "dict_w2v"]:
         vit = ViterbiDecompounder()
         vit.load_weights(modelSetup["WEIGHTS"])
 
         words = []
         if args.mode == "1-best":
-            words = map(lambda line: line.decode('utf8').strip(),
-                    sys.stdin)
+            words = [line.decode('utf8').strip() for line in sys.stdin]
         else:
-            words = base_decompounder.model.vocab.keys()
+            words = list(base_decompounder.model.vocab.keys())
 
-        print >>sys.stderr, "# words: %d" % len(words)
+        print("# words: %d" % len(words), file=sys.stderr)
 
         def process_word(word):
             lattice = Lattice(base_decompounder.get_decompound_lattice(word))
@@ -253,5 +252,5 @@ if __name__ == '__main__':
 
         pool = multiprocessing.Pool(4)
         for pword in pool.map(process_word, words):
-            print " ".join(pword)
+            print(" ".join(pword))
 

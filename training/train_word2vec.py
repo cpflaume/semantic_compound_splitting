@@ -26,14 +26,14 @@ class CorpusReader():
         :return: list of tokens
         """
         for f in self.files:
-            print "Processing ", f
+            print("Processing ", f)
             for line in open(f, "r"):
 		try:
 	                yield self.tokenizer.tokenize(line.decode("utf-8"))
 		except:
 			pass
 
-print "Starting W2V training..."
+print("Starting W2V training...")
 
 files = glob.glob(sys.argv[1])
 outfile_name = sys.argv[2]

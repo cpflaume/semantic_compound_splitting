@@ -11,7 +11,7 @@ if __name__ == '__main__':
         mosesResults = sys.argv[1]
         outFile = sys.argv[2]
     elif len(sys.argv)>1:
-        print 'Error in params.'
+        print('Error in params.')
         exit()
 
     fMosesOut = codecs.open(mosesResults, 'r', encoding='utf-8')

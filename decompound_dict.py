@@ -14,7 +14,7 @@ def load_dict(file, ignore_case=False):
                 # TODO, always using the last one in case of overlaps
                 w = w.lower()
             
-            indices = map(lambda i: i.split(','), es[1:])
+            indices = [i.split(',') for i in es[1:]]
 
             splits[w] = []
             for from_, to, fug in indices:
@@ -61,10 +61,10 @@ if __name__ == '__main__':
 
                 w_split.append(wordpart)
                     
-            return u" ".join(w_split)
+            return " ".join(w_split)
         else:
             return w
 
     for line in sys.stdin:
-        print u" ".join(map(split_word, line.decode('utf-8').strip().split(" ")))
+        print(" ".join(map(split_word, line.decode('utf-8').strip().split(" "))))
 

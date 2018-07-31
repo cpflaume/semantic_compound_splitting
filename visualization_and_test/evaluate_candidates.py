@@ -1,5 +1,5 @@
 __author__ = 'rwechsler'
-import cPickle as pickle
+import pickle as pickle
 import itertools
 import random
 from annoy import AnnoyIndex
@@ -59,9 +59,9 @@ def test_pair(pair1, pair2, word2vec_model, k=100, show=30):
 
     neighbours = word2vec_model.most_similar([predicted], topn=k)
 
-    print neighbours[:show]
-    neighbours, _ = zip(*neighbours)
-    print "Found: ", true_word in neighbours
+    print(neighbours[:show])
+    neighbours, _ = list(zip(*neighbours))
+    print("Found: ", true_word in neighbours)
 
 
 def candidate_generator(candidates, rank_threshold):
@@ -94,13 +94,13 @@ if __name__ == "__main__":
     arguments = parser.parse_args(sys.argv[1:])
 
 
-    print timestamp(), "loading candidates"
+    print(timestamp(), "loading candidates")
     candidates = load_candidate_dump(arguments.candidates_index_file)
 
-    print timestamp(), "loading word2vec model"
+    print(timestamp(), "loading word2vec model")
     word2vec_model = load_word2vecmodel(arguments.word2vec_file)
 
-    print timestamp(), "preprocess candidates"
+    print(timestamp(), "preprocess candidates")
     # only store vectors that we need. And sample already.
     word2vec_vectors = dict()
     for cand in candidates:
@@ -112,9 +112,9 @@ if __name__ == "__main__":
 
     del word2vec_model
 
-    print timestamp(), "number of vectors: ", len(word2vec_vectors)
+    print(timestamp(), "number of vectors: ", len(word2vec_vectors))
 
-    print timestamp(), "load annoy tree"
+    print(timestamp(), "load annoy tree")
     # global annoy_tree
     annoy_tree = load_annoy_tree(arguments.annoy_tree_file, arguments.vector_dims)
 
@@ -140,12 +140,12 @@ if __name__ == "__main__":
 
         return (prefix, float(counts[True]) / (counts[True] + counts[False])) if counts[True] + counts[False] > 0 else (prefix, 0.0)
 
-    print timestamp(), "evaluating candidates"
+    print(timestamp(), "evaluating candidates")
     pool = mp.Pool(processes=arguments.n_processes)
     params = candidate_generator(candidates, arguments.rank_threshold)
     results = pool.map(mp_wrapper_evaluate_set, params)
 
-    print timestamp(), "pickling"
+    print(timestamp(), "pickling")
     pickle.dump(results, open(arguments.result_output_file, "wb"))
 
-    print timestamp(), "done"
+    print(timestamp(), "done")

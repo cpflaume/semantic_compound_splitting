@@ -13,7 +13,7 @@ if __name__ == '__main__':
         corpus_path_train = sys.argv[1]
         corpus_path_test = sys.argv[2]
     elif len(sys.argv) > 1:
-        print 'Error in params'
+        print('Error in params')
         exit()
 
     idx = corpus_path_train.rfind('/') + 1
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     corpus_train = PlaintextCorpusReader(folder_train, filename_train, encoding='utf-8')
     corpus_test = PlaintextCorpusReader(folder_test, filename_test, encoding='utf-8')
 
-    print 'Getting frequency distributions'
+    print('Getting frequency distributions')
     fd_train = FreqDist([w for w in corpus_train.words() if w.isalpha()])
     fd_test = FreqDist([w for w in corpus_test.words() if w.isalpha()])
 
@@ -39,14 +39,14 @@ if __name__ == '__main__':
 
     for th in thresholds:
 
-        print 'Processing th: ' + str(th)
+        print('Processing th: ' + str(th))
 
         fout = codecs.open('MT/words_threshold_'+str(th), 'w', encoding='utf-8')
 
-        for word in fd_test.keys():
+        for word in list(fd_test.keys()):
             if fd_train[word] <= th:
                 fout.write(word + '\t' + str(fd_train[word]) + '\n')
 
         fout.close()
 
-    print 'End'
+    print('End')

@@ -1,7 +1,7 @@
 __author__ = 'rwechsler'
 import datetime
 import time
-import cPickle as pickle
+import pickle as pickle
 from annoy import AnnoyIndex
 import gensim
 import argparse
@@ -38,7 +38,7 @@ def get_rank_annoy_knn(annoy_tree, vector, true_index, k=100):
         return 0
 
 def get_rank_word2vec_knn(word2vec_model, vector, true_index, k=100):
-    neighbours, _ = zip(*word2vec_model.most_similar(positive=[vector], topn=k))
+    neighbours, _ = list(zip(*word2vec_model.most_similar(positive=[vector], topn=k)))
 
     try:
         return neighbours.index(word2vec_model.index2word[true_index]) + 1
@@ -109,14 +109,14 @@ if __name__ == "__main__":
     arguments = parser.parse_args(sys.argv[1:])
 
 
-    print timestamp(), "loading word2vec model"
+    print(timestamp(), "loading word2vec model")
     word2vec_model = load_word2vecmodel(arguments.word2vec_file)
 
-    print timestamp(), "loading prototypes"
+    print(timestamp(), "loading prototypes")
     prototypes = load_prototype_dump(arguments.prototypes_file)
 
     if arguments.candidates_index_file:
-        print timestamp(), "loading candidates"
+        print(timestamp(), "loading candidates")
         candidates = load_candidate_dump(arguments.candidates_index_file)
 
 
@@ -130,7 +130,7 @@ if __name__ == "__main__":
                 evaluation_set[(prefix, prototype)] = evidence_set
 
 
-    print timestamp(), "preprocess candidates"
+    print(timestamp(), "preprocess candidates")
     # only store vectors that we need. And sample already.
     word2vec_vectors = dict()
     for prototype_tup in evaluation_set:
@@ -143,16 +143,16 @@ if __name__ == "__main__":
         word2vec_vectors[prototype_tup[1][1]] = np.array(word2vec_model.syn0[prototype_tup[1][1]])
 
 
-    print timestamp(), "number of vectors: ", len(word2vec_vectors)
+    print(timestamp(), "number of vectors: ", len(word2vec_vectors))
 
     if arguments.annoy_tree_file and arguments.vector_dims:
         del word2vec_model
-        print timestamp(), "loading annoy tree"
+        print(timestamp(), "loading annoy tree")
         # global annoy_tree
         model = load_annoy_tree(arguments.annoy_tree_file, arguments.vector_dims)
         knn_method = get_rank_annoy_knn
     else:
-        print timestamp(), "using word2vec model"
+        print(timestamp(), "using word2vec model")
         model = word2vec_model
         knn_method = get_rank_word2vec_knn
 
@@ -180,7 +180,7 @@ if __name__ == "__main__":
 
         return (prefix_prototype_pair,results)
 
-    print timestamp(), "evaluating candidates"
+    print(timestamp(), "evaluating candidates")
     pool = mp.Pool(processes=arguments.n_processes)
     params = candidate_generator(evaluation_set, arguments.rank_threshold, arguments.sim_threshold)
     results = pool.map(mp_wrapper_evaluate_set, params)
@@ -189,30 +189,30 @@ if __name__ == "__main__":
     pool.join()
     del pool
 
-    print timestamp(), "pickling"
+    print(timestamp(), "pickling")
     pickle.dump(results, open(arguments.result_output_file, "wb"))
 
 
     if arguments.annoy_tree_file:
-        print timestamp(), "loading word2vec model"
+        print(timestamp(), "loading word2vec model")
         word2vec_model = load_word2vecmodel(arguments.word2vec_file)
     else:
         word2vec_model = model
 
-    print timestamp(), "mapping indices to word"
+    print(timestamp(), "mapping indices to word")
     scores = defaultdict(dict)
     for ((prefix, vector), eval_scores) in results:
         vector_repr = get_word_representation(prefix, vector[0], vector[1], word2vec_model)
         scores[prefix][vector_repr] = eval_scores
 
-    print timestamp(), "writing result file"
+    print(timestamp(), "writing result file")
     outfile = codecs.open(arguments.result_output_file, "w", "utf-8")
     for prefix in scores:
         for vector in scores[prefix]:
-            outfile.write("\t".join([prefix, vector] + map(str, scores[prefix][vector])) + "\n")
+            outfile.write("\t".join([prefix, vector] + list(map(str, scores[prefix][vector]))) + "\n")
 
     outfile.close()
 
 
 
-    print timestamp(), "done"
+    print(timestamp(), "done")
